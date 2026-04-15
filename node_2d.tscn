@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://bu4vnea8o5uyc"]
+
+[ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://question_manager.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprite/UIProjetLabFullTopText.png" id="2_rj586"]
+[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprite/UIProjetLabTopLeft.png" id="3_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprite/UIProjetLabTopRight.png" id="4_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprite/UIProjetLabBottomLeft.png" id="5_hqns4"]
+[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprite/UIProjetLabBottomRight.png" id="6_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprite/UIProjetLabMiddleTime.png" id="7_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprite/UIProjetLabScore.png" id="8_nr8wp"]
+
+[node name="SceneQuiz" type="Node2D" unique_id=1692662690]
+script = ExtResource("1_wtcfe")
+"BonneRéponse" = null
+image = false
+
+[node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Question" unique_id=232876942]
+position = Vector2(585.80005, 199.20001)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_rj586")
+
+[node name="texte_generique" type="Label" parent="Question" unique_id=226421097]
+visible = false
+offset_left = 14.800049
+offset_top = 77.20001
+offset_right = 1152.8
+offset_bottom = 325.2
+theme_override_font_sizes/font_size = 48
+text = "Quel est la capitale de la Norvège ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="Question" unique_id=1394317457]
+offset_left = 15.0
+offset_top = 74.0
+offset_right = 1152.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 48
+text = "Combien d'états comportent les États-Unis ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="RéponseA" unique_id=1132011558]
+position = Vector2(300.5, 409.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_4d7sh")
+
+[node name="texte_generique" type="Label" parent="RéponseA" unique_id=674849984]
+visible = false
+offset_left = 27.5
+offset_top = 347.5
+offset_right = 575.5
+offset_bottom = 475.5
+theme_override_font_sizes/font_size = 32
+text = "Oslo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseA" unique_id=644757297]
+offset_left = 27.0
+offset_top = 346.0
+offset_right = 575.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="RéponseB" unique_id=1495987441]
+position = Vector2(874, 411.4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ir8iy")
+
+[node name="texte_generique" type="Label" parent="RéponseB" unique_id=183181007]
+visible = false
+offset_left = 596.0
+offset_top = 348.4
+offset_right = 1153.0
+offset_bottom = 477.4
+theme_override_font_sizes/font_size = 32
+text = "Helsinki"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseB" unique_id=2072160502]
+offset_left = 597.0
+offset_top = 348.0
+offset_right = 1152.0
+offset_bottom = 475.0
+theme_override_font_sizes/font_size = 32
+text = "49"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="RéponseC" unique_id=1140807291]
+position = Vector2(299.40002, 578)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_hqns4")
+
+[node name="texte_generique" type="Label" parent="RéponseC" unique_id=1185972072]
+visible = false
+offset_left = 26.400024
+offset_top = 513.0
+offset_right = 572.4
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 32
+text = "Stockholm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseC" unique_id=1255506316]
+offset_left = 24.0
+offset_top = 513.0
+offset_right = 576.0
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 32
+text = "48"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="RéponseD" unique_id=1211261111]
+position = Vector2(878.30005, 576.1)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_x0ka3")
+
+[node name="texte_generique" type="Label" parent="RéponseD" unique_id=1934966412]
+visible = false
+offset_left = 603.30005
+offset_top = 512.1
+offset_right = 1152.3
+offset_bottom = 639.1
+theme_override_font_sizes/font_size = 32
+text = "Copenhague"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseD" unique_id=2061394332]
+offset_left = 601.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 32
+text = "51"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
+position = Vector2(586, 488)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_0h7mo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
+position = Vector2(260, 37)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_nr8wp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
+position = Vector2(901, 35)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_nr8wp")
