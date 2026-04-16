@@ -1,0 +1,311 @@
+[gd_scene format=3 uid="uid://bu4vnea8o5uyc"]
+
+[ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_tx0k3"]
+[ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_psn5n"]
+[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeft.png" id="3_2nl1b"]
+[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonTopRight/UIProjetLabTopRight.png" id="4_2jru6"]
+[ext_resource type="Texture2D" uid="uid://dwb047ravddwc" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftSelected.png" id="4_61nrn"]
+[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeft.png" id="5_6vunt"]
+[ext_resource type="Texture2D" uid="uid://6th0iu066qhp" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftCorrect.png" id="5_i2hoc"]
+[ext_resource type="Texture2D" uid="uid://cwnuowmsvvkj2" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftWrong.png" id="6_7jgav"]
+[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRight.png" id="6_18e6o"]
+[ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprites/QuestionOtherAsset/UIProjetLabMiddleTime.png" id="7_3gpfs"]
+[ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="8_0h6m8"]
+[ext_resource type="Texture2D" uid="uid://dgl1jgitb7ckg" path="res://sprites/ButtonTopRight/UIProjetLabTopRightSelected.png" id="8_kghek"]
+[ext_resource type="Texture2D" uid="uid://ohkxpos8fbv0" path="res://sprites/ButtonTopRight/UIProjetLabTopRightCorrect.png" id="9_a8fw6"]
+[ext_resource type="Texture2D" uid="uid://dmqfnvgjutw75" path="res://sprites/ButtonTopRight/UIProjetLabTopRightWrong.png" id="10_b3mkp"]
+[ext_resource type="Texture2D" uid="uid://3mp1d4vjht0p" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftSelected.png" id="12_dlurs"]
+[ext_resource type="Texture2D" uid="uid://6td35axpdtot" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftCorrect.png" id="13_bfjfa"]
+[ext_resource type="Texture2D" uid="uid://bllvvgi58hcnb" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftWrong.png" id="14_agoqs"]
+[ext_resource type="Texture2D" uid="uid://b5ejva00fb1qs" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightSelected.png" id="16_4om5f"]
+[ext_resource type="Texture2D" uid="uid://bh27hhoforsal" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightCorrect.png" id="17_yr7vb"]
+[ext_resource type="Texture2D" uid="uid://j3lqkmew63gh" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightWrong.png" id="18_4mu4i"]
+
+[sub_resource type="GDScript" id="GDScript_tx0k3"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+	
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
+script = ExtResource("1_tx0k3")
+texte = false
+"BonneRéponse" = 2
+buttons = [NodePath("RéponseA/Button"), NodePath("RéponseB/Button"), NodePath("RéponseC/Button"), NodePath("RéponseD/Button")]
+
+[node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
+
+[node name="Sprite" type="Node2D" parent="Question" unique_id=2129935516]
+
+[node name="Sprite2D" type="Sprite2D" parent="Question/Sprite" unique_id=232876942]
+position = Vector2(585.80005, 199.20001)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_psn5n")
+
+[node name="Texte" type="Node2D" parent="Question" unique_id=1135119892]
+
+[node name="texte_generique" type="Label" parent="Question/Texte" unique_id=226421097]
+offset_left = 14.800049
+offset_top = 77.20001
+offset_right = 1152.8
+offset_bottom = 325.2
+theme_override_font_sizes/font_size = 48
+text = "Quel est la capitale de la Norvège ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="Question/Texte" unique_id=1394317457]
+visible = false
+offset_left = 15.0
+offset_top = 74.0
+offset_right = 1152.0
+offset_bottom = 324.0
+theme_override_font_sizes/font_size = 48
+text = "Combien d'états comportent les États-Unis ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
+
+[node name="Button" type="Button" parent="RéponseA" unique_id=123329464]
+offset_left = 26.0
+offset_top = 342.0
+offset_right = 949.0
+offset_bottom = 565.0
+scale = Vector2(0.6, 0.6)
+action_mode = 0
+icon = ExtResource("3_2nl1b")
+flat = true
+icon_alignment = 1
+script = SubResource("GDScript_tx0k3")
+
+[node name="Texte" type="Node2D" parent="RéponseA" unique_id=287165033]
+
+[node name="texte_generique" type="Label" parent="RéponseA/Texte" unique_id=674849984]
+offset_left = 27.5
+offset_top = 347.5
+offset_right = 575.5
+offset_bottom = 475.5
+theme_override_font_sizes/font_size = 32
+text = "Helsinki"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseA/Texte" unique_id=644757297]
+visible = false
+offset_left = 141.0
+offset_top = 389.0
+offset_right = 483.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 32
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprites" type="Node2D" parent="RéponseA" unique_id=1239281506]
+
+[node name="Normal" type="Sprite2D" parent="RéponseA/Sprites" unique_id=1144128414]
+visible = false
+texture = ExtResource("3_2nl1b")
+
+[node name="Selectionné" type="Sprite2D" parent="RéponseA/Sprites" unique_id=71472075]
+visible = false
+texture = ExtResource("4_61nrn")
+
+[node name="Bonne Réponse" type="Sprite2D" parent="RéponseA/Sprites" unique_id=1380299338]
+visible = false
+texture = ExtResource("5_i2hoc")
+
+[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseA/Sprites" unique_id=163560431]
+visible = false
+texture = ExtResource("6_7jgav")
+
+[node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
+
+[node name="Button" type="Button" parent="RéponseB" unique_id=195798663]
+offset_left = 595.0
+offset_top = 341.0
+offset_right = 1528.0
+offset_bottom = 567.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("4_2jru6")
+flat = true
+
+[node name="Texte" type="Node2D" parent="RéponseB" unique_id=1246548316]
+
+[node name="texte_personnalise" type="Label" parent="RéponseB/Texte" unique_id=2072160502]
+visible = false
+offset_left = 597.0
+offset_top = 348.0
+offset_right = 1152.0
+offset_bottom = 475.0
+theme_override_font_sizes/font_size = 32
+text = "49"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_generique" type="Label" parent="RéponseB/Texte" unique_id=183181007]
+offset_left = 596.0
+offset_top = 348.4
+offset_right = 1153.0
+offset_bottom = 477.4
+theme_override_font_sizes/font_size = 32
+text = "Oslo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprites" type="Node2D" parent="RéponseB" unique_id=298048776]
+
+[node name="Normal" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1977007623]
+visible = false
+texture = ExtResource("4_2jru6")
+
+[node name="Selectionné" type="Sprite2D" parent="RéponseB/Sprites" unique_id=3388280]
+visible = false
+texture = ExtResource("8_kghek")
+
+[node name="Bonne Réponse" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1628919705]
+visible = false
+texture = ExtResource("9_a8fw6")
+
+[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1464091727]
+visible = false
+texture = ExtResource("10_b3mkp")
+
+[node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
+
+[node name="Button" type="Button" parent="RéponseC" unique_id=1665932184]
+offset_left = 21.0
+offset_top = 501.0
+offset_right = 947.0
+offset_bottom = 724.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("5_6vunt")
+flat = true
+
+[node name="Texte" type="Node2D" parent="RéponseC" unique_id=1074498151]
+
+[node name="texte_personnalise" type="Label" parent="RéponseC/Texte" unique_id=1255506316]
+visible = false
+offset_left = 24.0
+offset_top = 513.0
+offset_right = 576.0
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 32
+text = "48"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_generique" type="Label" parent="RéponseC/Texte" unique_id=1185972072]
+offset_left = 26.400024
+offset_top = 513.0
+offset_right = 572.4
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 32
+text = "Stockholm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprites" type="Node2D" parent="RéponseC" unique_id=1138288457]
+
+[node name="Normal" type="Sprite2D" parent="RéponseC/Sprites" unique_id=463403142]
+visible = false
+texture = ExtResource("5_6vunt")
+
+[node name="Selectionné" type="Sprite2D" parent="RéponseC/Sprites" unique_id=193303833]
+visible = false
+texture = ExtResource("12_dlurs")
+
+[node name="Bonne Réponse" type="Sprite2D" parent="RéponseC/Sprites" unique_id=1825607052]
+visible = false
+texture = ExtResource("13_bfjfa")
+
+[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseC/Sprites" unique_id=594463234]
+visible = false
+texture = ExtResource("14_agoqs")
+
+[node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
+
+[node name="Button" type="Button" parent="RéponseD" unique_id=1650336953]
+offset_left = 598.0
+offset_top = 504.0
+offset_right = 1527.0
+offset_bottom = 729.0
+scale = Vector2(0.6, 0.6)
+icon = ExtResource("6_18e6o")
+flat = true
+
+[node name="Texte" type="Node2D" parent="RéponseD" unique_id=1817513793]
+
+[node name="texte_generique" type="Label" parent="RéponseD/Texte" unique_id=1934966412]
+offset_left = 603.30005
+offset_top = 512.1
+offset_right = 1152.3
+offset_bottom = 639.1
+theme_override_font_sizes/font_size = 32
+text = "Copenhague"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="texte_personnalise" type="Label" parent="RéponseD/Texte" unique_id=2061394332]
+visible = false
+offset_left = 601.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 32
+text = "51"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprites" type="Node2D" parent="RéponseD" unique_id=1817924430]
+
+[node name="Normal" type="Sprite2D" parent="RéponseD/Sprites" unique_id=1425492932]
+visible = false
+texture = ExtResource("6_18e6o")
+
+[node name="Selectionné" type="Sprite2D" parent="RéponseD/Sprites" unique_id=745483344]
+visible = false
+texture = ExtResource("16_4om5f")
+
+[node name="Bonne Réponse" type="Sprite2D" parent="RéponseD/Sprites" unique_id=1733586872]
+visible = false
+texture = ExtResource("17_yr7vb")
+
+[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseD/Sprites" unique_id=324444586]
+visible = false
+texture = ExtResource("18_4mu4i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
+position = Vector2(586, 488)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_3gpfs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
+position = Vector2(260, 37)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_0h6m8")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
+position = Vector2(901, 35)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_0h6m8")
