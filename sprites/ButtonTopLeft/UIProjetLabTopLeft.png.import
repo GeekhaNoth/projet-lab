@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctkppnfyhfcth"
-path="res://.godot/imported/UIProjetLabMiddleTime.png-da98de962cd31ec2584150e6d4e4eda6.ctex"
+uid="uid://ck5i8xfb0aoik"
+path="res://.godot/imported/UIProjetLabTopLeft.png-a055d55a38546f03266d0a6e1650ad18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/UIProjetLabMiddleTime.png"
-dest_files=["res://.godot/imported/UIProjetLabMiddleTime.png-da98de962cd31ec2584150e6d4e4eda6.ctex"]
+source_file="res://sprites/ButtonTopLeft/UIProjetLabTopLeft.png"
+dest_files=["res://.godot/imported/UIProjetLabTopLeft.png-a055d55a38546f03266d0a6e1650ad18.ctex"]
 
 [params]
 

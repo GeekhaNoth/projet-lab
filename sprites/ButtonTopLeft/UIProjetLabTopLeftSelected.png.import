@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnwbmrmak2kt3"
-path="res://.godot/imported/UIProjetLabScore.png-22a92ce1e7e23eebca6aa654686b540a.ctex"
+uid="uid://dwb047ravddwc"
+path="res://.godot/imported/UIProjetLabTopLeftSelected.png-0539b51cc5d75f6a2de3816711f7c132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/UIProjetLabScore.png"
-dest_files=["res://.godot/imported/UIProjetLabScore.png-22a92ce1e7e23eebca6aa654686b540a.ctex"]
+source_file="res://sprites/ButtonTopLeft/UIProjetLabTopLeftSelected.png"
+dest_files=["res://.godot/imported/UIProjetLabTopLeftSelected.png-0539b51cc5d75f6a2de3816711f7c132.ctex"]
 
 [params]
 
