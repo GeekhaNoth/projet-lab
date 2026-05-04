@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_tx0k3")
-texte = false
 "BonneRéponse" = 2
 buttons = [NodePath("RéponseA/Button"), NodePath("RéponseB/Button"), NodePath("RéponseC/Button"), NodePath("RéponseD/Button")]
 
@@ -54,6 +53,7 @@ texture = ExtResource("2_psn5n")
 [node name="Texte" type="Node2D" parent="Question" unique_id=1135119892]
 
 [node name="texte_generique" type="Label" parent="Question/Texte" unique_id=226421097]
+visible = false
 offset_left = 14.800049
 offset_top = 77.20001
 offset_right = 1152.8
@@ -65,7 +65,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="texte_personnalise" type="Label" parent="Question/Texte" unique_id=1394317457]
-visible = false
 offset_left = 15.0
 offset_top = 74.0
 offset_right = 1152.0
@@ -93,6 +92,7 @@ script = SubResource("GDScript_tx0k3")
 [node name="Texte" type="Node2D" parent="RéponseA" unique_id=287165033]
 
 [node name="texte_generique" type="Label" parent="RéponseA/Texte" unique_id=674849984]
+visible = false
 offset_left = 27.5
 offset_top = 347.5
 offset_right = 575.5
@@ -104,7 +104,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="texte_personnalise" type="Label" parent="RéponseA/Texte" unique_id=644757297]
-visible = false
 offset_left = 141.0
 offset_top = 389.0
 offset_right = 483.0
@@ -147,7 +146,6 @@ flat = true
 [node name="Texte" type="Node2D" parent="RéponseB" unique_id=1246548316]
 
 [node name="texte_personnalise" type="Label" parent="RéponseB/Texte" unique_id=2072160502]
-visible = false
 offset_left = 597.0
 offset_top = 348.0
 offset_right = 1152.0
@@ -159,6 +157,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="texte_generique" type="Label" parent="RéponseB/Texte" unique_id=183181007]
+visible = false
 offset_left = 596.0
 offset_top = 348.4
 offset_right = 1153.0
@@ -201,7 +200,6 @@ flat = true
 [node name="Texte" type="Node2D" parent="RéponseC" unique_id=1074498151]
 
 [node name="texte_personnalise" type="Label" parent="RéponseC/Texte" unique_id=1255506316]
-visible = false
 offset_left = 24.0
 offset_top = 513.0
 offset_right = 576.0
@@ -213,6 +211,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="texte_generique" type="Label" parent="RéponseC/Texte" unique_id=1185972072]
+visible = false
 offset_left = 26.400024
 offset_top = 513.0
 offset_right = 572.4
@@ -255,6 +254,7 @@ flat = true
 [node name="Texte" type="Node2D" parent="RéponseD" unique_id=1817513793]
 
 [node name="texte_generique" type="Label" parent="RéponseD/Texte" unique_id=1934966412]
+visible = false
 offset_left = 603.30005
 offset_top = 512.1
 offset_right = 1152.3
@@ -266,7 +266,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="texte_personnalise" type="Label" parent="RéponseD/Texte" unique_id=2061394332]
-visible = false
 offset_left = 601.0
 offset_top = 512.0
 offset_right = 1152.0
