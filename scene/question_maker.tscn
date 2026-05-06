@@ -2,30 +2,62 @@
 
 [ext_resource type="Script" uid="uid://b8fg2cjd4x8ek" path="res://scripts/questionMaker.gd" id="1_u0xl1"]
 
-[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("buttonCreateQuestion", "buttonCreateScene", "textEdit")]
+[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("buttonCreateQuestion", "buttonCreateScene", "textEdit", "allTextEdit")]
 script = ExtResource("1_u0xl1")
-buttonCreateQuestion = NodePath("Button")
-buttonCreateScene = NodePath("Button2")
-textEdit = NodePath("TextEdit")
+buttonCreateQuestion = NodePath("NewQuestion")
+buttonCreateScene = NodePath("ValidateQuestion")
+textEdit = NodePath("TextEdit/QuestionEdit")
+allTextEdit = NodePath("TextEdit")
 
-[node name="Button" type="Button" parent="." unique_id=1623017771]
-offset_left = 416.0
-offset_top = 190.0
-offset_right = 643.0
-offset_bottom = 221.0
+[node name="NewQuestion" type="Button" parent="." unique_id=1623017771]
+offset_left = 438.0
+offset_top = 222.0
+offset_right = 665.0
+offset_bottom = 253.0
 text = "Créer une nouvelle question"
 
-[node name="Button2" type="Button" parent="." unique_id=1277579025]
-offset_left = 471.0
-offset_top = 441.0
-offset_right = 631.0
-offset_bottom = 507.0
+[node name="ValidateQuestion" type="Button" parent="." unique_id=1277579025]
+offset_left = 483.0
+offset_top = 548.0
+offset_right = 643.0
+offset_bottom = 614.0
 text = "Valider la question"
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=97666342]
-visible = false
-offset_left = 232.0
-offset_top = 299.0
-offset_right = 896.0
-offset_bottom = 393.0
+[node name="TextEdit" type="Node2D" parent="." unique_id=769660118]
+
+[node name="QuestionEdit" type="TextEdit" parent="TextEdit" unique_id=97666342]
+offset_left = 327.0
+offset_top = 25.0
+offset_right = 865.0
+offset_bottom = 119.0
 placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
+
+[node name="Answer1Edit" type="TextEdit" parent="TextEdit" unique_id=2038593353]
+offset_left = 17.0
+offset_top = 193.0
+offset_right = 511.0
+offset_bottom = 287.0
+placeholder_text = "Indiquez une réponse ici. Exemple : 1 million"
+context_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="Answer2Edit" type="TextEdit" parent="TextEdit" unique_id=2080791820]
+offset_left = 592.0
+offset_top = 207.0
+offset_right = 1124.0
+offset_bottom = 301.0
+placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
+
+[node name="Answer3Edit" type="TextEdit" parent="TextEdit" unique_id=1125262573]
+offset_left = 20.0
+offset_top = 378.0
+offset_right = 504.0
+offset_bottom = 472.0
+placeholder_text = "Indiquez une réponse ici. Exemple : 2 millions"
+
+[node name="Answer4Edit" type="TextEdit" parent="TextEdit" unique_id=802511103]
+offset_left = 585.0
+offset_top = 382.0
+offset_right = 1145.0
+offset_bottom = 476.0
+placeholder_text = "Indiquez une réponse ici. Exemple : 100 000"

@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_tx0k3")
 "BonneRéponse" = 2
-buttons = [NodePath("RéponseA/Button"), NodePath("RéponseB/Button"), NodePath("RéponseC/Button"), NodePath("RéponseD/Button")]
+buttons = [NodePath("RéponseA/ButtonA"), NodePath("RéponseB/ButtonB"), NodePath("RéponseC/ButtonC"), NodePath("RéponseD/ButtonD")]
 
 [node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
 
@@ -77,13 +77,15 @@ autowrap_mode = 2
 
 [node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
 
-[node name="Button" type="Button" parent="RéponseA" unique_id=123329464]
+[node name="ButtonA" type="Button" parent="RéponseA" unique_id=123329464]
 offset_left = 26.0
 offset_top = 342.0
 offset_right = 949.0
 offset_bottom = 565.0
 scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 48
 action_mode = 0
+text = "50"
 icon = ExtResource("3_2nl1b")
 flat = true
 icon_alignment = 1
@@ -134,14 +136,17 @@ texture = ExtResource("6_7jgav")
 
 [node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
 
-[node name="Button" type="Button" parent="RéponseB" unique_id=195798663]
+[node name="ButtonB" type="Button" parent="RéponseB" unique_id=195798663]
 offset_left = 595.0
 offset_top = 341.0
 offset_right = 1528.0
 offset_bottom = 567.0
 scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 48
+text = "49"
 icon = ExtResource("4_2jru6")
 flat = true
+icon_alignment = 1
 
 [node name="Texte" type="Node2D" parent="RéponseB" unique_id=1246548316]
 
@@ -188,14 +193,17 @@ texture = ExtResource("10_b3mkp")
 
 [node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
 
-[node name="Button" type="Button" parent="RéponseC" unique_id=1665932184]
+[node name="ButtonC" type="Button" parent="RéponseC" unique_id=1665932184]
 offset_left = 21.0
 offset_top = 501.0
 offset_right = 947.0
 offset_bottom = 724.0
 scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 48
+text = "48"
 icon = ExtResource("5_6vunt")
 flat = true
+icon_alignment = 1
 
 [node name="Texte" type="Node2D" parent="RéponseC" unique_id=1074498151]
 
@@ -242,14 +250,17 @@ texture = ExtResource("14_agoqs")
 
 [node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
 
-[node name="Button" type="Button" parent="RéponseD" unique_id=1650336953]
+[node name="ButtonD" type="Button" parent="RéponseD" unique_id=1650336953]
 offset_left = 598.0
 offset_top = 504.0
 offset_right = 1527.0
 offset_bottom = 729.0
 scale = Vector2(0.6, 0.6)
+theme_override_font_sizes/font_size = 48
+text = "51"
 icon = ExtResource("6_18e6o")
 flat = true
+icon_alignment = 1
 
 [node name="Texte" type="Node2D" parent="RéponseD" unique_id=1817513793]
 

@@ -16,8 +16,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Engine.is_editor_hint():
-		_changeNodesOfACategoryState(nodetxt, "texte_personnalise", "texte_generique", texte)
+	pass
+	#if Engine.is_editor_hint():
+		#_changeNodesOfACategoryState(nodetxt, "texte_personnalise", "texte_generique", texte)
 
 func _changeNodesOfACategoryState(_nodesCategory, stringNodeCustoms, stringNodeGen, boolCategory):
 	for child in _nodesCategory:
