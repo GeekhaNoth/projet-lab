@@ -3,7 +3,7 @@ extends Node2D
 @export var texte = true
 @export var BonneRéponse = 1
 @export var image = true
-@export var buttons: Array[Button] = []
+@export var buttons: Array[TextureButton] = []
 
 @onready var nodetxt = get_tree().get_nodes_in_group("txt")
 @onready var nodesprite = get_tree().get_nodes_in_group("sprite")

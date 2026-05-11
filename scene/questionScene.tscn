@@ -21,25 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://bh27hhoforsal" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightCorrect.png" id="17_yr7vb"]
 [ext_resource type="Texture2D" uid="uid://j3lqkmew63gh" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightWrong.png" id="18_4mu4i"]
 
-[sub_resource type="GDScript" id="GDScript_tx0k3"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_tx0k3")
 "BonneRéponse" = 2
-buttons = [NodePath("RéponseA/ButtonA"), NodePath("RéponseB/ButtonB"), NodePath("RéponseC/ButtonC"), NodePath("RéponseD/ButtonD")]
+buttons = [NodePath("RéponseA/TextureButton"), NodePath("RéponseB/TextureButton"), NodePath("RéponseC/TextureButton"), NodePath("RéponseD/TextureButton")]
 
 [node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
 
@@ -77,44 +62,29 @@ autowrap_mode = 2
 
 [node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
 
-[node name="ButtonA" type="Button" parent="RéponseA" unique_id=123329464]
+[node name="TextureButton" type="TextureButton" parent="RéponseA" unique_id=159556379]
 offset_left = 26.0
-offset_top = 342.0
-offset_right = 949.0
-offset_bottom = 565.0
+offset_top = 346.0
+offset_right = 951.0
+offset_bottom = 564.0
 scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("3_2nl1b")
+texture_hover = ExtResource("4_61nrn")
+
+[node name="Label" type="Label" parent="RéponseA/TextureButton" unique_id=1851768799]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.333332
+offset_right = -122.666626
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-action_mode = 0
-text = "50"
-icon = ExtResource("3_2nl1b")
-flat = true
-icon_alignment = 1
-script = SubResource("GDScript_tx0k3")
-
-[node name="Texte" type="Node2D" parent="RéponseA" unique_id=287165033]
-
-[node name="texte_generique" type="Label" parent="RéponseA/Texte" unique_id=674849984]
-visible = false
-offset_left = 27.5
-offset_top = 347.5
-offset_right = 575.5
-offset_bottom = 475.5
-theme_override_font_sizes/font_size = 32
-text = "Helsinki"
+text = "49"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="texte_personnalise" type="Label" parent="RéponseA/Texte" unique_id=644757297]
-offset_left = 141.0
-offset_top = 389.0
-offset_right = 483.0
-offset_bottom = 441.0
-theme_override_font_sizes/font_size = 32
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Sprites" type="Node2D" parent="RéponseA" unique_id=1239281506]
 
@@ -136,42 +106,29 @@ texture = ExtResource("6_7jgav")
 
 [node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
 
-[node name="ButtonB" type="Button" parent="RéponseB" unique_id=195798663]
-offset_left = 595.0
-offset_top = 341.0
-offset_right = 1528.0
-offset_bottom = 567.0
+[node name="TextureButton" type="TextureButton" parent="RéponseB" unique_id=240958986]
+offset_left = 599.0
+offset_top = 344.0
+offset_right = 1524.0
+offset_bottom = 562.0
 scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("4_2jru6")
+texture_hover = ExtResource("8_kghek")
+
+[node name="Label" type="Label" parent="RéponseB/TextureButton" unique_id=877582989]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_right = -7.666626
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "49"
-icon = ExtResource("4_2jru6")
-flat = true
-icon_alignment = 1
-
-[node name="Texte" type="Node2D" parent="RéponseB" unique_id=1246548316]
-
-[node name="texte_personnalise" type="Label" parent="RéponseB/Texte" unique_id=2072160502]
-offset_left = 597.0
-offset_top = 348.0
-offset_right = 1152.0
-offset_bottom = 475.0
-theme_override_font_sizes/font_size = 32
-text = "49"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="texte_generique" type="Label" parent="RéponseB/Texte" unique_id=183181007]
-visible = false
-offset_left = 596.0
-offset_top = 348.4
-offset_right = 1153.0
-offset_bottom = 477.4
-theme_override_font_sizes/font_size = 32
-text = "Oslo"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Sprites" type="Node2D" parent="RéponseB" unique_id=298048776]
 
@@ -193,42 +150,31 @@ texture = ExtResource("10_b3mkp")
 
 [node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
 
-[node name="ButtonC" type="Button" parent="RéponseC" unique_id=1665932184]
-offset_left = 21.0
-offset_top = 501.0
-offset_right = 947.0
-offset_bottom = 724.0
+[node name="TextureButton" type="TextureButton" parent="RéponseC" unique_id=2070070366]
+offset_left = 24.0
+offset_top = 505.00003
+offset_right = 945.0
+offset_bottom = 722.0
 scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("5_6vunt")
+texture_hover = ExtResource("12_dlurs")
+
+[node name="Label" type="Label" parent="RéponseC/TextureButton" unique_id=196851185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.666664
+offset_top = -5.086263e-05
+offset_right = -122.666626
+offset_bottom = -4.5776367e-05
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "48"
-icon = ExtResource("5_6vunt")
-flat = true
-icon_alignment = 1
-
-[node name="Texte" type="Node2D" parent="RéponseC" unique_id=1074498151]
-
-[node name="texte_personnalise" type="Label" parent="RéponseC/Texte" unique_id=1255506316]
-offset_left = 24.0
-offset_top = 513.0
-offset_right = 576.0
-offset_bottom = 641.0
-theme_override_font_sizes/font_size = 32
-text = "48"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="texte_generique" type="Label" parent="RéponseC/Texte" unique_id=1185972072]
-visible = false
-offset_left = 26.400024
-offset_top = 513.0
-offset_right = 572.4
-offset_bottom = 641.0
-theme_override_font_sizes/font_size = 32
-text = "Stockholm"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Sprites" type="Node2D" parent="RéponseC" unique_id=1138288457]
 
@@ -250,42 +196,29 @@ texture = ExtResource("14_agoqs")
 
 [node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
 
-[node name="ButtonD" type="Button" parent="RéponseD" unique_id=1650336953]
+[node name="TextureButton" type="TextureButton" parent="RéponseD" unique_id=493098486]
 offset_left = 598.0
 offset_top = 504.0
-offset_right = 1527.0
-offset_bottom = 729.0
+offset_right = 1519.0
+offset_bottom = 721.0
 scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("6_18e6o")
+texture_hover = ExtResource("16_4om5f")
+
+[node name="Label" type="Label" parent="RéponseD/TextureButton" unique_id=85687014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_right = -7.666626
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "51"
-icon = ExtResource("6_18e6o")
-flat = true
-icon_alignment = 1
-
-[node name="Texte" type="Node2D" parent="RéponseD" unique_id=1817513793]
-
-[node name="texte_generique" type="Label" parent="RéponseD/Texte" unique_id=1934966412]
-visible = false
-offset_left = 603.30005
-offset_top = 512.1
-offset_right = 1152.3
-offset_bottom = 639.1
-theme_override_font_sizes/font_size = 32
-text = "Copenhague"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="texte_personnalise" type="Label" parent="RéponseD/Texte" unique_id=2061394332]
-offset_left = 601.0
-offset_top = 512.0
-offset_right = 1152.0
-offset_bottom = 640.0
-theme_override_font_sizes/font_size = 32
-text = "51"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="Sprites" type="Node2D" parent="RéponseD" unique_id=1817924430]
 
