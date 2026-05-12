@@ -31,11 +31,12 @@ buttons = [NodePath("RéponseA/TextureButton"), NodePath("RéponseB/TextureButto
 [node name="Sprite" type="Node2D" parent="Question" unique_id=2129935516]
 
 [node name="Sprite2D" type="Sprite2D" parent="Question/Sprite" unique_id=232876942]
-position = Vector2(585.80005, 199.20001)
+position = Vector2(962.80005, 607.4)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_psn5n")
 
 [node name="Texte" type="Node2D" parent="Question" unique_id=1135119892]
+position = Vector2(377, 408.2)
 
 [node name="texte_generique" type="Label" parent="Question/Texte" unique_id=226421097]
 visible = false
@@ -63,10 +64,10 @@ autowrap_mode = 2
 [node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
 
 [node name="TextureButton" type="TextureButton" parent="RéponseA" unique_id=159556379]
-offset_left = 26.0
-offset_top = 346.0
-offset_right = 951.0
-offset_bottom = 564.0
+offset_left = 403.0
+offset_top = 754.2
+offset_right = 1328.0
+offset_bottom = 972.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_2nl1b")
 texture_hover = ExtResource("4_61nrn")
@@ -81,7 +82,7 @@ offset_right = -122.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "49"
+text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -107,10 +108,10 @@ texture = ExtResource("6_7jgav")
 [node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
 
 [node name="TextureButton" type="TextureButton" parent="RéponseB" unique_id=240958986]
-offset_left = 599.0
-offset_top = 344.0
-offset_right = 1524.0
-offset_bottom = 562.0
+offset_left = 976.0
+offset_top = 752.2
+offset_right = 1901.0
+offset_bottom = 970.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("4_2jru6")
 texture_hover = ExtResource("8_kghek")
@@ -151,10 +152,10 @@ texture = ExtResource("10_b3mkp")
 [node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
 
 [node name="TextureButton" type="TextureButton" parent="RéponseC" unique_id=2070070366]
-offset_left = 24.0
-offset_top = 505.00003
-offset_right = 945.0
-offset_bottom = 722.0
+offset_left = 401.0
+offset_top = 913.2001
+offset_right = 1322.0
+offset_bottom = 1130.2001
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("5_6vunt")
 texture_hover = ExtResource("12_dlurs")
@@ -197,10 +198,10 @@ texture = ExtResource("14_agoqs")
 [node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
 
 [node name="TextureButton" type="TextureButton" parent="RéponseD" unique_id=493098486]
-offset_left = 598.0
-offset_top = 504.0
-offset_right = 1519.0
-offset_bottom = 721.0
+offset_left = 975.0
+offset_top = 912.2
+offset_right = 1896.0
+offset_bottom = 1129.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("6_18e6o")
 texture_hover = ExtResource("16_4om5f")
@@ -239,16 +240,23 @@ visible = false
 texture = ExtResource("18_4mu4i")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
-position = Vector2(586, 488)
+position = Vector2(963, 896.2)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_3gpfs")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
-position = Vector2(260, 37)
+position = Vector2(637, 445.2)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_0h6m8")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
-position = Vector2(901, 35)
+position = Vector2(1278, 443.2)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_0h6m8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1081680362]
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 1901.0
+offset_bottom = 471.0
+expand_mode = 1

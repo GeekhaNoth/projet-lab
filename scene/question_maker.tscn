@@ -2,41 +2,42 @@
 
 [ext_resource type="Script" uid="uid://b8fg2cjd4x8ek" path="res://scripts/questionMaker.gd" id="1_u0xl1"]
 
-[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("buttonCreateQuestion", "buttonCreateScene", "textEdit", "allTextEdit")]
+[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("buttonCreateQuestion", "buttonCreateScene", "buttonAddImage", "textEdit", "allTextEdit")]
 script = ExtResource("1_u0xl1")
 buttonCreateQuestion = NodePath("NewQuestion")
 buttonCreateScene = NodePath("ValidateQuestion")
+buttonAddImage = NodePath("AddImageButton")
 textEdit = NodePath("TextEdit/QuestionEdit")
 allTextEdit = NodePath("TextEdit")
 
 [node name="NewQuestion" type="Button" parent="." unique_id=1623017771]
-offset_left = 438.0
-offset_top = 222.0
-offset_right = 665.0
-offset_bottom = 253.0
+offset_left = 828.0
+offset_top = 376.0
+offset_right = 1055.0
+offset_bottom = 407.0
 text = "Créer une nouvelle question"
 
 [node name="ValidateQuestion" type="Button" parent="." unique_id=1277579025]
-offset_left = 483.0
-offset_top = 548.0
-offset_right = 643.0
-offset_bottom = 614.0
+offset_left = 894.0
+offset_top = 946.0
+offset_right = 1054.0
+offset_bottom = 1012.0
 text = "Valider la question"
 
 [node name="TextEdit" type="Node2D" parent="." unique_id=769660118]
 
 [node name="QuestionEdit" type="TextEdit" parent="TextEdit" unique_id=97666342]
-offset_left = 327.0
-offset_top = 25.0
-offset_right = 865.0
-offset_bottom = 119.0
+offset_left = 717.0
+offset_top = 179.0
+offset_right = 1255.0
+offset_bottom = 273.0
 placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
 
 [node name="Answer1Edit" type="LineEdit" parent="TextEdit" unique_id=588181951]
-offset_left = 19.0
-offset_top = 192.0
-offset_right = 546.0
-offset_bottom = 287.0
+offset_left = 409.0
+offset_top = 346.0
+offset_right = 936.0
+offset_bottom = 441.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 1 million"
 max_length = 50
@@ -45,10 +46,10 @@ emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
 [node name="Answer2Edit" type="LineEdit" parent="TextEdit" unique_id=491326621]
-offset_left = 605.0
-offset_top = 196.0
-offset_right = 1132.0
-offset_bottom = 291.0
+offset_left = 995.0
+offset_top = 350.0
+offset_right = 1522.0
+offset_bottom = 445.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 2 million"
 max_length = 50
@@ -57,10 +58,10 @@ emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
 [node name="Answer3Edit" type="LineEdit" parent="TextEdit" unique_id=413592429]
-offset_left = 22.0
-offset_top = 385.0
-offset_right = 549.0
-offset_bottom = 480.0
+offset_left = 412.0
+offset_top = 539.0
+offset_right = 939.0
+offset_bottom = 634.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
 max_length = 50
@@ -69,10 +70,10 @@ emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
 [node name="Answer4Edit" type="LineEdit" parent="TextEdit" unique_id=2084961116]
-offset_left = 602.0
-offset_top = 386.0
-offset_right = 1129.0
-offset_bottom = 481.0
+offset_left = 992.0
+offset_top = 540.0
+offset_right = 1519.0
+offset_bottom = 635.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 100 mille"
 max_length = 50
@@ -84,14 +85,43 @@ shortcut_keys_enabled = false
 oversampling_override = 1.0
 title = "Open a File"
 position = Vector2i(0, 36)
-visible = true
 file_mode = 0
 filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1094040828]
-offset_left = 587.0
-offset_top = 174.0
-offset_right = 627.0
-offset_bottom = 214.0
+[node name="AddImageButton" type="Button" parent="." unique_id=381884392]
+offset_left = 461.0
+offset_top = 658.0
+offset_right = 732.0
+offset_bottom = 775.0
+text = "Cliquer ici pour ajouter une image"
+
+[node name="Label" type="Label" parent="AddImageButton" unique_id=303781555]
+visible = false
+layout_mode = 0
+offset_left = 16.0
+offset_top = 145.0
+offset_right = 234.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "Image importée avec succès"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1216238509]
+offset_left = 1030.0
+offset_top = 685.0
+offset_right = 1332.0
+offset_bottom = 730.0
+alignment = 1
+autowrap_mode = 2
+allow_reselect = true
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="OptionButton" unique_id=1694443239]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = -13.0
+text = "Choisissez la réponse considérée comme étant la bonne"
 
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
