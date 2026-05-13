@@ -45,11 +45,19 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="Answer2Edit" type="LineEdit" parent="TextEdit" unique_id=491326621]
-offset_left = 995.0
-offset_top = 350.0
-offset_right = 1522.0
-offset_bottom = 445.0
+[node name="AddAnswer2Button" type="Button" parent="TextEdit" unique_id=1346507262]
+visible = false
+offset_left = 1160.0
+offset_top = 376.0
+offset_right = 1319.0
+offset_bottom = 407.0
+text = "Ajouter une répone"
+
+[node name="Answer2Edit" type="LineEdit" parent="TextEdit/AddAnswer2Button" unique_id=491326621]
+visible = false
+layout_mode = 0
+offset_right = 527.0
+offset_bottom = 95.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 2 million"
 max_length = 50
@@ -57,11 +65,21 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="Answer3Edit" type="LineEdit" parent="TextEdit" unique_id=413592429]
-offset_left = 412.0
-offset_top = 539.0
-offset_right = 939.0
-offset_bottom = 634.0
+[node name="AddAnswer3Button" type="Button" parent="TextEdit" unique_id=1225630589]
+visible = false
+offset_left = 548.0
+offset_top = 516.0
+offset_right = 707.0
+offset_bottom = 547.0
+text = "Ajouter une répone"
+
+[node name="Answer3Edit" type="LineEdit" parent="TextEdit/AddAnswer3Button" unique_id=413592429]
+visible = false
+layout_mode = 0
+offset_left = -143.0
+offset_top = -13.0
+offset_right = 384.0
+offset_bottom = 82.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
 max_length = 50
@@ -69,11 +87,21 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="Answer4Edit" type="LineEdit" parent="TextEdit" unique_id=2084961116]
-offset_left = 992.0
-offset_top = 540.0
-offset_right = 1519.0
-offset_bottom = 635.0
+[node name="AddAnswer4Button" type="Button" parent="TextEdit" unique_id=1282523754]
+visible = false
+offset_left = 1133.0
+offset_top = 526.0
+offset_right = 1292.0
+offset_bottom = 557.0
+text = "Ajouter une répone"
+
+[node name="Answer4Edit" type="LineEdit" parent="TextEdit/AddAnswer4Button" unique_id=2084961116]
+visible = false
+layout_mode = 0
+offset_left = -123.0
+offset_top = -29.0
+offset_right = 404.0
+offset_bottom = 66.0
 theme_override_font_sizes/font_size = 20
 placeholder_text = "Indiquez une réponse ici. Exemple : 100 mille"
 max_length = 50
@@ -106,6 +134,7 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "Image importée avec succès"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1216238509]
+visible = false
 offset_left = 1030.0
 offset_top = 685.0
 offset_right = 1332.0
@@ -113,8 +142,6 @@ offset_bottom = 730.0
 alignment = 1
 autowrap_mode = 2
 allow_reselect = true
-item_count = 1
-popup/item_0/id = 0
 
 [node name="Label" type="Label" parent="OptionButton" unique_id=1694443239]
 layout_mode = 0

@@ -7,7 +7,10 @@ extends Node
 
 @onready var file_dialog = $FileDialog
 @onready var option_button = $OptionButton
-@onready var lineEdit = [ $TextEdit/Answer1Edit, $TextEdit/Answer2Edit, $TextEdit/Answer3Edit, $TextEdit/Answer4Edit]
+@onready var lineEdit = [ $TextEdit/Answer1Edit, 
+$TextEdit/AddAnswer2Button/Answer2Edit, 
+$TextEdit/AddAnswer3Button/Answer3Edit, 
+$TextEdit/AddAnswer4Button/Answer4Edit]
 
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
@@ -18,8 +21,10 @@ func _ready() -> void:
 	changeNodeVisibility(false)
 	for i in range(lineEdit.size()):
 		lineEdit[i].text_changed.connect(_on_answer_edit_text_changed.bind(i))
-		if i > 0:
-			lineEdit[i].set_visible(false)
+		if (i > 0):
+			lineEdit[i].get_parent().pressed.connect(AddAnAnswer.bind(lineEdit[i].get_parent()))
+		#if i > 0:
+			#lineEdit[i].set_visible(false)
 	pass # Replace with function body.
 
 
@@ -49,7 +54,7 @@ func ImportAndAddImage(nodeSceneQuestion):
 	
 	if err == OK:
 		var texture = ImageTexture.create_from_image(image)
-		nodeSceneQuestion.get_node("TextureRect").texture = texture
+		nodeSceneQuestion.get_node("Sprite2D4/TextureRect").texture = texture
 
 func CreateQuestion():
 	buttonCreateQuestion.hide()
@@ -75,7 +80,7 @@ func changeNodeVisibility(state):
 	buttonCreateScene.set_visible(state)
 	allTextEdit.set_visible(state)
 	buttonAddImage.set_visible(state)
-	option_button.set_visible(state)
+	#option_button.set_visible(state)
 
 
 func PutVisibleFileDialog():
@@ -87,11 +92,23 @@ func _on_file_dialog_file_selected(path):
 
 
 func _on_answer_edit_text_changed(new_text, index) -> void:
-	if option_button.item > index:
+	if option_button.item_count > index:
 		option_button.set_item_text(index, new_text)
 	else:
 		option_button.add_item(new_text, index)
+	if (new_text == ""):
+		pass
+	else:
+		pass
 	pass # Replace with function body.
 
-func AddAnAnswer():
+func AddAnAnswer(button):
+	if (option_button.visible == false):
+		option_button.set_visible(true)
+	button.get_child(0).set_visible(true)
+	button.self_modulate.a = 0
+	var array = allTextEdit.get_children()
+	var index = array.find(button)
+	if (index+1 < array.size()):
+		array[index+1].set_visible(true)
 	pass
