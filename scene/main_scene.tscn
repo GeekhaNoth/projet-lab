@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://6nc6was200b0"]
+
+[ext_resource type="Script" uid="uid://bf5kw7d7ovvyq" path="res://main_scene.gd" id="1_wgwml"]
+
+[node name="MainScene" type="Node2D" unique_id=436053502]
+script = ExtResource("1_wgwml")
+
+[node name="MainMenu" type="Node2D" parent="." unique_id=564121698]
+
+[node name="Label" type="Label" parent="MainMenu" unique_id=891496907]
+offset_left = 497.0
+offset_top = 73.0
+offset_right = 1419.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 128
+text = "Jeu du Quiz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="MainMenu" unique_id=1913160183]
+
+[node name="CreationButton" type="Button" parent="MainMenu" unique_id=1660146827]
+offset_left = 594.0
+offset_top = 402.0
+offset_right = 1277.0
+offset_bottom = 506.0
+theme_override_font_sizes/font_size = 48
+text = "Mode Création de question"
+
+[node name="GameButton" type="Button" parent="MainMenu" unique_id=1575540725]
+offset_left = 585.0
+offset_top = 548.0
+offset_right = 1268.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 48
+text = "Mode Jeu"

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjetLab"
-run/main_scene="uid://b2vxvxm8byqlv"
+run/main_scene="uid://6nc6was200b0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

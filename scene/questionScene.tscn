@@ -24,47 +24,30 @@
 
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_tx0k3")
-"BonneRéponse" = 2
-buttons = [NodePath("RéponseA/TextureButton"), NodePath("RéponseB/TextureButton"), NodePath("RéponseC/TextureButton"), NodePath("RéponseD/TextureButton")]
+right_answer = null
+buttons = [NodePath("AnswerA/TextureButton"), NodePath("AnswerB/TextureButton"), NodePath("AnswerC/TextureButton"), NodePath("AnwerD/TextureButton")]
 
 [node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
 
-[node name="Sprite" type="Node2D" parent="Question" unique_id=2129935516]
-
-[node name="Sprite2D" type="Sprite2D" parent="Question/Sprite" unique_id=232876942]
-position = Vector2(962.80005, 607.4)
+[node name="Sprite2D" type="Sprite2D" parent="Question" unique_id=1473913259]
+position = Vector2(970, 616)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_psn5n")
 
-[node name="Texte" type="Node2D" parent="Question" unique_id=1135119892]
-position = Vector2(377, 408.2)
-
-[node name="texte_generique" type="Label" parent="Question/Texte" unique_id=226421097]
-visible = false
-offset_left = 14.800049
-offset_top = 77.20001
-offset_right = 1152.8
-offset_bottom = 325.2
-theme_override_font_sizes/font_size = 48
-text = "Quel est la capitale de la Norvège ?"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="texte_personnalise" type="Label" parent="Question/Texte" unique_id=1394317457]
-offset_left = 15.0
-offset_top = 74.0
-offset_right = 1152.0
-offset_bottom = 324.0
+[node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
+offset_left = 411.0
+offset_top = 499.0
+offset_right = 1531.0
+offset_bottom = 730.0
 theme_override_font_sizes/font_size = 48
 text = "Combien d'états comportent les États-Unis ?"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
 
-[node name="RéponseA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
+[node name="AnswerA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
 
-[node name="TextureButton" type="TextureButton" parent="RéponseA" unique_id=159556379]
+[node name="TextureButton" type="TextureButton" parent="AnswerA" unique_id=159556379]
 offset_left = 403.0
 offset_top = 754.2
 offset_right = 1328.0
@@ -73,7 +56,7 @@ scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_2nl1b")
 texture_hover = ExtResource("4_61nrn")
 
-[node name="Label" type="Label" parent="RéponseA/TextureButton" unique_id=1851768799]
+[node name="Label" type="Label" parent="AnswerA/TextureButton" unique_id=1851768799]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,27 +71,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprites" type="Node2D" parent="RéponseA" unique_id=1239281506]
+[node name="Sprites" type="Node2D" parent="AnswerA" unique_id=1239281506]
 
-[node name="Normal" type="Sprite2D" parent="RéponseA/Sprites" unique_id=1144128414]
+[node name="Normal" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1144128414]
 visible = false
 texture = ExtResource("3_2nl1b")
 
-[node name="Selectionné" type="Sprite2D" parent="RéponseA/Sprites" unique_id=71472075]
+[node name="Selectionné" type="Sprite2D" parent="AnswerA/Sprites" unique_id=71472075]
 visible = false
 texture = ExtResource("4_61nrn")
 
-[node name="Bonne Réponse" type="Sprite2D" parent="RéponseA/Sprites" unique_id=1380299338]
+[node name="Bonne Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1380299338]
 visible = false
 texture = ExtResource("5_i2hoc")
 
-[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseA/Sprites" unique_id=163560431]
+[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=163560431]
 visible = false
 texture = ExtResource("6_7jgav")
 
-[node name="RéponseB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
+[node name="AnswerB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
 
-[node name="TextureButton" type="TextureButton" parent="RéponseB" unique_id=240958986]
+[node name="TextureButton" type="TextureButton" parent="AnswerB" unique_id=240958986]
 offset_left = 976.0
 offset_top = 752.2
 offset_right = 1901.0
@@ -117,7 +100,7 @@ scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("4_2jru6")
 texture_hover = ExtResource("8_kghek")
 
-[node name="Label" type="Label" parent="RéponseB/TextureButton" unique_id=877582989]
+[node name="Label" type="Label" parent="AnswerB/TextureButton" unique_id=877582989]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,27 +115,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprites" type="Node2D" parent="RéponseB" unique_id=298048776]
+[node name="Sprites" type="Node2D" parent="AnswerB" unique_id=298048776]
 
-[node name="Normal" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1977007623]
+[node name="Normal" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1977007623]
 visible = false
 texture = ExtResource("4_2jru6")
 
-[node name="Selectionné" type="Sprite2D" parent="RéponseB/Sprites" unique_id=3388280]
+[node name="Selectionné" type="Sprite2D" parent="AnswerB/Sprites" unique_id=3388280]
 visible = false
 texture = ExtResource("8_kghek")
 
-[node name="Bonne Réponse" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1628919705]
+[node name="Bonne Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1628919705]
 visible = false
 texture = ExtResource("9_a8fw6")
 
-[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseB/Sprites" unique_id=1464091727]
+[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1464091727]
 visible = false
 texture = ExtResource("10_b3mkp")
 
-[node name="RéponseC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
+[node name="AnswerC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
 
-[node name="TextureButton" type="TextureButton" parent="RéponseC" unique_id=2070070366]
+[node name="TextureButton" type="TextureButton" parent="AnswerC" unique_id=2070070366]
 offset_left = 401.0
 offset_top = 913.2001
 offset_right = 1322.0
@@ -161,7 +144,7 @@ scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("5_6vunt")
 texture_hover = ExtResource("12_dlurs")
 
-[node name="Label" type="Label" parent="RéponseC/TextureButton" unique_id=196851185]
+[node name="Label" type="Label" parent="AnswerC/TextureButton" unique_id=196851185]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,27 +161,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprites" type="Node2D" parent="RéponseC" unique_id=1138288457]
+[node name="Sprites" type="Node2D" parent="AnswerC" unique_id=1138288457]
 
-[node name="Normal" type="Sprite2D" parent="RéponseC/Sprites" unique_id=463403142]
+[node name="Normal" type="Sprite2D" parent="AnswerC/Sprites" unique_id=463403142]
 visible = false
 texture = ExtResource("5_6vunt")
 
-[node name="Selectionné" type="Sprite2D" parent="RéponseC/Sprites" unique_id=193303833]
+[node name="Selectionné" type="Sprite2D" parent="AnswerC/Sprites" unique_id=193303833]
 visible = false
 texture = ExtResource("12_dlurs")
 
-[node name="Bonne Réponse" type="Sprite2D" parent="RéponseC/Sprites" unique_id=1825607052]
+[node name="Bonne Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=1825607052]
 visible = false
 texture = ExtResource("13_bfjfa")
 
-[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseC/Sprites" unique_id=594463234]
+[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=594463234]
 visible = false
 texture = ExtResource("14_agoqs")
 
-[node name="RéponseD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
+[node name="AnwerD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
 
-[node name="TextureButton" type="TextureButton" parent="RéponseD" unique_id=493098486]
+[node name="TextureButton" type="TextureButton" parent="AnwerD" unique_id=493098486]
 offset_left = 975.0
 offset_top = 912.2
 offset_right = 1896.0
@@ -207,7 +190,7 @@ scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("6_18e6o")
 texture_hover = ExtResource("16_4om5f")
 
-[node name="Label" type="Label" parent="RéponseD/TextureButton" unique_id=85687014]
+[node name="Label" type="Label" parent="AnwerD/TextureButton" unique_id=85687014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -222,21 +205,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprites" type="Node2D" parent="RéponseD" unique_id=1817924430]
+[node name="Sprites" type="Node2D" parent="AnwerD" unique_id=1817924430]
 
-[node name="Normal" type="Sprite2D" parent="RéponseD/Sprites" unique_id=1425492932]
+[node name="Normal" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1425492932]
 visible = false
 texture = ExtResource("6_18e6o")
 
-[node name="Selectionné" type="Sprite2D" parent="RéponseD/Sprites" unique_id=745483344]
+[node name="Selectionné" type="Sprite2D" parent="AnwerD/Sprites" unique_id=745483344]
 visible = false
 texture = ExtResource("16_4om5f")
 
-[node name="Bonne Réponse" type="Sprite2D" parent="RéponseD/Sprites" unique_id=1733586872]
+[node name="Bonne Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1733586872]
 visible = false
 texture = ExtResource("17_yr7vb")
 
-[node name="Mauvaise Réponse" type="Sprite2D" parent="RéponseD/Sprites" unique_id=324444586]
+[node name="Mauvaise Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=324444586]
 visible = false
 texture = ExtResource("18_4mu4i")
 
