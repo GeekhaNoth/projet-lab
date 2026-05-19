@@ -1,29 +1,29 @@
-[gd_scene format=3 uid="uid://bb8o3hb1ro3ou"]
+[gd_scene format=3 uid="uid://bu4vnea8o5uyc"]
 
-[ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_tx0k3"]
-[ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_psn5n"]
-[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeft.png" id="3_2nl1b"]
-[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonTopRight/UIProjetLabTopRight.png" id="4_2jru6"]
-[ext_resource type="Texture2D" uid="uid://dwb047ravddwc" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftSelected.png" id="4_61nrn"]
-[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeft.png" id="5_6vunt"]
-[ext_resource type="Texture2D" uid="uid://6th0iu066qhp" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftCorrect.png" id="5_i2hoc"]
-[ext_resource type="Texture2D" uid="uid://cwnuowmsvvkj2" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftWrong.png" id="6_7jgav"]
-[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRight.png" id="6_18e6o"]
-[ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprites/QuestionOtherAsset/UIProjetLabMiddleTime.png" id="7_3gpfs"]
-[ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="8_0h6m8"]
-[ext_resource type="Texture2D" uid="uid://dgl1jgitb7ckg" path="res://sprites/ButtonTopRight/UIProjetLabTopRightSelected.png" id="8_kghek"]
-[ext_resource type="Texture2D" uid="uid://ohkxpos8fbv0" path="res://sprites/ButtonTopRight/UIProjetLabTopRightCorrect.png" id="9_a8fw6"]
-[ext_resource type="Texture2D" uid="uid://dmqfnvgjutw75" path="res://sprites/ButtonTopRight/UIProjetLabTopRightWrong.png" id="10_b3mkp"]
-[ext_resource type="Texture2D" uid="uid://3mp1d4vjht0p" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftSelected.png" id="12_dlurs"]
-[ext_resource type="Texture2D" uid="uid://6td35axpdtot" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftCorrect.png" id="13_bfjfa"]
-[ext_resource type="Texture2D" uid="uid://bllvvgi58hcnb" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftWrong.png" id="14_agoqs"]
-[ext_resource type="Texture2D" uid="uid://b5ejva00fb1qs" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightSelected.png" id="16_4om5f"]
-[ext_resource type="Texture2D" uid="uid://bh27hhoforsal" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightCorrect.png" id="17_yr7vb"]
-[ext_resource type="Texture2D" uid="uid://j3lqkmew63gh" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightWrong.png" id="18_4mu4i"]
-[ext_resource type="Texture2D" uid="uid://cm5yeoov40sye" path="res://sprites/QuestionOtherAsset/UIProjetLabImage.png" id="21_i2hoc"]
+[ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_d6g27"]
+[ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_323ws"]
+[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeft.png" id="3_jcfo7"]
+[ext_resource type="Texture2D" uid="uid://dwb047ravddwc" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftSelected.png" id="4_x734l"]
+[ext_resource type="Texture2D" uid="uid://6th0iu066qhp" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftCorrect.png" id="5_wmpfe"]
+[ext_resource type="Texture2D" uid="uid://cwnuowmsvvkj2" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftWrong.png" id="6_j22pe"]
+[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonTopRight/UIProjetLabTopRight.png" id="7_tui6u"]
+[ext_resource type="Texture2D" uid="uid://dgl1jgitb7ckg" path="res://sprites/ButtonTopRight/UIProjetLabTopRightSelected.png" id="8_33kpe"]
+[ext_resource type="Texture2D" uid="uid://ohkxpos8fbv0" path="res://sprites/ButtonTopRight/UIProjetLabTopRightCorrect.png" id="9_d2am1"]
+[ext_resource type="Texture2D" uid="uid://dmqfnvgjutw75" path="res://sprites/ButtonTopRight/UIProjetLabTopRightWrong.png" id="10_3qrxa"]
+[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeft.png" id="11_3rvsm"]
+[ext_resource type="Texture2D" uid="uid://3mp1d4vjht0p" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftSelected.png" id="12_3yscp"]
+[ext_resource type="Texture2D" uid="uid://6td35axpdtot" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftCorrect.png" id="13_p55fj"]
+[ext_resource type="Texture2D" uid="uid://bllvvgi58hcnb" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftWrong.png" id="14_81qal"]
+[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRight.png" id="15_vtesp"]
+[ext_resource type="Texture2D" uid="uid://b5ejva00fb1qs" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightSelected.png" id="16_nwjli"]
+[ext_resource type="Texture2D" uid="uid://bh27hhoforsal" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightCorrect.png" id="17_1epjx"]
+[ext_resource type="Texture2D" uid="uid://j3lqkmew63gh" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightWrong.png" id="18_s2mv3"]
+[ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprites/QuestionOtherAsset/UIProjetLabMiddleTime.png" id="19_l41g4"]
+[ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="20_t6ov6"]
+[ext_resource type="Texture2D" uid="uid://cm5yeoov40sye" path="res://sprites/QuestionOtherAsset/UIProjetLabImage.png" id="21_fo8ka"]
 
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
-script = ExtResource("1_tx0k3")
+script = ExtResource("1_d6g27")
 right_answer = null
 buttons = [NodePath("AnswerA/TextureButton"), NodePath("AnswerB/TextureButton"), NodePath("AnswerC/TextureButton"), NodePath("AnwerD/TextureButton")]
 
@@ -32,7 +32,7 @@ buttons = [NodePath("AnswerA/TextureButton"), NodePath("AnswerB/TextureButton"),
 [node name="Sprite2D" type="Sprite2D" parent="Question" unique_id=1473913259]
 position = Vector2(970, 616)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_psn5n")
+texture = ExtResource("2_323ws")
 
 [node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
 offset_left = 411.0
@@ -40,7 +40,7 @@ offset_top = 499.0
 offset_right = 1531.0
 offset_bottom = 730.0
 theme_override_font_sizes/font_size = 48
-text = "A"
+text = "Combien d'états comportent les États-Unis ?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -53,8 +53,8 @@ offset_top = 754.2
 offset_right = 1328.0
 offset_bottom = 972.2
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_2nl1b")
-texture_hover = ExtResource("4_61nrn")
+texture_normal = ExtResource("3_jcfo7")
+texture_hover = ExtResource("4_x734l")
 
 [node name="Label" type="Label" parent="AnswerA/TextureButton" unique_id=1851768799]
 layout_mode = 1
@@ -66,7 +66,7 @@ offset_right = -122.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "B"
+text = "50"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -75,19 +75,19 @@ autowrap_mode = 3
 
 [node name="Normal" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1144128414]
 visible = false
-texture = ExtResource("3_2nl1b")
+texture = ExtResource("3_jcfo7")
 
 [node name="Selectionné" type="Sprite2D" parent="AnswerA/Sprites" unique_id=71472075]
 visible = false
-texture = ExtResource("4_61nrn")
+texture = ExtResource("4_x734l")
 
 [node name="Bonne Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1380299338]
 visible = false
-texture = ExtResource("5_i2hoc")
+texture = ExtResource("5_wmpfe")
 
 [node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=163560431]
 visible = false
-texture = ExtResource("6_7jgav")
+texture = ExtResource("6_j22pe")
 
 [node name="AnswerB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
 
@@ -97,8 +97,8 @@ offset_top = 752.2
 offset_right = 1901.0
 offset_bottom = 970.2
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("4_2jru6")
-texture_hover = ExtResource("8_kghek")
+texture_normal = ExtResource("7_tui6u")
+texture_hover = ExtResource("8_33kpe")
 
 [node name="Label" type="Label" parent="AnswerB/TextureButton" unique_id=877582989]
 layout_mode = 1
@@ -110,7 +110,7 @@ offset_right = -7.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "C"
+text = "49"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -119,19 +119,19 @@ autowrap_mode = 3
 
 [node name="Normal" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1977007623]
 visible = false
-texture = ExtResource("4_2jru6")
+texture = ExtResource("7_tui6u")
 
 [node name="Selectionné" type="Sprite2D" parent="AnswerB/Sprites" unique_id=3388280]
 visible = false
-texture = ExtResource("8_kghek")
+texture = ExtResource("8_33kpe")
 
 [node name="Bonne Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1628919705]
 visible = false
-texture = ExtResource("9_a8fw6")
+texture = ExtResource("9_d2am1")
 
 [node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1464091727]
 visible = false
-texture = ExtResource("10_b3mkp")
+texture = ExtResource("10_3qrxa")
 
 [node name="AnswerC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
 
@@ -141,8 +141,8 @@ offset_top = 913.2001
 offset_right = 1322.0
 offset_bottom = 1130.2001
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("5_6vunt")
-texture_hover = ExtResource("12_dlurs")
+texture_normal = ExtResource("11_3rvsm")
+texture_hover = ExtResource("12_3yscp")
 
 [node name="Label" type="Label" parent="AnswerC/TextureButton" unique_id=196851185]
 layout_mode = 1
@@ -156,7 +156,7 @@ offset_bottom = -4.5776367e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "D"
+text = "48"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -165,19 +165,19 @@ autowrap_mode = 3
 
 [node name="Normal" type="Sprite2D" parent="AnswerC/Sprites" unique_id=463403142]
 visible = false
-texture = ExtResource("5_6vunt")
+texture = ExtResource("11_3rvsm")
 
 [node name="Selectionné" type="Sprite2D" parent="AnswerC/Sprites" unique_id=193303833]
 visible = false
-texture = ExtResource("12_dlurs")
+texture = ExtResource("12_3yscp")
 
 [node name="Bonne Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=1825607052]
 visible = false
-texture = ExtResource("13_bfjfa")
+texture = ExtResource("13_p55fj")
 
 [node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=594463234]
 visible = false
-texture = ExtResource("14_agoqs")
+texture = ExtResource("14_81qal")
 
 [node name="AnwerD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
 
@@ -187,8 +187,8 @@ offset_top = 912.2
 offset_right = 1896.0
 offset_bottom = 1129.2
 scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("6_18e6o")
-texture_hover = ExtResource("16_4om5f")
+texture_normal = ExtResource("15_vtesp")
+texture_hover = ExtResource("16_nwjli")
 
 [node name="Label" type="Label" parent="AnwerD/TextureButton" unique_id=85687014]
 layout_mode = 1
@@ -200,7 +200,7 @@ offset_right = -7.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "E"
+text = "51"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -209,39 +209,39 @@ autowrap_mode = 3
 
 [node name="Normal" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1425492932]
 visible = false
-texture = ExtResource("6_18e6o")
+texture = ExtResource("15_vtesp")
 
 [node name="Selectionné" type="Sprite2D" parent="AnwerD/Sprites" unique_id=745483344]
 visible = false
-texture = ExtResource("16_4om5f")
+texture = ExtResource("16_nwjli")
 
 [node name="Bonne Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1733586872]
 visible = false
-texture = ExtResource("17_yr7vb")
+texture = ExtResource("17_1epjx")
 
 [node name="Mauvaise Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=324444586]
 visible = false
-texture = ExtResource("18_4mu4i")
+texture = ExtResource("18_s2mv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
 position = Vector2(963, 896.2)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_3gpfs")
+texture = ExtResource("19_l41g4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
 position = Vector2(637, 445.2)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_0h6m8")
+texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
 position = Vector2(1278, 443.2)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_0h6m8")
+texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=651329542]
 position = Vector2(967.50006, 238)
 scale = Vector2(0.6203937, 0.5242695)
-texture = ExtResource("21_i2hoc")
+texture = ExtResource("21_fo8ka")
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D4" unique_id=1081680362]
 anchors_preset = 8

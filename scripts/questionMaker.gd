@@ -1,6 +1,6 @@
 extends Node
 @export var button_create_question : Button
-@export var button_create_scene : Button
+@export var button_validate_question : Button
 @export var button_add_image : Button
 @export var question_edit : TextEdit
 
@@ -15,6 +15,7 @@ var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_change_node_visibility(false)
+	button_validate_question.get_child(0).set_visible(false)
 	for i in range(line_edit.size()):
 		line_edit[i].text_changed.connect(_on_answer_edit_text_changed.bind(i))
 		if (i > 0):
@@ -22,25 +23,29 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _validate_question():
+	if (!_check_field_when_question_validation(question_edit, "Le champ question est vide")):
+		return
+	if (!_check_field_when_question_validation(line_edit[0], "Le champ réponse 1 est vide")):
+		return
+	button_validate_question.get_child(0).set_visible(false)
 	_change_node_visibility(false)
 	for element in line_edit:
 		element.get_parent().set_visible(false)
-	var scene_question = preload("res://scene/questionScene.tscn").instantiate()
-	add_child(scene_question)
-	var question_text_node = scene_question.get_node("Question/QuestionText")
-	if (question_edit.text != ""):
-		question_text_node.text = question_edit.text
-	for i in range(line_edit.size()):
-		if (line_edit[i].text != ""):
-			scene_question.buttons[i].get_child(0).text = line_edit[i].text
 	_add_in_csv()
-	_import_and_add_image(scene_question)
-	scene_question.right_answer = option_button.get_selected_id()
-	
+	#_import_and_add_image(scene_question)
+	#scene_question.right_answer = option_button.get_selected_id()
+
+func _check_field_when_question_validation(field_to_check, text_to_show) -> bool:
+	if (field_to_check.text.strip_edges() == ""):
+		button_validate_question.get_child(0).text = text_to_show
+		button_validate_question.get_child(0).set_visible(true)
+		return false
+	return true
+
 func _import_and_add_image(node_scene_question):
 	if(selected_image_path != ""):
 			node_scene_question.get_node("Sprite2D4/TextureRect").texture = load(selected_image_path)
@@ -67,7 +72,7 @@ func _add_in_csv():
 	csv_file.close()
 
 func _change_node_visibility(state):
-	button_create_scene.set_visible(state)
+	button_validate_question.set_visible(state)
 	question_edit.set_visible(state)
 	button_add_image.set_visible(state)
 	line_edit[0].set_visible(state)
