@@ -1,258 +1,36 @@
 [gd_scene format=3 uid="uid://6nc6was200b0"]
 
-[ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_f8mcn"]
-[ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_rvira"]
-[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeft.png" id="3_l4hwf"]
-[ext_resource type="Texture2D" uid="uid://dwb047ravddwc" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftSelected.png" id="4_dcrpu"]
-[ext_resource type="Texture2D" uid="uid://6th0iu066qhp" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftCorrect.png" id="5_3sgmn"]
-[ext_resource type="Texture2D" uid="uid://cwnuowmsvvkj2" path="res://sprites/ButtonTopLeft/UIProjetLabTopLeftWrong.png" id="6_m4mm3"]
-[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonTopRight/UIProjetLabTopRight.png" id="7_b18e2"]
-[ext_resource type="Texture2D" uid="uid://dgl1jgitb7ckg" path="res://sprites/ButtonTopRight/UIProjetLabTopRightSelected.png" id="8_w0mx4"]
-[ext_resource type="Texture2D" uid="uid://ohkxpos8fbv0" path="res://sprites/ButtonTopRight/UIProjetLabTopRightCorrect.png" id="9_2xx7e"]
-[ext_resource type="Texture2D" uid="uid://dmqfnvgjutw75" path="res://sprites/ButtonTopRight/UIProjetLabTopRightWrong.png" id="10_lawm6"]
-[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeft.png" id="11_wnws5"]
-[ext_resource type="Texture2D" uid="uid://3mp1d4vjht0p" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftSelected.png" id="12_ycbyq"]
-[ext_resource type="Texture2D" uid="uid://6td35axpdtot" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftCorrect.png" id="13_a5kx5"]
-[ext_resource type="Texture2D" uid="uid://bllvvgi58hcnb" path="res://sprites/ButtonBottomLeft/UIProjetLabBottomLeftWrong.png" id="14_mj7dq"]
-[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRight.png" id="15_ges30"]
-[ext_resource type="Texture2D" uid="uid://b5ejva00fb1qs" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightSelected.png" id="16_2b5ew"]
-[ext_resource type="Texture2D" uid="uid://bh27hhoforsal" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightCorrect.png" id="17_ki5xq"]
-[ext_resource type="Texture2D" uid="uid://j3lqkmew63gh" path="res://sprites/ButtonBottomRight/UIProjetLabBottomRightWrong.png" id="18_esvrn"]
-[ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprites/QuestionOtherAsset/UIProjetLabMiddleTime.png" id="19_skscj"]
-[ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="20_yrr2u"]
-[ext_resource type="Texture2D" uid="uid://cm5yeoov40sye" path="res://sprites/QuestionOtherAsset/UIProjetLabImage.png" id="21_x5mbu"]
+[ext_resource type="Script" uid="uid://bf5kw7d7ovvyq" path="res://main_scene.gd" id="1_wgwml"]
 
-[node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
-script = ExtResource("1_f8mcn")
-right_answer = null
-buttons = [NodePath("AnswerA/TextureButton"), NodePath("AnswerB/TextureButton"), NodePath("AnswerC/TextureButton"), NodePath("AnwerD/TextureButton")]
+[node name="MainScene" type="Node2D" unique_id=436053502]
+script = ExtResource("1_wgwml")
 
-[node name="Question" type="Node2D" parent="." unique_id=1986096530 groups=["txt"]]
+[node name="MainMenu" type="Node2D" parent="." unique_id=564121698]
 
-[node name="Sprite2D" type="Sprite2D" parent="Question" unique_id=1473913259]
-position = Vector2(970, 616)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_rvira")
-
-[node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
-offset_left = 411.0
-offset_top = 499.0
-offset_right = 1531.0
-offset_bottom = 730.0
-theme_override_font_sizes/font_size = 48
-text = "Combien d'états comportent les États-Unis ?"
+[node name="Label" type="Label" parent="MainMenu" unique_id=891496907]
+offset_left = 497.0
+offset_top = 73.0
+offset_right = 1419.0
+offset_bottom = 414.0
+theme_override_font_sizes/font_size = 128
+text = "Jeu du Quiz"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
-[node name="AnswerA" type="Node2D" parent="." unique_id=1179512933 groups=["txt"]]
+[node name="Sprite2D" type="Sprite2D" parent="MainMenu" unique_id=1913160183]
 
-[node name="TextureButton" type="TextureButton" parent="AnswerA" unique_id=159556379]
-offset_left = 403.0
-offset_top = 754.2
-offset_right = 1328.0
-offset_bottom = 972.2
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_l4hwf")
-texture_hover = ExtResource("4_dcrpu")
-
-[node name="Label" type="Label" parent="AnswerA/TextureButton" unique_id=1851768799]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.333332
-offset_right = -122.666626
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CreationButton" type="Button" parent="MainMenu" unique_id=1660146827]
+offset_left = 594.0
+offset_top = 402.0
+offset_right = 1277.0
+offset_bottom = 506.0
 theme_override_font_sizes/font_size = 48
-text = "50"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+text = "Mode Création de question"
 
-[node name="Sprites" type="Node2D" parent="AnswerA" unique_id=1239281506]
-
-[node name="Normal" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1144128414]
-visible = false
-texture = ExtResource("3_l4hwf")
-
-[node name="Selectionné" type="Sprite2D" parent="AnswerA/Sprites" unique_id=71472075]
-visible = false
-texture = ExtResource("4_dcrpu")
-
-[node name="Bonne Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=1380299338]
-visible = false
-texture = ExtResource("5_3sgmn")
-
-[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerA/Sprites" unique_id=163560431]
-visible = false
-texture = ExtResource("6_m4mm3")
-
-[node name="AnswerB" type="Node2D" parent="." unique_id=278708774 groups=["txt"]]
-
-[node name="TextureButton" type="TextureButton" parent="AnswerB" unique_id=240958986]
-offset_left = 976.0
-offset_top = 752.2
-offset_right = 1901.0
-offset_bottom = 970.2
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("7_b18e2")
-texture_hover = ExtResource("8_w0mx4")
-
-[node name="Label" type="Label" parent="AnswerB/TextureButton" unique_id=877582989]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 115.0
-offset_right = -7.666626
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameButton" type="Button" parent="MainMenu" unique_id=1575540725]
+offset_left = 585.0
+offset_top = 548.0
+offset_right = 1268.0
+offset_bottom = 652.0
 theme_override_font_sizes/font_size = 48
-text = "49"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Sprites" type="Node2D" parent="AnswerB" unique_id=298048776]
-
-[node name="Normal" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1977007623]
-visible = false
-texture = ExtResource("7_b18e2")
-
-[node name="Selectionné" type="Sprite2D" parent="AnswerB/Sprites" unique_id=3388280]
-visible = false
-texture = ExtResource("8_w0mx4")
-
-[node name="Bonne Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1628919705]
-visible = false
-texture = ExtResource("9_2xx7e")
-
-[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerB/Sprites" unique_id=1464091727]
-visible = false
-texture = ExtResource("10_lawm6")
-
-[node name="AnswerC" type="Node2D" parent="." unique_id=682637463 groups=["txt"]]
-
-[node name="TextureButton" type="TextureButton" parent="AnswerC" unique_id=2070070366]
-offset_left = 401.0
-offset_top = 913.2001
-offset_right = 1322.0
-offset_bottom = 1130.2001
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("11_wnws5")
-texture_hover = ExtResource("12_ycbyq")
-
-[node name="Label" type="Label" parent="AnswerC/TextureButton" unique_id=196851185]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.666664
-offset_top = -5.086263e-05
-offset_right = -122.666626
-offset_bottom = -4.5776367e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "48"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Sprites" type="Node2D" parent="AnswerC" unique_id=1138288457]
-
-[node name="Normal" type="Sprite2D" parent="AnswerC/Sprites" unique_id=463403142]
-visible = false
-texture = ExtResource("11_wnws5")
-
-[node name="Selectionné" type="Sprite2D" parent="AnswerC/Sprites" unique_id=193303833]
-visible = false
-texture = ExtResource("12_ycbyq")
-
-[node name="Bonne Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=1825607052]
-visible = false
-texture = ExtResource("13_a5kx5")
-
-[node name="Mauvaise Réponse" type="Sprite2D" parent="AnswerC/Sprites" unique_id=594463234]
-visible = false
-texture = ExtResource("14_mj7dq")
-
-[node name="AnwerD" type="Node2D" parent="." unique_id=1723032435 groups=["txt"]]
-
-[node name="TextureButton" type="TextureButton" parent="AnwerD" unique_id=493098486]
-offset_left = 975.0
-offset_top = 912.2
-offset_right = 1896.0
-offset_bottom = 1129.2
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("15_ges30")
-texture_hover = ExtResource("16_2b5ew")
-
-[node name="Label" type="Label" parent="AnwerD/TextureButton" unique_id=85687014]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 115.0
-offset_right = -7.666626
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "51"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Sprites" type="Node2D" parent="AnwerD" unique_id=1817924430]
-
-[node name="Normal" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1425492932]
-visible = false
-texture = ExtResource("15_ges30")
-
-[node name="Selectionné" type="Sprite2D" parent="AnwerD/Sprites" unique_id=745483344]
-visible = false
-texture = ExtResource("16_2b5ew")
-
-[node name="Bonne Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=1733586872]
-visible = false
-texture = ExtResource("17_ki5xq")
-
-[node name="Mauvaise Réponse" type="Sprite2D" parent="AnwerD/Sprites" unique_id=324444586]
-visible = false
-texture = ExtResource("18_esvrn")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
-position = Vector2(963, 896.2)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("19_skscj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
-position = Vector2(637, 445.2)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("20_yrr2u")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
-position = Vector2(1278, 443.2)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("20_yrr2u")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=651329542]
-position = Vector2(967.50006, 238)
-scale = Vector2(0.6203937, 0.5242695)
-texture = ExtResource("21_x5mbu")
-
-[node name="TextureRect" type="TextureRect" parent="Sprite2D4" unique_id=1081680362]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1906.8538
-offset_top = -982.55756
-offset_right = -87.041504
-offset_bottom = -63.183105
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
+text = "Mode Jeu"
