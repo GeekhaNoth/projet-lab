@@ -34,6 +34,3 @@ offset_right = 1268.0
 offset_bottom = 652.0
 theme_override_font_sizes/font_size = 48
 text = "Mode Jeu"
-
-[connection signal="pressed" from="MainMenu/CreationButton" to="." method="_on_creation_button_pressed"]
-[connection signal="pressed" from="MainMenu/GameButton" to="." method="_on_game_button_pressed"]
