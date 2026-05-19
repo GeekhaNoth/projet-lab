@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b8fg2cjd4x8ek" path="res://scripts/questionMaker.gd" id="1_u0xl1"]
 
-[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("button_create_question", "button_create_scene", "button_add_image", "question_edit")]
+[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("button_create_question", "button_validate_question", "button_add_image", "question_edit")]
 script = ExtResource("1_u0xl1")
 button_create_question = NodePath("NewQuestion")
-button_create_scene = NodePath("ValidateQuestion")
+button_validate_question = NodePath("ValidateQuestion")
 button_add_image = NodePath("AddImageButton")
 question_edit = NodePath("TextEdit/QuestionEdit")
 
@@ -23,6 +23,23 @@ offset_top = 946.0
 offset_right = 1054.0
 offset_bottom = 1012.0
 text = "Valider la question"
+
+[node name="Label" type="Label" parent="ValidateQuestion" unique_id=1393086007]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = 52.0
+offset_right = 82.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Le champ Question est invalide"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextEdit" type="Node2D" parent="." unique_id=769660118]
 
@@ -114,6 +131,7 @@ oversampling_override = 1.0
 title = "Open a File"
 position = Vector2i(0, 36)
 file_mode = 0
+access = 2
 filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
 
 [node name="AddImageButton" type="Button" parent="." unique_id=381884392]
