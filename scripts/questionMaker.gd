@@ -16,12 +16,17 @@ var selected_image_path := ""
 func _ready() -> void:
 	_change_node_visibility(false)
 	button_validate_question.get_child(0).set_visible(false)
+	$CounterNumberQuestion.text = "Nombre de question crées : " + str(_counter_number_line())
 	for i in range(line_edit.size()):
 		line_edit[i].text_changed.connect(_on_answer_edit_text_changed.bind(i))
 		if (i > 0):
 			line_edit[i].get_parent().pressed.connect(_add_an_answer.bind(line_edit[i].get_parent()))
 
-
+func _counter_number_line() -> int:
+	var file = FileAccess.get_file_as_string("user://quiz.csv")
+	if not (file):
+		return 0
+	return file.strip_edges().split("\n").size()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -36,6 +41,7 @@ func _validate_question():
 	for element in line_edit:
 		element.get_parent().set_visible(false)
 	_add_in_csv()
+	get_tree().reload_current_scene()
 	#_import_and_add_image(scene_question)
 	#scene_question.right_answer = option_button.get_selected_id()
 
@@ -67,7 +73,10 @@ func _add_in_csv():
 	var string = []
 	string.append(question_edit.text)
 	for element in line_edit:
-		string.append(element.text)
+		if (element.text.strip_edges() != ""):
+			string.append(element.text)
+	if (selected_image_path != ""):
+		string.append(selected_image_path)
 	csv_file.store_csv_line(string, ";")
 	csv_file.close()
 

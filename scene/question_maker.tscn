@@ -170,6 +170,13 @@ offset_right = 36.0
 offset_bottom = -13.0
 text = "Choisissez la réponse considérée comme étant la bonne"
 
+[node name="CounterNumberQuestion" type="Label" parent="." unique_id=298310746]
+offset_left = 29.0
+offset_top = 13.0
+offset_right = 295.0
+offset_bottom = 130.0
+text = "Nombre de question crées"
+
 [connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
