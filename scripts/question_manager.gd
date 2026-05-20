@@ -5,12 +5,28 @@ extends Node2D
 
 @onready var question_text = $Question/QuestionText
 
+enum ButtonState {
+	NORMAL,
+	HOVER,
+	CORRECT,
+	WRONG
+}
+
+var sprites = {}
+
 var index_csv = 0
 var csv_rows = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for button in buttons:
+	for button in get_tree().get_nodes_in_group("quiz_buttons"):
+		var button_name = button.name
+		var path = "res://sprites/" + button.name
+		sprites[button] = load_button_sprites(path)
+		
 		button.pressed.connect(_on_button_pressed.bind(button))
+		button.mouse_entered.connect(_on_button_hover.bind(button))
+		button.mouse_exited.connect(_on_button_exit.bind(button))
+		
 	load_csv()
 	_new_question()
 
@@ -24,30 +40,56 @@ func load_csv():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
 func _new_question():
 	if (index_csv +1 >= csv_rows.size()):
 		get_tree().change_scene_to_file("res://scene/main_scene.tscn")
 		
 	var csv_line = csv_rows[index_csv]
 	for i in range(csv_line.size()):
+		if (i+1 == csv_line.size() && FileAccess.file_exists(csv_line[i])):
+			$Sprite2D4/TextureRect.texture = load(csv_line[i])
+			
 		if (i == 0): question_text.text = csv_line[0]
 		else:
 			buttons[i-1].get_child(0).text = csv_line[i]
 	
 func _on_button_pressed(button_pressed : TextureButton):
-	var index = buttons.find(button_pressed)
-	var sprites_node
-	if index == right_answer:
-		sprites_node = _get_texture_button_answer("Bonne Réponse", button_pressed)
-	else:
-		sprites_node = _get_texture_button_answer("Mauvaise Réponse", button_pressed)
-	button_pressed.texture_normal = sprites_node.texture
+	var correct = _is_answer_correct(button_pressed)
+	_set_button_state(button_pressed, ButtonState.CORRECT if correct else ButtonState.WRONG)
 	index_csv += 1
 	button_pressed.disabled = true
 	await get_tree().create_timer(0.5).timeout
-	button_pressed.texture_normal = _get_texture_button_answer("Normal", button_pressed).texture
+	_set_button_state(button_pressed, ButtonState.NORMAL)
 	button_pressed.disabled = false
 	_new_question()
+
+func _is_answer_correct(button) -> bool:
+	return buttons.find(button) == right_answer
 	
-func _get_texture_button_answer(texture_name, button) -> Sprite2D:
-	return button.get_parent().find_child(texture_name)
+func load_button_sprites(path: String):
+	var result = {}
+	
+	result["normal"] = load(path + "/normal.png")
+	result["hover"] = load(path + "/hover.png")
+	result["correct"] = load(path + "/correct.png")
+	result["wrong"] = load(path + "/wrong.png")
+	
+	return result
+
+func _set_button_state(button, state: ButtonState):
+	match state:
+		ButtonState.NORMAL:
+			button.texture_normal = sprites[button]["normal"]
+		ButtonState.HOVER:
+			button.texture_normal = sprites[button]["hover"]
+		ButtonState.CORRECT:
+			button.texture_normal = sprites[button]["correct"]
+		ButtonState.WRONG:
+			button.texture_normal = sprites[button]["wrong"]
+			
+func _on_button_hover(button):
+	_set_button_state(button, ButtonState.HOVER)
+	
+func _on_button_exit(button):
+	_set_button_state(button, ButtonState.NORMAL)

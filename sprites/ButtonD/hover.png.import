@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ohkxpos8fbv0"
-path="res://.godot/imported/UIProjetLabTopRightCorrect.png-73cba0e24c1fbbd469506c5b4e92554e.ctex"
+uid="uid://b5ejva00fb1qs"
+path="res://.godot/imported/hover.png-63944c4cfbdf018d024fb3c2b0c24428.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ButtonTopRight/UIProjetLabTopRightCorrect.png"
-dest_files=["res://.godot/imported/UIProjetLabTopRightCorrect.png-73cba0e24c1fbbd469506c5b4e92554e.ctex"]
+source_file="res://sprites/ButtonD/hover.png"
+dest_files=["res://.godot/imported/hover.png-63944c4cfbdf018d024fb3c2b0c24428.ctex"]
 
 [params]
 
