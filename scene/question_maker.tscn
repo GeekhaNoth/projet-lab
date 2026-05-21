@@ -177,7 +177,16 @@ offset_right = 295.0
 offset_bottom = 130.0
 text = "Nombre de question crées"
 
+[node name="QuizButton" type="Button" parent="." unique_id=1709492690]
+offset_left = 1668.0
+offset_top = 972.0
+offset_right = 1910.0
+offset_bottom = 1050.0
+text = "Revenir au menu principal"
+autowrap_mode = 3
+
 [connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="AddImageButton" to="." method="_put_visible_file_dialog"]
+[connection signal="pressed" from="QuizButton" to="." method="_back_to_menu"]

@@ -1,6 +1,5 @@
 @tool
 extends Node2D
-@export var right_answer = 0
 @export var buttons: Array[TextureButton] = []
 
 @onready var question_text = $Question/QuestionText
@@ -16,6 +15,9 @@ var sprites = {}
 
 var index_csv = 0
 var csv_rows = []
+
+var right_answer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for button in get_tree().get_nodes_in_group("quiz_buttons"):
@@ -31,7 +33,11 @@ func _ready():
 	_new_question()
 
 func load_csv():
-	var csv_file = FileAccess.open("user://quiz.csv", FileAccess.READ)
+	var csv_file
+	if (FileAccess.file_exists("user://quiz.csv")):
+		csv_file = FileAccess.open("user://quiz.csv", FileAccess.READ)
+	else:
+		return
 	
 	while not csv_file.eof_reached():
 		csv_rows.append(csv_file.get_csv_line(";"))
@@ -46,13 +52,17 @@ func _new_question():
 		get_tree().change_scene_to_file("res://scene/main_scene.tscn")
 		
 	var csv_line = csv_rows[index_csv]
-	for i in range(csv_line.size()):
-		if (i+1 == csv_line.size() && FileAccess.file_exists(csv_line[i])):
-			$Sprite2D4/TextureRect.texture = load(csv_line[i])
-			
-		if (i == 0): question_text.text = csv_line[0]
-		else:
-			buttons[i-1].get_child(0).text = csv_line[i]
+	
+	question_text.text = csv_line[0]
+	var last_index = csv_line.size()-1
+	var has_image = FileAccess.file_exists(csv_line[last_index])
+	if (has_image):
+		$Sprite2D4/TextureRect.texture = load(csv_line[last_index])
+		last_index -= 1
+		
+	right_answer = csv_line[last_index]
+	for i in range(1, last_index):
+		buttons[i-1].get_child(0).text = csv_line[i]
 	
 func _on_button_pressed(button_pressed : TextureButton):
 	var correct = _is_answer_correct(button_pressed)
@@ -65,7 +75,7 @@ func _on_button_pressed(button_pressed : TextureButton):
 	_new_question()
 
 func _is_answer_correct(button) -> bool:
-	return buttons.find(button) == right_answer
+	return button.get_child(0).text == right_answer
 	
 func load_button_sprites(path: String):
 	var result = {}

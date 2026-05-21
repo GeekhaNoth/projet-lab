@@ -42,8 +42,6 @@ func _validate_question():
 		element.get_parent().set_visible(false)
 	_add_in_csv()
 	get_tree().reload_current_scene()
-	#_import_and_add_image(scene_question)
-	#scene_question.right_answer = option_button.get_selected_id()
 
 func _check_field_when_question_validation(field_to_check, text_to_show) -> bool:
 	if (field_to_check.text.strip_edges() == ""):
@@ -64,7 +62,7 @@ func _add_in_csv():
 	var csv_file_root = "user://quiz.csv"
 	var csv_file
 	
-	if FileAccess.file_exists(csv_file_root):
+	if (FileAccess.file_exists(csv_file_root)):
 		csv_file = FileAccess.open(csv_file_root, FileAccess.READ_WRITE)
 		csv_file.seek_end()
 	else:
@@ -75,8 +73,11 @@ func _add_in_csv():
 	for element in line_edit:
 		if (element.text.strip_edges() != ""):
 			string.append(element.text)
+	
+	string.append(option_button.get_item_text(option_button.selected))
 	if (selected_image_path != ""):
 		string.append(selected_image_path)
+		
 	csv_file.store_csv_line(string, ";")
 	csv_file.close()
 
@@ -113,3 +114,6 @@ func _add_an_answer(button):
 		option_button.set_visible(true)
 	button.get_child(0).set_visible(true)
 	button.self_modulate.a = 0
+
+func _back_to_menu():
+	get_tree().change_scene_to_file("res://scene/main_scene.tscn")

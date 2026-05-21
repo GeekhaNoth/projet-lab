@@ -12,7 +12,6 @@
 
 [node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_d6g27")
-right_answer = null
 buttons = [NodePath("ButtonA"), NodePath("ButtonB"), NodePath("ButtonC"), NodePath("ButtonD")]
 
 [node name="Question" type="Node2D" parent="." unique_id=1986096530]
@@ -133,16 +132,19 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("19_l41g4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
+z_index = 2
 position = Vector2(637, 445.2)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
+z_index = 2
 position = Vector2(1278, 443.2)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=651329542]
+z_index = 1
 position = Vector2(967.50006, 238)
 scale = Vector2(0.6203937, 0.5242695)
 texture = ExtResource("21_fo8ka")
