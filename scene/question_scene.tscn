@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_d6g27"]
 [ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_323ws"]
 [ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonA/normal.png" id="3_jcfo7"]
+[ext_resource type="Script" uid="uid://bav4aknojvo4j" path="res://scripts/margin_button.gd" id="4_pw7xn"]
 [ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonB/normal.png" id="7_tui6u"]
 [ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonC/normal.png" id="11_3rvsm"]
 [ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonD/normal.png" id="15_vtesp"]
@@ -27,7 +28,7 @@ offset_top = 499.0
 offset_right = 1531.0
 offset_bottom = 730.0
 theme_override_font_sizes/font_size = 48
-text = "bbb"
+text = "capitale"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -35,10 +36,11 @@ autowrap_mode = 3
 [node name="ButtonA" type="TextureButton" parent="." unique_id=159556379 groups=["quiz_buttons"]]
 offset_left = 403.0
 offset_top = 754.2
-offset_right = 1328.0
-offset_bottom = 972.2
+offset_right = 1318.0
+offset_bottom = 969.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_jcfo7")
+script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonA" unique_id=1851768799]
 layout_mode = 1
@@ -50,7 +52,7 @@ offset_right = -122.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "ccc"
+text = "paris"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -62,6 +64,7 @@ offset_right = 1901.0
 offset_bottom = 970.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("7_tui6u")
+script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonB" unique_id=877582989]
 layout_mode = 1
@@ -73,7 +76,7 @@ offset_right = -7.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "C"
+text = "lyon"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -81,10 +84,11 @@ autowrap_mode = 3
 [node name="ButtonC" type="TextureButton" parent="." unique_id=2070070366 groups=["quiz_buttons"]]
 offset_left = 401.0
 offset_top = 913.2001
-offset_right = 1322.0
+offset_right = 1319.3333
 offset_bottom = 1130.2001
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("11_3rvsm")
+script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonC" unique_id=196851185]
 layout_mode = 1
@@ -98,7 +102,7 @@ offset_bottom = -4.5776367e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "D"
+text = "marseille"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -110,6 +114,7 @@ offset_right = 1896.0
 offset_bottom = 1129.2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("15_vtesp")
+script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonD" unique_id=85687014]
 layout_mode = 1
@@ -121,7 +126,7 @@ offset_right = -7.666626
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
-text = "E"
+text = "lille"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

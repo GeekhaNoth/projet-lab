@@ -21,7 +21,6 @@ var right_answer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for button in get_tree().get_nodes_in_group("quiz_buttons"):
-		var button_name = button.name
 		var path = "res://sprites/" + button.name
 		sprites[button] = load_button_sprites(path)
 		
