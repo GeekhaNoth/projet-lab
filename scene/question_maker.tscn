@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://b8fg2cjd4x8ek" path="res://scripts/questionMaker.gd" id="1_u0xl1"]
 
-[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("button_create_question", "button_validate_question", "button_add_image", "question_edit")]
+[node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("button_create_question", "button_validate_question", "button_add_image", "question_edit", "button_modify_question", "button_validate_modif")]
 script = ExtResource("1_u0xl1")
 button_create_question = NodePath("NewQuestion")
 button_validate_question = NodePath("ValidateQuestion")
 button_add_image = NodePath("AddImageButton")
 question_edit = NodePath("TextEdit/QuestionEdit")
+button_modify_question = NodePath("ModifyButton")
+button_validate_modif = NodePath("ValidateModif")
 
 [node name="NewQuestion" type="Button" parent="." unique_id=1623017771]
+z_index = 1
 offset_left = 828.0
 offset_top = 376.0
 offset_right = 1055.0
@@ -185,8 +188,39 @@ offset_bottom = 1029.0
 text = "Revenir au menu principal"
 autowrap_mode = 3
 
+[node name="ModifyButton" type="Button" parent="." unique_id=935345552]
+z_index = 1
+offset_left = 853.0
+offset_top = 462.0
+offset_right = 1033.0
+offset_bottom = 493.0
+text = "Modifier une question"
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1336607358]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 131.0
+offset_top = 20.0
+offset_right = 1769.0
+offset_bottom = 1060.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValidateModif" type="Button" parent="." unique_id=1070120817]
+visible = false
+offset_left = 924.0
+offset_top = 873.0
+offset_right = 1013.0
+offset_bottom = 899.0
+text = "Valider la modification"
+
 [connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="AddImageButton" to="." method="_put_visible_file_dialog"]
 [connection signal="pressed" from="QuizButton" to="." method="_back_to_menu"]
+[connection signal="pressed" from="ModifyButton" to="." method="_modify_question_menu"]

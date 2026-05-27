@@ -3,6 +3,8 @@ extends Node
 @export var button_validate_question : Button
 @export var button_add_image : Button
 @export var question_edit : TextEdit
+@export var button_modify_question : Button
+@export var button_validate_modif : Button
 
 @onready var file_dialog = $FileDialog
 @onready var option_button = $OptionButton
@@ -10,6 +12,7 @@ extends Node
 $TextEdit/AddAnswer2Button/Answer2Edit, 
 $TextEdit/AddAnswer3Button/Answer3Edit, 
 $TextEdit/AddAnswer4Button/Answer4Edit]
+@onready var container = $GridContainer
 
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +21,7 @@ func _ready() -> void:
 	button_validate_question.get_child(0).set_visible(false)
 	$CounterNumberQuestion.text = "Nombre de question crées : " + str(_counter_number_line())
 	_setup_button()
+	container.hide()
 
 func _setup_button():
 	for i in range(line_edit.size()):
@@ -53,9 +57,14 @@ func _check_field_when_question_validation(field_to_check, text_to_show) -> bool
 		return false
 	return true
 
-func _create_question():
+func _hide_main_button():
 	button_create_question.hide()
+	button_modify_question.hide()
+
+func _create_question():
+	_hide_main_button()
 	_change_node_visibility(true)
+	button_validate_question.show()
 
 func _add_in_csv():
 	var csv_file = _check_if_csv_exist()
@@ -95,7 +104,6 @@ func _check_if_csv_exist():
 		return FileAccess.open(csv_file_root, FileAccess.WRITE_READ)
 
 func _change_node_visibility(state):
-	button_validate_question.set_visible(state)
 	question_edit.set_visible(state)
 	button_add_image.set_visible(state)
 	line_edit[0].set_visible(state)
@@ -132,3 +140,73 @@ func _add_an_answer(button):
 
 func _back_to_menu():
 	get_tree().change_scene_to_file("res://scene/main_scene.tscn")
+
+func _modify_question_menu():
+	_hide_main_button()
+	var csv_file = _check_if_csv_exist()
+	_create_list_question(csv_file)
+	
+func _create_list_question(file):
+	container.show()
+	var csv_rows = []
+	while not file.eof_reached():
+		var line = file.get_csv_line(";")
+		
+		if line.size() == 0:
+			continue
+		
+		if line[0].strip_edges() == "":
+			continue
+		csv_rows.append(line)
+	for i in range(csv_rows.size()):
+		var button = Button.new()
+		button.text = csv_rows[i][0]
+		container.add_child(button)
+		button.add_theme_font_size_override("font_size", 48)
+		button.pressed.connect(_modify_question.bind(csv_rows, i))
+		
+func _modify_question(csv_rows, index):
+	container.hide()
+	option_button.show()
+	var csv_line = csv_rows[index]
+	question_edit.text = csv_line[0]
+	question_edit.show()
+	var last_index = csv_line.size()-1
+	last_index += _image_setup(csv_line[last_index])
+	for i in range(1, last_index):
+		line_edit[i-1].text = csv_line[i]
+		line_edit[i-1].get_parent().show()
+		line_edit[i-1].get_parent().self_modulate.a = 0
+		line_edit[i-1].show()
+		option_button.add_item(line_edit[i-1].text, i-1)
+	button_validate_modif.show()
+	button_validate_modif.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
+
+func _make_modif_in_csv(index, csv_rows):
+	var string_to_csv = []
+	string_to_csv.append(question_edit.text)
+	for element in line_edit:
+		if (element.text.strip_edges() != ""):
+			string_to_csv.append(element.text)
+	
+	string_to_csv.append(option_button.get_item_text(option_button.selected))
+	if (selected_image_path != ""):
+		string_to_csv.append(_put_img_in_csv())
+	
+	csv_rows[index] = string_to_csv
+	var file = _check_if_csv_exist()
+	for line in csv_rows:
+		file.store_csv_line(line, ";")
+	
+	file.close()
+	get_tree().reload_current_scene()
+
+func _image_setup(location) -> int:
+	if (_image_check(location)):
+		return -1
+	else:
+		return 0
+
+func _image_check(location):
+	var path_image = "user://images/" + location
+	return FileAccess.file_exists(path_image)
