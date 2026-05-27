@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 @export var buttons: Array[TextureButton] = []
 
@@ -42,31 +41,53 @@ func load_csv():
 		csv_rows.append(csv_file.get_csv_line(";"))
 	
 	csv_file.close()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+
+func _undisplay_buttons():
+	for button in buttons:
+		button.set_visible(false)
 
 func _new_question():
-	if (index_csv +1 >= csv_rows.size()):
-		get_tree().change_scene_to_file("res://scene/main_scene.tscn")
-		
+	_end_quiz_check()
+	
+	_undisplay_buttons()
 	var csv_line = csv_rows[index_csv]
 	
 	question_text.text = csv_line[0]
 	var last_index = csv_line.size()-1
-	var has_image = FileAccess.file_exists(csv_line[last_index])
-	if (has_image):
-		$Sprite2D4/TextureRect.texture = load(csv_line[last_index])
-		last_index -= 1
-		
+	last_index += _image_setup(csv_line[last_index])
 	right_answer = csv_line[last_index]
+	_display_button(last_index, csv_line)
+
+func _image_setup(location) -> int:
+	if (_image_check(location)):
+		$Sprite2D4/TextureRect.texture = _load_image_texture("user://images/" + location)
+		return -1
+	return 0
+
+func _display_button(last_index, csv_line):
 	for i in range(1, last_index):
+		buttons[i-1].set_visible(true)
 		buttons[i-1].get_child(0).text = csv_line[i]
-	
+
+func _end_quiz_check():
+	if (index_csv +1 >= csv_rows.size()):
+		get_tree().change_scene_to_file("res://scene/main_scene.tscn")
+
+func _image_check(location):
+	var path_image = "user://images/" + location
+	return FileAccess.file_exists(path_image)
+
+func _load_image_texture(path_image):
+	var img = Image.load_from_file(path_image)
+	return ImageTexture.create_from_image(img)
+
 func _on_button_pressed(button_pressed : TextureButton):
 	var correct = _is_answer_correct(button_pressed)
 	_set_button_state(button_pressed, ButtonState.CORRECT if correct else ButtonState.WRONG)
 	index_csv += 1
+	_prepare_new_question(button_pressed)
+
+func _prepare_new_question(button_pressed):
 	button_pressed.disabled = true
 	await get_tree().create_timer(0.5).timeout
 	_set_button_state(button_pressed, ButtonState.NORMAL)
@@ -75,7 +96,7 @@ func _on_button_pressed(button_pressed : TextureButton):
 
 func _is_answer_correct(button) -> bool:
 	return button.get_child(0).text == right_answer
-	
+
 func load_button_sprites(path: String):
 	var result = {}
 	
@@ -96,9 +117,9 @@ func _set_button_state(button, state: ButtonState):
 			button.texture_normal = sprites[button]["correct"]
 		ButtonState.WRONG:
 			button.texture_normal = sprites[button]["wrong"]
-			
+
 func _on_button_hover(button):
 	_set_button_state(button, ButtonState.HOVER)
-	
+
 func _on_button_exit(button):
 	_set_button_state(button, ButtonState.NORMAL)

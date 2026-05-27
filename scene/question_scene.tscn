@@ -17,16 +17,26 @@ buttons = [NodePath("ButtonA"), NodePath("ButtonB"), NodePath("ButtonC"), NodePa
 
 [node name="Question" type="Node2D" parent="." unique_id=1986096530]
 
-[node name="Sprite2D" type="Sprite2D" parent="Question" unique_id=1473913259]
-position = Vector2(970, 616)
-scale = Vector2(0.6, 0.6)
+[node name="TextureRect" type="TextureRect" parent="Question" unique_id=193089615]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_323ws")
 
 [node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
-offset_left = 411.0
-offset_top = 499.0
-offset_right = 1531.0
-offset_bottom = 730.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -115.5
+offset_right = 560.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "capitale"
 horizontal_alignment = 1
@@ -34,10 +44,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonA" type="TextureButton" parent="." unique_id=159556379 groups=["quiz_buttons"]]
-offset_left = 403.0
-offset_top = 754.2
-offset_right = 1318.0
-offset_bottom = 969.2
+offset_left = -543.0001
+offset_top = 167.32501
+offset_right = 371.99988
+offset_bottom = 382.325
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_jcfo7")
 script = ExtResource("4_pw7xn")
@@ -58,10 +68,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonB" type="TextureButton" parent="." unique_id=240958986 groups=["quiz_buttons"]]
-offset_left = 976.0
-offset_top = 752.2
-offset_right = 1901.0
-offset_bottom = 970.2
+offset_left = 29.999878
+offset_top = 165.32501
+offset_right = 954.9999
+offset_bottom = 383.325
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("7_tui6u")
 script = ExtResource("4_pw7xn")
@@ -82,10 +92,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonC" type="TextureButton" parent="." unique_id=2070070366 groups=["quiz_buttons"]]
-offset_left = 401.0
-offset_top = 913.2001
-offset_right = 1319.3333
-offset_bottom = 1130.2001
+offset_left = -545.0001
+offset_top = 326.32507
+offset_right = 373.33313
+offset_bottom = 543.3251
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("11_3rvsm")
 script = ExtResource("4_pw7xn")
@@ -108,10 +118,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonD" type="TextureButton" parent="." unique_id=493098486 groups=["quiz_buttons"]]
-offset_left = 975.0
-offset_top = 912.2
-offset_right = 1896.0
-offset_bottom = 1129.2
+offset_left = 28.999878
+offset_top = 325.325
+offset_right = 949.9999
+offset_bottom = 542.325
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("15_vtesp")
 script = ExtResource("4_pw7xn")
@@ -132,26 +142,22 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
-position = Vector2(963, 896.2)
-scale = Vector2(0.6, 0.6)
+position = Vector2(16.999878, 309.325)
 texture = ExtResource("19_l41g4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
 z_index = 2
-position = Vector2(637, 445.2)
-scale = Vector2(0.6, 0.6)
 texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
 z_index = 2
-position = Vector2(1278, 443.2)
-scale = Vector2(0.6, 0.6)
+position = Vector2(331.99988, -143.67499)
 texture = ExtResource("20_t6ov6")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=651329542]
 z_index = 1
-position = Vector2(967.50006, 238)
-scale = Vector2(0.6203937, 0.5242695)
+position = Vector2(21.499939, -348.875)
+scale = Vector2(1.183, 1)
 texture = ExtResource("21_fo8ka")
 
 [node name="TextureRect" type="TextureRect" parent="Sprite2D4" unique_id=1081680362]
@@ -167,3 +173,6 @@ offset_bottom = -63.183105
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1553230964]
+zoom = Vector2(0.5, 0.5)
