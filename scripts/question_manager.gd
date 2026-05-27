@@ -28,7 +28,11 @@ func _ready():
 		button.mouse_exited.connect(_on_button_exit.bind(button))
 		
 	load_csv()
+	_randomize_question()
 	_new_question()
+
+func _randomize_question():
+	csv_rows.shuffle()
 
 func load_csv():
 	var csv_file
@@ -56,18 +60,27 @@ func _new_question():
 	var last_index = csv_line.size()-1
 	last_index += _image_setup(csv_line[last_index])
 	right_answer = csv_line[last_index]
-	_display_button(last_index, csv_line)
+	_display_button(last_index,  _randomize_answer(last_index, csv_line))
+
+func _randomize_answer(last_index, csv_line):
+	var new_array = []
+	for i in range(1, last_index):
+		new_array.append(csv_line[i])
+	new_array.shuffle()
+	return new_array
 
 func _image_setup(location) -> int:
 	if (_image_check(location)):
 		$Sprite2D4/TextureRect.texture = _load_image_texture("user://images/" + location)
 		return -1
-	return 0
+	else:
+		$Sprite2D4/TextureRect.texture = null
+		return 0
 
-func _display_button(last_index, csv_line):
-	for i in range(1, last_index):
-		buttons[i-1].set_visible(true)
-		buttons[i-1].get_child(0).text = csv_line[i]
+func _display_button(last_index, array_shuffle):
+	for i in range(0, last_index-1):
+		buttons[i].set_visible(true)
+		buttons[i].get_child(0).text = array_shuffle[i]
 
 func _end_quiz_check():
 	if (index_csv +1 >= csv_rows.size()):
