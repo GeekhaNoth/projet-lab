@@ -210,3 +210,6 @@ func _image_setup(location) -> int:
 func _image_check(location):
 	var path_image = "user://images/" + location
 	return FileAccess.file_exists(path_image)
+
+func _reset_all_questions():
+	DirAccess.remove_absolute("user://quiz.csv")

@@ -218,6 +218,13 @@ offset_right = 1013.0
 offset_bottom = 899.0
 text = "Valider la modification"
 
+[node name="Button" type="Button" parent="." unique_id=1529209657]
+offset_left = 76.0
+offset_top = 910.0
+offset_right = 153.0
+offset_bottom = 963.0
+text = "Reset"
+
 [connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
