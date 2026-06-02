@@ -146,6 +146,8 @@ func _on_answer_edit_text_changed(new_text, index) -> void:
 		option_button.set_item_text(index, new_text)
 	else:
 		option_button.add_item(new_text, index)
+		var popup = option_button.get_popup()
+		popup.add_theme_font_size_override("font_size", 48)
 		
 	_check_lineEdit_text(new_text, index)
 

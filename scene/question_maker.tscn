@@ -55,7 +55,6 @@ button_modify_question = NodePath("ModifyButton")
 button_validate_modif = NodePath("ValidateModif")
 
 [node name="NewQuestion" type="TextureButton" parent="." unique_id=563198085]
-visible = false
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,6 +135,7 @@ texture_normal = ExtResource("4_xxa7o")
 texture_hover = ExtResource("5_hfkit")
 
 [node name="Answer1Edit" type="LineEdit" parent="TextEdit" unique_id=588181951]
+visible = false
 z_index = 1
 offset_left = -1514.0
 offset_top = -836.0
@@ -162,6 +162,7 @@ grow_vertical = 2
 texture = ExtResource("7_hfkit")
 
 [node name="AddAnswer2Button" type="Button" parent="TextEdit" unique_id=1346507262]
+visible = false
 offset_left = 121.0
 offset_top = -636.0
 offset_right = 280.0
@@ -169,6 +170,7 @@ offset_bottom = -605.0
 text = "Ajouter une répone"
 
 [node name="Answer2Edit" type="LineEdit" parent="TextEdit/AddAnswer2Button" unique_id=491326621]
+visible = false
 layout_mode = 0
 offset_top = -196.0
 offset_right = 1354.0
@@ -194,13 +196,15 @@ grow_vertical = 2
 texture = ExtResource("7_hfkit")
 
 [node name="AddAnswer3Button" type="Button" parent="TextEdit" unique_id=1225630589]
-offset_left = -800.0
+visible = false
+offset_left = -572.0
 offset_top = 88.0
-offset_right = -641.0
+offset_right = -413.0
 offset_bottom = 119.0
 text = "Ajouter une répone"
 
 [node name="Answer3Edit" type="LineEdit" parent="TextEdit/AddAnswer3Button" unique_id=413592429]
+visible = false
 layout_mode = 0
 offset_left = -969.0
 offset_top = -209.0
@@ -227,6 +231,7 @@ grow_vertical = 2
 texture = ExtResource("7_hfkit")
 
 [node name="AddAnswer4Button" type="Button" parent="TextEdit" unique_id=1282523754]
+visible = false
 offset_left = 162.0
 offset_top = 94.0
 offset_right = 321.0
@@ -234,6 +239,7 @@ offset_bottom = 125.0
 text = "Ajouter une répone"
 
 [node name="Answer4Edit" type="LineEdit" parent="TextEdit/AddAnswer4Button" unique_id=2084961116]
+visible = false
 layout_mode = 0
 offset_left = -123.0
 offset_top = -226.0
@@ -269,6 +275,7 @@ access = 2
 filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
 
 [node name="AddImageButton" type="Button" parent="." unique_id=381884392]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -294,11 +301,12 @@ theme_override_font_sizes/font_size = 48
 text = "Image importée avec succès"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1216238509]
-offset_left = 875.0
-offset_top = 275.0
-offset_right = 1748.0
-offset_bottom = 615.0
-theme_override_font_sizes/font_size = 48
+visible = false
+offset_left = 962.0
+offset_top = 396.0
+offset_right = 1405.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 64
 alignment = 1
 autowrap_mode = 2
 allow_reselect = true
@@ -328,7 +336,6 @@ texture_normal = ExtResource("6_j03ur")
 texture_hover = ExtResource("7_bq3jh")
 
 [node name="ModifyButton" type="TextureButton" parent="." unique_id=1976736490]
-visible = false
 z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
