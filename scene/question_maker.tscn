@@ -1,6 +1,49 @@
 [gd_scene format=3 uid="uid://b2vxvxm8byqlv"]
 
 [ext_resource type="Script" uid="uid://b8fg2cjd4x8ek" path="res://scripts/questionMaker.gd" id="1_u0xl1"]
+[ext_resource type="Texture2D" uid="uid://cyx2anienea1f" path="res://sprites/ModeCreation/UIProjetLabCreateNewQuestion.png" id="2_f1bk7"]
+[ext_resource type="Texture2D" uid="uid://dwhkl1w8ey6fp" path="res://sprites/ModeCreation/UIProjetLabResetButton.png" id="2_owh7f"]
+[ext_resource type="Texture2D" uid="uid://w30jaoqrq8b3" path="res://sprites/ModeCreation/UIProjetLabResetButtonHighlight.png" id="3_ik3k2"]
+[ext_resource type="Texture2D" uid="uid://bua13r08i7nl2" path="res://sprites/ModeCreation/UIProjetLabCreateNewQuestionHighlight.png" id="3_ldwmh"]
+[ext_resource type="Texture2D" uid="uid://eer0bm2n3hx1" path="res://sprites/ModeCreation/UIProjetLabValidateModifications.png" id="4_xxa7o"]
+[ext_resource type="Texture2D" uid="uid://u86rv7e5rgrr" path="res://sprites/ModeCreation/UIProjetLabValidateModificationsHighlight.png" id="5_hfkit"]
+[ext_resource type="Texture2D" uid="uid://dqbu7lyqgf0cs" path="res://sprites/ModeCreation/UIProjetLabReturnHome.png" id="6_j03ur"]
+[ext_resource type="Texture2D" uid="uid://dd4c1mhgoyn6s" path="res://sprites/ModeCreation/UIProjetLabQuestionPrompt.png" id="6_xxa7o"]
+[ext_resource type="Texture2D" uid="uid://dkmf85oye1pc5" path="res://sprites/ModeCreation/UIProjetLabReturnHomeHighlight.png" id="7_bq3jh"]
+[ext_resource type="Texture2D" uid="uid://dm82mrwrihkoq" path="res://sprites/ModeCreation/UIProjetLabSelectAnswer.png" id="7_hfkit"]
+[ext_resource type="Texture2D" uid="uid://b6g7e7t24qqwi" path="res://sprites/ModeCreation/UIProjetLabModifyQuestion.png" id="8_am5fd"]
+[ext_resource type="Texture2D" uid="uid://b7b8amwoedgp4" path="res://sprites/ModeCreation/UIProjetLabModifyQuestionHightlight.png" id="9_mnh5a"]
+[ext_resource type="Texture2D" uid="uid://clr68a235lu8p" path="res://sprites/ModeCreation/UIProjetLabQuestionsNumber.png" id="12_q2382"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxa7o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfkit"]
+bg_color = Color(0.30323282, 0.30323285, 0.30323276, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j03ur"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq3jh"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am5fd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnh5a"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q2382"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iesfe"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov3yq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01mpw"]
+bg_color = Color(0.3019608, 0.3019608, 0.3019608, 0.49803922)
 
 [node name="QuestionMaker" type="Node2D" unique_id=1670134801 node_paths=PackedStringArray("button_create_question", "button_validate_question", "button_add_image", "question_edit", "button_modify_question", "button_validate_modif")]
 script = ExtResource("1_u0xl1")
@@ -11,190 +54,305 @@ question_edit = NodePath("TextEdit/QuestionEdit")
 button_modify_question = NodePath("ModifyButton")
 button_validate_modif = NodePath("ValidateModif")
 
-[node name="NewQuestion" type="Button" parent="." unique_id=1623017771]
+[node name="NewQuestion" type="TextureButton" parent="." unique_id=563198085]
+visible = false
 z_index = 1
-offset_left = 828.0
-offset_top = 376.0
-offset_right = 1055.0
-offset_bottom = 407.0
-text = "Créer une nouvelle question"
-
-[node name="ValidateQuestion" type="Button" parent="." unique_id=1277579025]
-visible = false
-offset_left = 894.0
-offset_top = 946.0
-offset_right = 1054.0
-offset_bottom = 1012.0
-text = "Valider la question"
-
-[node name="Label" type="Label" parent="ValidateQuestion" unique_id=1393086007]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -61.0
-offset_top = 52.0
-offset_right = 82.0
-offset_bottom = 52.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -899.0
+offset_top = -450.0
+offset_right = 899.0
+offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Le champ Question est invalide"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+texture_normal = ExtResource("2_f1bk7")
+texture_hover = ExtResource("3_ldwmh")
+
+[node name="ValidateQuestion" type="TextureButton" parent="." unique_id=1343797429]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = 645.0
+offset_right = 418.0
+offset_bottom = 973.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
 
 [node name="TextEdit" type="Node2D" parent="." unique_id=769660118]
 
 [node name="QuestionEdit" type="TextEdit" parent="TextEdit" unique_id=97666342]
-offset_left = 717.0
-offset_top = 179.0
-offset_right = 1255.0
-offset_bottom = 273.0
+visible = false
+z_index = 1
+offset_left = -780.0
+offset_top = -167.0
+offset_right = 782.0
+offset_bottom = 167.0
+focus_mode = 1
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_xxa7o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hfkit")
 placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
+wrap_mode = 1
+
+[node name="Questionasset" type="TextureRect" parent="TextEdit/QuestionEdit" unique_id=242806989]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -791.0
+offset_top = -522.0
+offset_right = 789.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xxa7o")
+
+[node name="TextureButton" type="TextureButton" parent="TextEdit/QuestionEdit" unique_id=732085720]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = 166.0
+offset_right = 418.0
+offset_bottom = 494.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
 
 [node name="Answer1Edit" type="LineEdit" parent="TextEdit" unique_id=588181951]
-offset_left = 409.0
-offset_top = 346.0
-offset_right = 936.0
-offset_bottom = 441.0
-theme_override_font_sizes/font_size = 20
+z_index = 1
+offset_left = -1514.0
+offset_top = -836.0
+offset_right = -164.0
+offset_bottom = -543.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_j03ur")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bq3jh")
 placeholder_text = "Indiquez une réponse ici. Exemple : 1 million"
+alignment = 1
 max_length = 50
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
+[node name="TextureRect" type="TextureRect" parent="TextEdit/Answer1Edit" unique_id=849296070]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
 [node name="AddAnswer2Button" type="Button" parent="TextEdit" unique_id=1346507262]
-visible = false
-offset_left = 1160.0
-offset_top = 376.0
-offset_right = 1319.0
-offset_bottom = 407.0
+offset_left = 121.0
+offset_top = -636.0
+offset_right = 280.0
+offset_bottom = -605.0
 text = "Ajouter une répone"
 
 [node name="Answer2Edit" type="LineEdit" parent="TextEdit/AddAnswer2Button" unique_id=491326621]
-visible = false
 layout_mode = 0
-offset_right = 527.0
+offset_top = -196.0
+offset_right = 1354.0
 offset_bottom = 95.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_am5fd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mnh5a")
 placeholder_text = "Indiquez une réponse ici. Exemple : 2 million"
+alignment = 1
 max_length = 50
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
+[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer2Button/Answer2Edit" unique_id=2134464796]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
 [node name="AddAnswer3Button" type="Button" parent="TextEdit" unique_id=1225630589]
-visible = false
-offset_left = 548.0
-offset_top = 516.0
-offset_right = 707.0
-offset_bottom = 547.0
+offset_left = -800.0
+offset_top = 88.0
+offset_right = -641.0
+offset_bottom = 119.0
 text = "Ajouter une répone"
 
 [node name="Answer3Edit" type="LineEdit" parent="TextEdit/AddAnswer3Button" unique_id=413592429]
-visible = false
 layout_mode = 0
-offset_left = -143.0
-offset_top = -13.0
+offset_left = -969.0
+offset_top = -209.0
 offset_right = 384.0
 offset_bottom = 82.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_q2382")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iesfe")
 placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
+alignment = 1
 max_length = 50
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
+[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer3Button/Answer3Edit" unique_id=539220171]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
 [node name="AddAnswer4Button" type="Button" parent="TextEdit" unique_id=1282523754]
-visible = false
-offset_left = 1133.0
-offset_top = 526.0
-offset_right = 1292.0
-offset_bottom = 557.0
+offset_left = 162.0
+offset_top = 94.0
+offset_right = 321.0
+offset_bottom = 125.0
 text = "Ajouter une répone"
 
 [node name="Answer4Edit" type="LineEdit" parent="TextEdit/AddAnswer4Button" unique_id=2084961116]
-visible = false
 layout_mode = 0
 offset_left = -123.0
-offset_top = -29.0
-offset_right = 404.0
+offset_top = -226.0
+offset_right = 1233.0
 offset_bottom = 66.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov3yq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_01mpw")
 placeholder_text = "Indiquez une réponse ici. Exemple : 100 mille"
+alignment = 1
 max_length = 50
 context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer4Button/Answer4Edit" unique_id=593155182]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=74608589]
 oversampling_override = 1.0
 title = "Open a File"
-position = Vector2i(0, 36)
+position = Vector2i(-1000, -500)
+size = Vector2i(1920, 1080)
 file_mode = 0
 access = 2
 filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
 
 [node name="AddImageButton" type="Button" parent="." unique_id=381884392]
-visible = false
-offset_left = 461.0
-offset_top = 658.0
-offset_right = 732.0
-offset_bottom = 775.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -915.0
+offset_top = 467.0
+offset_right = -324.0
+offset_bottom = 766.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
 text = "Cliquer ici pour ajouter une image"
 
 [node name="Label" type="Label" parent="AddImageButton" unique_id=303781555]
-visible = false
 layout_mode = 0
-offset_left = 16.0
-offset_top = 145.0
-offset_right = 234.0
-offset_bottom = 168.0
+offset_left = 92.5
+offset_top = 317.0
+offset_right = 743.5
+offset_bottom = 384.0
 theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
 text = "Image importée avec succès"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1216238509]
-visible = false
-offset_left = 1030.0
-offset_top = 685.0
-offset_right = 1332.0
-offset_bottom = 730.0
+offset_left = 875.0
+offset_top = 275.0
+offset_right = 1748.0
+offset_bottom = 615.0
+theme_override_font_sizes/font_size = 48
 alignment = 1
 autowrap_mode = 2
 allow_reselect = true
 
 [node name="Label" type="Label" parent="OptionButton" unique_id=1694443239]
 layout_mode = 0
-offset_left = -4.0
-offset_top = -36.0
-offset_right = 36.0
-offset_bottom = -13.0
+offset_left = -396.0
+offset_top = -102.0
+offset_right = 899.0
+offset_bottom = -35.0
+theme_override_font_sizes/font_size = 48
 text = "Choisissez la réponse considérée comme étant la bonne"
 
-[node name="CounterNumberQuestion" type="Label" parent="." unique_id=298310746]
-offset_left = 29.0
-offset_top = 13.0
-offset_right = 295.0
-offset_bottom = 130.0
-text = "Nombre de question crées"
+[node name="MainMenuButton" type="TextureButton" parent="." unique_id=1012885864]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1405.0
+offset_top = 747.0
+offset_right = 1855.0
+offset_bottom = 1011.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_j03ur")
+texture_hover = ExtResource("7_bq3jh")
 
-[node name="QuizButton" type="Button" parent="." unique_id=1709492690]
-offset_left = 1602.0
-offset_top = 951.0
-offset_right = 1844.0
-offset_bottom = 1029.0
-text = "Revenir au menu principal"
-autowrap_mode = 3
-
-[node name="ModifyButton" type="Button" parent="." unique_id=935345552]
+[node name="ModifyButton" type="TextureButton" parent="." unique_id=1976736490]
+visible = false
 z_index = 1
-offset_left = 853.0
-offset_top = 462.0
-offset_right = 1033.0
-offset_bottom = 493.0
-text = "Modifier une question"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -651.5
+offset_top = 50.0
+offset_right = 651.5
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_am5fd")
+texture_hover = ExtResource("9_mnh5a")
+
+[node name="Label" type="Label" parent="ModifyButton" unique_id=214450327]
+visible = false
+layout_mode = 0
+offset_left = -91.5
+offset_top = 301.0
+offset_right = 1525.5
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 48
+text = "Aucune question n'a encore été créée, tu ne peux donc pas les modifier"
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=1336607358]
 visible = false
@@ -203,31 +361,115 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 131.0
-offset_top = 20.0
-offset_right = 1769.0
-offset_bottom = 1060.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ValidateModif" type="Button" parent="." unique_id=1070120817]
+[node name="ValidateModif" type="TextureButton" parent="." unique_id=1222278563]
 visible = false
-offset_left = 924.0
-offset_top = 873.0
-offset_right = 1013.0
-offset_bottom = 899.0
-text = "Valider la modification"
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = 649.0
+offset_right = 418.0
+offset_bottom = 977.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
 
-[node name="Button" type="Button" parent="." unique_id=1529209657]
-offset_left = 76.0
-offset_top = 910.0
-offset_right = 153.0
-offset_bottom = 963.0
-text = "Reset"
+[node name="ButtonReset" type="TextureButton" parent="." unique_id=72583977]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1846.0
+offset_top = 747.0
+offset_right = -1490.0
+offset_bottom = 1011.0
+grow_vertical = 0
+texture_normal = ExtResource("2_owh7f")
+texture_hover = ExtResource("3_ik3k2")
+
+[node name="Label" type="Label" parent="ButtonReset" unique_id=683165542]
+visible = false
+layout_mode = 0
+offset_left = 364.0
+offset_top = 9.0
+offset_right = 870.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 48
+text = "Clique ici pour réinitialiser toutes les questions que tu as créees"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1877024745]
+position = Vector2(0, -9)
+zoom = Vector2(0.5, 0.5)
+
+[node name="Counter" type="TextureRect" parent="." unique_id=206616271]
+visible = false
+offset_left = -1873.0
+offset_top = -1031.0
+offset_right = -1120.0
+offset_bottom = -874.0
+texture = ExtResource("12_q2382")
+
+[node name="CounterNumberQuestion" type="Label" parent="Counter" unique_id=298310746]
+layout_mode = 0
+offset_left = 618.0
+offset_right = 753.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(0.78039217, 0.6627451, 0.05882353, 1)
+theme_override_font_sizes/font_size = 64
+text = "44"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ErrorEmpty" type="Label" parent="." unique_id=1491937463]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.0
+offset_top = 656.0
+offset_right = 273.0
+offset_bottom = 832.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Le champ est vide"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="QuestionTitle" type="Label" parent="." unique_id=688508129]
+visible = false
+offset_left = -893.0
+offset_top = -911.0
+offset_right = 827.0
+offset_bottom = -647.0
+theme_override_font_sizes/font_size = 64
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
+[connection signal="pressed" from="TextEdit/QuestionEdit/TextureButton" to="." method="_validate_title_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="AddImageButton" to="." method="_put_visible_file_dialog"]
-[connection signal="pressed" from="QuizButton" to="." method="_back_to_menu"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_back_to_menu"]
 [connection signal="pressed" from="ModifyButton" to="." method="_modify_question_menu"]
+[connection signal="mouse_entered" from="ButtonReset" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonReset" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="ButtonReset" to="." method="_reset_all_questions"]

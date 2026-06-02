@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djsr8itdrvbm0" path="res://sprites/MenuAsset/UIProjetLogo.png" id="2_4wnd8"]
 [ext_resource type="Texture2D" uid="uid://76v2l3pwhtik" path="res://sprites/MenuAsset/UIProjetModeCreation.png" id="3_x5n27"]
 [ext_resource type="Texture2D" uid="uid://bh7cjm5021od4" path="res://sprites/MenuAsset/UIProjetModeJeu.png" id="4_jsie2"]
+[ext_resource type="Texture2D" uid="uid://bdpa7mmt3f8s" path="res://sprites/MenuAsset/UIProjetLabQuestionCreationModeHighlight.png" id="4_x5n27"]
 
 [node name="MainScene" type="Node2D" unique_id=436053502]
 script = ExtResource("1_wgwml")
@@ -21,27 +22,31 @@ text = "Jeu du Quiz"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="MainMenu" unique_id=1913160183]
-position = Vector2(962, 225)
-scale = Vector2(0.7, 0.7)
+[node name="Logo" type="TextureRect" parent="MainMenu" unique_id=726308704]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -700.5
+offset_top = -1100.0
+offset_right = 700.5
+offset_bottom = -300.0
+grow_horizontal = 2
 texture = ExtResource("2_4wnd8")
 
-[node name="CreationButton" type="Button" parent="MainMenu" unique_id=1660146827]
+[node name="CreationButton" type="TextureButton" parent="MainMenu" unique_id=602643445]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = 500.0
-offset_right = 3840.0
-offset_bottom = 1108.0
+offset_left = -1000.5
+offset_top = -300.0
+offset_right = 1000.5
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 48
-icon = ExtResource("3_x5n27")
-flat = true
-icon_alignment = 1
+texture_normal = ExtResource("3_x5n27")
+texture_hover = ExtResource("4_x5n27")
 
 [node name="GameButton" type="Button" parent="MainMenu" unique_id=1575540725]
 anchors_preset = 8
@@ -49,17 +54,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 915.5
-offset_top = 776.0
-offset_right = 2924.5
-offset_bottom = 1384.0
+offset_left = -1000.5
+offset_top = 300.0
+offset_right = 1008.5
+offset_bottom = 908.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
 mouse_filter = 1
 icon = ExtResource("4_jsie2")
 flat = true
 icon_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=573050886]
+zoom = Vector2(0.5, 0.5)
 
 [connection signal="pressed" from="MainMenu/CreationButton" to="." method="_on_creation_button_pressed"]
 [connection signal="pressed" from="MainMenu/GameButton" to="." method="_on_game_button_pressed"]

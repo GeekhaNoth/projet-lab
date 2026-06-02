@@ -1,0 +1,322 @@
+[
+	[
+		"Quelle est la capitale de la France ?",
+		"Lyon",
+		"Marseille",
+		"Paris",
+		"Toulouse",
+		"Paris"
+	],
+	[
+		"Combien y a-t-il de continents sur Terre ?",
+		"5",
+		"6",
+		"7",
+		"8",
+		"7"
+	],
+	[
+		"Quel est le plus grand ocean du monde ?",
+		"Atlantique",
+		"Indien",
+		"Arctique",
+		"Pacifique",
+		"Pacifique"
+	],
+	[
+		"Quel est le symbole chimique de l'eau ?",
+		"O2",
+		"H2O",
+		"CO2",
+		"H2",
+		"H2O"
+	],
+	[
+		"Qui a ecrit Les Miserables ?",
+		"Moliere",
+		"Victor Hugo",
+		"Emile Zola",
+		"Voltaire",
+		"Victor Hugo"
+	],
+	[
+		"Quel est le plus long fleuve de France ?",
+		"Seine",
+		"Rhone",
+		"Loire",
+		"Garonne",
+		"Loire"
+	],
+	[
+		"Combien de cotes possede un hexagone ?",
+		"5",
+		"6",
+		"7",
+		"8",
+		"6"
+	],
+	[
+		"Quelle planete est surnommee la planete rouge ?",
+		"Venus",
+		"Jupiter",
+		"Mars",
+		"Saturne",
+		"Mars"
+	],
+	[
+		"Quelle est la langue officielle du Bresil ?",
+		"Espagnol",
+		"Portugais",
+		"Francais",
+		"Anglais",
+		"Portugais"
+	],
+	[
+		"Qui a peint la Joconde ?",
+		"Picasso",
+		"Monet",
+		"Leonard de Vinci",
+		"Van Gogh",
+		"Leonard de Vinci"
+	],
+	[
+		"Combien de jours compte une annee normale ?",
+		"364",
+		"365",
+		"366",
+		"367",
+		"365"
+	],
+	[
+		"Quel gaz les plantes absorbent-elles principalement ?",
+		"Oxygene",
+		"Azote",
+		"Hydrogene",
+		"Dioxyde de carbone",
+		"Dioxyde de carbone"
+	],
+	[
+		"Qui fut le premier president de la Ve Republique francaise ?",
+		"Francois Mitterrand",
+		"Georges Pompidou",
+		"Charles de Gaulle",
+		"Jacques Chirac",
+		"Charles de Gaulle"
+	],
+	[
+		"Quel est l'animal terrestre le plus rapide ?",
+		"Lion",
+		"Guepard",
+		"Antilope",
+		"Tigre",
+		"Guepard"
+	],
+	[
+		"Quelle est la capitale de l'Italie ?",
+		"Milan",
+		"Naples",
+		"Turin",
+		"Rome",
+		"Rome"
+	],
+	[
+		"Dans quel organe se trouve le cerveau ?",
+		"Thorax",
+		"Abdomen",
+		"Crane",
+		"Bassin",
+		"Crane"
+	],
+	[
+		"Combien de dents possede normalement un adulte ?",
+		"28",
+		"30",
+		"32",
+		"36",
+		"32"
+	],
+	[
+		"Qui a decouvert l'Amerique en 1492 ?",
+		"Vasco de Gama",
+		"Christophe Colomb",
+		"Magellan",
+		"Marco Polo",
+		"Christophe Colomb"
+	],
+	[
+		"Quel est le plus grand desert chaud du monde ?",
+		"Gobi",
+		"Kalahari",
+		"Sahara",
+		"Atacama",
+		"Sahara"
+	],
+	[
+		"Combien de cordes possede une guitare classique ?",
+		"4",
+		"5",
+		"6",
+		"8",
+		"6"
+	],
+	[
+		"Quel est l'astre au centre du systeme solaire ?",
+		"Terre",
+		"Lune",
+		"Jupiter",
+		"Soleil",
+		"Soleil"
+	],
+	[
+		"Quel est le symbole chimique du fer ?",
+		"Fe",
+		"Fr",
+		"F",
+		"Fi",
+		"Fe"
+	],
+	[
+		"Quelle est la capitale de l'Espagne ?",
+		"Barcelone",
+		"Seville",
+		"Madrid",
+		"Valence",
+		"Madrid"
+	],
+	[
+		"Combien de cotes possede un triangle ?",
+		"2",
+		"3",
+		"4",
+		"5",
+		"3"
+	],
+	[
+		"Quel est le plus grand mammifere du monde ?",
+		"Elephant",
+		"Requin-baleine",
+		"Baleine bleue",
+		"Girafe",
+		"Baleine bleue"
+	],
+	[
+		"Quelle est la formule du perimetre d'un carre ?",
+		"Cote x 2",
+		"Cote x 3",
+		"Cote x 4",
+		"Cote^2",
+		"Cote x 4"
+	],
+	[
+		"Combien de couleurs comporte un arc-en-ciel ?",
+		"5",
+		"6",
+		"7",
+		"8",
+		"7"
+	],
+	[
+		"Qui a ecrit Le Petit Prince ?",
+		"Jules Verne",
+		"Antoine de Saint-Exupery",
+		"Albert Camus",
+		"Balzac",
+		"Antoine de Saint-Exupery"
+	],
+	[
+		"Quel pays est surnomme le Pays du Soleil-Levant ?",
+		"Chine",
+		"Coree du Sud",
+		"Japon",
+		"Thailande",
+		"Japon"
+	],
+	[
+		"Quel metal est liquide a temperature ambiante ?",
+		"Fer",
+		"Cuivre",
+		"Mercure",
+		"Aluminium",
+		"Mercure"
+	],
+	[
+		"Combien de mois compte une annee ?",
+		"10",
+		"11",
+		"12",
+		"13",
+		"12"
+	],
+	[
+		"Quel est l'instrument utilise pour mesurer la temperature ?",
+		"Barometre",
+		"Thermometre",
+		"Hygrometre",
+		"Altimetre",
+		"Thermometre"
+	],
+	[
+		"Quelle mer borde la Cote d'Azur ?",
+		"Mer Noire",
+		"Mer Rouge",
+		"Mer Mediterranee",
+		"Mer Baltique",
+		"Mer Mediterranee"
+	],
+	[
+		"Combien de joueurs une equipe de football aligne-t-elle sur le terrain ?",
+		"9",
+		"10",
+		"11",
+		"12",
+		"11"
+	],
+	[
+		"Quel est le plus petit nombre premier ?",
+		"0",
+		"1",
+		"2",
+		"3",
+		"2"
+	],
+	[
+		"Qui a invente l'imprimerie moderne ?",
+		"Edison",
+		"Gutenberg",
+		"Newton",
+		"Pasteur",
+		"Gutenberg"
+	],
+	[
+		"Quel est le principal gaz de l'atmosphere terrestre ?",
+		"Oxygene",
+		"Dioxyde de carbone",
+		"Azote",
+		"Hydrogene",
+		"Azote"
+	],
+	[
+		"Quelle est la capitale de l'Allemagne ?",
+		"Munich",
+		"Hambourg",
+		"Francfort",
+		"Berlin",
+		"Berlin"
+	],
+	[
+		"Quelle est la planete la plus proche du Soleil ?",
+		"Venus",
+		"Terre",
+		"Mars",
+		"Mercure",
+		"Mercure"
+	],
+	[
+		"Quel ecrivain a cree le personnage de Sherlock Holmes ?",
+		"Agatha Christie",
+		"Arthur Conan Doyle",
+		"Jules Verne",
+		"Emile Zola",
+		"Arthur Conan Doyle"
+	]
+]

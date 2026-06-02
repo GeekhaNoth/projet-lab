@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bag48we4tiaeb" path="res://scripts/question_manager.gd" id="1_d6g27"]
 [ext_resource type="Texture2D" uid="uid://b4y5kpsyl203d" path="res://sprites/QuestionOtherAsset/UIProjetLabFullTopText.png" id="2_323ws"]
-[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/ButtonA/normal.png" id="3_jcfo7"]
+[ext_resource type="Texture2D" uid="uid://ck5i8xfb0aoik" path="res://sprites/AnswersAssets/ButtonA/normal.png" id="3_pw7xn"]
 [ext_resource type="Script" uid="uid://bav4aknojvo4j" path="res://scripts/margin_button.gd" id="4_pw7xn"]
-[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/ButtonB/normal.png" id="7_tui6u"]
-[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/ButtonC/normal.png" id="11_3rvsm"]
-[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/ButtonD/normal.png" id="15_vtesp"]
+[ext_resource type="Texture2D" uid="uid://dwu7l0r1hoomh" path="res://sprites/AnswersAssets/ButtonB/normal.png" id="5_wc2ar"]
+[ext_resource type="Texture2D" uid="uid://ch0qkx4krnvxl" path="res://sprites/AnswersAssets/ButtonC/normal.png" id="6_070nw"]
+[ext_resource type="Texture2D" uid="uid://dhv8cs3c0h2rn" path="res://sprites/AnswersAssets/ButtonD/normal.png" id="7_ji63d"]
 [ext_resource type="Texture2D" uid="uid://ctkppnfyhfcth" path="res://sprites/QuestionOtherAsset/UIProjetLabMiddleTime.png" id="19_l41g4"]
 [ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="20_t6ov6"]
 [ext_resource type="Texture2D" uid="uid://cm5yeoov40sye" path="res://sprites/QuestionOtherAsset/UIProjetLabImage.png" id="21_fo8ka"]
@@ -21,6 +21,10 @@ buttons = [NodePath("ButtonA"), NodePath("ButtonB"), NodePath("ButtonC"), NodePa
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -958.0
+offset_top = -178.0
+offset_right = 958.0
+offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_323ws")
@@ -31,10 +35,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -560.0
-offset_top = -115.5
-offset_right = 560.0
-offset_bottom = 115.5
+offset_left = -940.0
+offset_top = -158.0
+offset_right = 941.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
@@ -44,12 +48,15 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonA" type="TextureButton" parent="." unique_id=159556379 groups=["quiz_buttons"]]
-offset_left = -543.0001
-offset_top = 167.32501
-offset_right = 371.99988
-offset_bottom = 382.325
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("3_jcfo7")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -950.0
+offset_top = 300.0
+offset_right = -35.0
+offset_bottom = 515.0
+grow_vertical = 0
+texture_normal = ExtResource("3_pw7xn")
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonA" unique_id=1851768799]
@@ -68,12 +75,15 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonB" type="TextureButton" parent="." unique_id=240958986 groups=["quiz_buttons"]]
-offset_left = 29.999878
-offset_top = 165.32501
-offset_right = 954.9999
-offset_bottom = 383.325
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("7_tui6u")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 300.0
+offset_right = 949.0
+offset_bottom = 518.0
+grow_vertical = 0
+texture_normal = ExtResource("5_wc2ar")
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonB" unique_id=877582989]
@@ -92,12 +102,15 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonC" type="TextureButton" parent="." unique_id=2070070366 groups=["quiz_buttons"]]
-offset_left = -545.0001
-offset_top = 326.32507
-offset_right = 373.33313
-offset_bottom = 543.3251
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("11_3rvsm")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -950.0
+offset_top = 581.0
+offset_right = -31.666748
+offset_bottom = 798.0
+grow_vertical = 0
+texture_normal = ExtResource("6_070nw")
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonC" unique_id=196851185]
@@ -118,12 +131,15 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonD" type="TextureButton" parent="." unique_id=493098486 groups=["quiz_buttons"]]
-offset_left = 28.999878
-offset_top = 325.325
-offset_right = 949.9999
-offset_bottom = 542.325
-scale = Vector2(0.6, 0.6)
-texture_normal = ExtResource("15_vtesp")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.5
+offset_top = 581.0
+offset_right = 949.5
+offset_bottom = 798.0
+grow_vertical = 0
+texture_normal = ExtResource("7_ji63d")
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="ButtonD" unique_id=85687014]
@@ -141,38 +157,85 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1269311077]
-position = Vector2(16.999878, 309.325)
-texture = ExtResource("19_l41g4")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=33077855]
-z_index = 2
-texture = ExtResource("20_t6ov6")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1200244870]
-z_index = 2
-position = Vector2(331.99988, -143.67499)
-texture = ExtResource("20_t6ov6")
-
-[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=651329542]
-z_index = 1
-position = Vector2(21.499939, -348.875)
-scale = Vector2(1.183, 1)
-texture = ExtResource("21_fo8ka")
-
-[node name="TextureRect" type="TextureRect" parent="Sprite2D4" unique_id=1081680362]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1906.8538
-offset_top = -982.55756
-offset_right = -87.041504
-offset_bottom = -63.183105
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1553230964]
 zoom = Vector2(0.5, 0.5)
+
+[node name="ImageContainer" type="TextureRect" parent="." unique_id=1035083335]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -916.0
+offset_top = -1079.0
+offset_right = 916.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_fo8ka")
+
+[node name="Image" type="TextureRect" parent="ImageContainer" unique_id=1101627164]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 1823.0
+offset_bottom = 912.5
+
+[node name="Score1" type="TextureRect" parent="ImageContainer" unique_id=1665104177]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+offset_right = 781.0
+offset_bottom = -4.0
+grow_vertical = 0
+texture = ExtResource("20_t6ov6")
+
+[node name="Score2" type="TextureRect" parent="ImageContainer" unique_id=850871294]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -781.0
+offset_top = -138.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("20_t6ov6")
+
+[node name="Circle" type="TextureRect" parent="." unique_id=370481139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = 375.0
+offset_right = 186.0
+offset_bottom = 709.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_l41g4")
+
+[node name="CounterQuestion" type="Label" parent="." unique_id=524284260]
+z_index = 4
+offset_left = -867.0
+offset_top = -265.0
+offset_right = -176.0
+offset_bottom = -174.0
+theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
+theme_override_font_sizes/font_size = 48
+text = "Question n°1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="." unique_id=651712972]
+z_index = 4
+offset_left = 185.0
+offset_top = -265.0
+offset_right = 876.0
+offset_bottom = -174.0
+theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
+theme_override_font_sizes/font_size = 48
+text = "Score : 0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -9,7 +9,7 @@ func _ready() -> void:
 	DirAccess.make_dir_recursive_absolute("user://images")
 
 func _on_game_button_pressed():
-	_change_scene("res://scene/question_scene.tscn")
+	_change_scene("res://scene/quiz_option.tscn")
 
 func _on_creation_button_pressed():
 	_change_scene("res://scene/question_maker.tscn")
