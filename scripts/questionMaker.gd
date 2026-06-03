@@ -236,6 +236,7 @@ func _validate_modif_question_title(last_index, csv_line, csv_rows, index):
 
 func _make_modif_in_csv(index, csv_rows):
 	if (!_check_field_when_question_validation(line_edit[0], "Le champ réponse 1 est vide")):
+		button_validate_modif.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
 		return
 	var string_to_csv = []
 	string_to_csv.append(question_edit.text)
