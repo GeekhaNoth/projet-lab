@@ -220,6 +220,9 @@ func _modify_question(csv_rows, index):
 	button_validate_modif.pressed.connect(_validate_modif_question_title.bind(last_index, csv_line, csv_rows, index), CONNECT_ONE_SHOT)
 
 func _validate_modif_question_title(last_index, csv_line, csv_rows, index):
+	if (!_check_field_when_question_validation(question_edit, "Le champ question est vide")):
+		button_validate_modif.pressed.connect(_validate_modif_question_title.bind(last_index, csv_line, csv_rows, index), CONNECT_ONE_SHOT)
+		return
 	option_button.show()
 	question_edit.hide()
 	for i in range(1, last_index):
@@ -232,6 +235,8 @@ func _validate_modif_question_title(last_index, csv_line, csv_rows, index):
 	button_validate_modif.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
 
 func _make_modif_in_csv(index, csv_rows):
+	if (!_check_field_when_question_validation(line_edit[0], "Le champ réponse 1 est vide")):
+		return
 	var string_to_csv = []
 	string_to_csv.append(question_edit.text)
 	for element in line_edit:
