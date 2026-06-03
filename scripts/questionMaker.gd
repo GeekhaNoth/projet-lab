@@ -17,6 +17,7 @@ $TextEdit/AddAnswer4Button/Answer4Edit]
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Autoload.register_buttons(self)
 	_change_node_visibility(false)
 	$Counter/CounterNumberQuestion.text = str(_counter_number_line())
 	_setup_button()

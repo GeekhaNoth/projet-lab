@@ -3,6 +3,9 @@ extends Node2D
 
 @onready var question_text = $Question/QuestionText
 
+@onready var right = AudioStreamPlayer.new()
+@onready var wrong = AudioStreamPlayer.new()
+
 enum ButtonState {
 	NORMAL,
 	HOVER,
@@ -23,6 +26,7 @@ var number_question = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Autoload.register_buttons(self)
 	number_question = Autoload.number_question
 	for button in get_tree().get_nodes_in_group("quiz_buttons"):
 		var path = "res://sprites/AnswersAssets/" + button.name
@@ -31,22 +35,20 @@ func _ready():
 		button.pressed.connect(_on_button_pressed.bind(button))
 		button.mouse_entered.connect(_on_button_hover.bind(button))
 		button.mouse_exited.connect(_on_button_exit.bind(button))
-		
-	print("Existe :", FileAccess.file_exists("res://data/quiz_imported.csv"))
-	var file = FileAccess.open("res://quiz_interne.csv", FileAccess.READ)
-	if file == null:
-		print("Erreur ouverture :", FileAccess.get_open_error())
-	else:
-		print("Fichier ouvert avec succès")
-		
-		
-		
-		
+	
+	add_child(right)
+	add_child(wrong)
+	
+	right.stream = preload("res://sound/right_answer.mp3")
+	wrong.stream = preload("res://sound/wrong_answer.wav")
 		
 	load_csv()
 	_check_if_enough_questions()
 	_randomize_question()
 	_new_question()
+
+func _play_sound(sound):
+	sound.play()
 
 func _check_if_enough_questions():
 	if (csv_rows.size() < number_question):
@@ -140,7 +142,9 @@ func _on_button_pressed(button_pressed : TextureButton):
 	if (correct):
 		score += 1
 		$Score.text = "Score : " + str(score)
+		_play_sound(right)
 	else:
+		_play_sound(wrong)
 		for button in buttons:
 			if (button.get_child(0).text == right_answer):
 				_set_button_state(button, ButtonState.CORRECT)

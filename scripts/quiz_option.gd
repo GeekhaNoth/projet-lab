@@ -4,6 +4,7 @@ var number_question = 1
 @onready var label_number_questions = $Label2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Autoload.register_buttons(self)
 	$Button.pressed.connect(_add_to_number_question.bind(-1))
 	$Button2.pressed.connect(_add_to_number_question.bind(1))
 	pass # Replace with function body.

@@ -116,6 +116,7 @@ offset_right = 789.0
 offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("6_xxa7o")
 
 [node name="TextureButton" type="TextureButton" parent="TextEdit/QuestionEdit" unique_id=732085720]
