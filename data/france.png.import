@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4uj4axjtiawm"
-path="res://.godot/imported/UIProjetLabMainBackground.png-a98b074fce4108b0b6408f98f97271af.ctex"
+uid="uid://4sa422bnlq7p"
+path="res://.godot/imported/france.png-cbcfab1114a7d139972cab63d3647ad9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ATrier/UIProjetLabMainBackground.png"
-dest_files=["res://.godot/imported/UIProjetLabMainBackground.png-a98b074fce4108b0b6408f98f97271af.ctex"]
+source_file="res://data/france.png"
+dest_files=["res://.godot/imported/france.png-cbcfab1114a7d139972cab63d3647ad9.ctex"]
 
 [params]
 

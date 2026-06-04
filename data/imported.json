@@ -5,7 +5,8 @@
 		"Marseille",
 		"Paris",
 		"Toulouse",
-		"Paris"
+		"Paris",
+		"res://data/france.png"
 	],
 	[
 		"Combien y a-t-il de continents sur Terre ?",
@@ -13,7 +14,8 @@
 		"6",
 		"7",
 		"8",
-		"7"
+		"7",
+		"res://data/terre.jpg"
 	],
 	[
 		"Quel est le plus grand ocean du monde ?",
@@ -21,7 +23,8 @@
 		"Indien",
 		"Arctique",
 		"Pacifique",
-		"Pacifique"
+		"Pacifique",
+		"res://data/ocean.jpg"
 	],
 	[
 		"Quel est le symbole chimique de l'eau ?",
@@ -29,7 +32,8 @@
 		"H2O",
 		"CO2",
 		"H2",
-		"H2O"
+		"H2O",
+		"res://data/molecule.jpg"
 	],
 	[
 		"Qui a ecrit Les Miserables ?",
@@ -37,7 +41,8 @@
 		"Victor Hugo",
 		"Emile Zola",
 		"Voltaire",
-		"Victor Hugo"
+		"Victor Hugo",
+		"res://data/livre.jpg"
 	],
 	[
 		"Quel est le plus long fleuve de France ?",
@@ -45,7 +50,8 @@
 		"Rhone",
 		"Loire",
 		"Garonne",
-		"Loire"
+		"Loire",
+		"res://data/fleuve.jpg"
 	],
 	[
 		"Combien de cotes possede un hexagone ?",
@@ -53,7 +59,8 @@
 		"6",
 		"7",
 		"8",
-		"6"
+		"6",
+		"res://data/hexagon.jpg"
 	],
 	[
 		"Quelle planete est surnommee la planete rouge ?",
@@ -61,7 +68,8 @@
 		"Jupiter",
 		"Mars",
 		"Saturne",
-		"Mars"
+		"Mars",
+		"res://data/mars.jpg"
 	],
 	[
 		"Quelle est la langue officielle du Bresil ?",

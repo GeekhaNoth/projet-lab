@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6td35axpdtot"
-path="res://.godot/imported/correct.png-873d3c1329faebe5bead0abe014f2464.ctex"
+uid="uid://wjfgvkumj43j"
+path="res://.godot/imported/mars.jpg-b82222b52534fb16eb5e6792e484b86f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/AnswersAssets/ButtonC/correct.png"
-dest_files=["res://.godot/imported/correct.png-873d3c1329faebe5bead0abe014f2464.ctex"]
+source_file="res://data/mars.jpg"
+dest_files=["res://.godot/imported/mars.jpg-b82222b52534fb16eb5e6792e484b86f.ctex"]
 
 [params]
 

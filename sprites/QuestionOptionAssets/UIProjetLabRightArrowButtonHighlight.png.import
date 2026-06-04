@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh27hhoforsal"
-path="res://.godot/imported/correct.png-764a3190cb7bb865410b5b9f50762a6c.ctex"
+uid="uid://t1nbdofjqlcy"
+path="res://.godot/imported/UIProjetLabRightArrowButtonHighlight.png-3037eb6309b5f1c4fcdc99cc683e7497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/AnswersAssets/ButtonD/correct.png"
-dest_files=["res://.godot/imported/correct.png-764a3190cb7bb865410b5b9f50762a6c.ctex"]
+source_file="res://sprites/QuestionOptionAssets/UIProjetLabRightArrowButtonHighlight.png"
+dest_files=["res://.godot/imported/UIProjetLabRightArrowButtonHighlight.png-3037eb6309b5f1c4fcdc99cc683e7497.ctex"]
 
 [params]
 

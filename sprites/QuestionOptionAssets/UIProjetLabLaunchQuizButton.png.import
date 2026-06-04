@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ohkxpos8fbv0"
-path="res://.godot/imported/correct.png-6b44960e18e5f792b58143a338a218a7.ctex"
+uid="uid://bp388k3nj1wxr"
+path="res://.godot/imported/UIProjetLabLaunchQuizButton.png-af79db212b0396264699007ddb807595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/AnswersAssets/ButtonB/correct.png"
-dest_files=["res://.godot/imported/correct.png-6b44960e18e5f792b58143a338a218a7.ctex"]
+source_file="res://sprites/QuestionOptionAssets/UIProjetLabLaunchQuizButton.png"
+dest_files=["res://.godot/imported/UIProjetLabLaunchQuizButton.png-af79db212b0396264699007ddb807595.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6th0iu066qhp"
-path="res://.godot/imported/correct.png-8d011aaae6a0f4c75fc86022cbef71e7.ctex"
+uid="uid://tqbqla330dxg"
+path="res://.godot/imported/livre.jpg-8050cdec814ae7f7271d229ae534ad29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/AnswersAssets/ButtonA/correct.png"
-dest_files=["res://.godot/imported/correct.png-8d011aaae6a0f4c75fc86022cbef71e7.ctex"]
+source_file="res://data/livre.jpg"
+dest_files=["res://.godot/imported/livre.jpg-8050cdec814ae7f7271d229ae534ad29.ctex"]
 
 [params]
 
