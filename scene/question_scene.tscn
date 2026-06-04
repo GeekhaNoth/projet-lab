@@ -11,13 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://cnwbmrmak2kt3" path="res://sprites/QuestionOtherAsset/UIProjetLabScore.png" id="20_t6ov6"]
 [ext_resource type="Texture2D" uid="uid://cm5yeoov40sye" path="res://sprites/QuestionOtherAsset/UIProjetLabImage.png" id="21_fo8ka"]
 
-[node name="SceneQuiz" type="Node2D" unique_id=1692662690 node_paths=PackedStringArray("buttons")]
+[node name="SceneQuiz" type="Control" unique_id=1823277382 node_paths=PackedStringArray("buttons")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_d6g27")
 buttons = [NodePath("ButtonA"), NodePath("ButtonB"), NodePath("ButtonC"), NodePath("ButtonD")]
 
-[node name="Question" type="Node2D" parent="." unique_id=1986096530]
+[node name="Question" type="Control" parent="." unique_id=610086892]
+anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="Question" unique_id=193089615]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,6 +34,7 @@ grow_vertical = 2
 texture = ExtResource("2_323ws")
 
 [node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -48,6 +53,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonA" type="TextureButton" parent="." unique_id=159556379 groups=["quiz_buttons"]]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -75,6 +81,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonB" type="TextureButton" parent="." unique_id=240958986 groups=["quiz_buttons"]]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -102,6 +109,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonC" type="TextureButton" parent="." unique_id=2070070366 groups=["quiz_buttons"]]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -131,6 +139,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonD" type="TextureButton" parent="." unique_id=493098486 groups=["quiz_buttons"]]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -161,6 +170,8 @@ autowrap_mode = 3
 zoom = Vector2(0.5, 0.5)
 
 [node name="ImageContainer" type="TextureRect" parent="." unique_id=1035083335]
+clip_contents = true
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -173,11 +184,19 @@ grow_vertical = 2
 texture = ExtResource("21_fo8ka")
 
 [node name="Image" type="TextureRect" parent="ImageContainer" unique_id=1101627164]
-layout_mode = 0
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 9.0
 offset_top = 9.0
-offset_right = 1823.0
-offset_bottom = 912.5
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Score1" type="TextureRect" parent="ImageContainer" unique_id=1665104177]
 layout_mode = 1
@@ -205,6 +224,7 @@ grow_vertical = 0
 texture = ExtResource("20_t6ov6")
 
 [node name="Circle" type="TextureRect" parent="." unique_id=370481139]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -218,6 +238,7 @@ texture = ExtResource("19_l41g4")
 
 [node name="CounterQuestion" type="Label" parent="." unique_id=524284260]
 z_index = 4
+layout_mode = 0
 offset_left = -867.0
 offset_top = -265.0
 offset_right = -176.0
@@ -230,6 +251,7 @@ vertical_alignment = 1
 
 [node name="Score" type="Label" parent="." unique_id=651712972]
 z_index = 4
+layout_mode = 0
 offset_left = 185.0
 offset_top = -265.0
 offset_right = 876.0

@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 @export var buttons: Array[TextureButton] = []
 
 @onready var question_text = $Question/QuestionText
@@ -102,7 +102,8 @@ func _new_question():
 	var last_index = csv_line.size()-1
 	last_index += _image_setup(csv_line[last_index])
 	right_answer = csv_line[last_index]
-	_display_button(last_index,  _randomize_answer(last_index, csv_line))
+	print(str(last_index))
+	_display_button(last_index, _randomize_answer(last_index, csv_line))
 
 func _randomize_answer(last_index, csv_line):
 	var new_array = []
@@ -112,8 +113,9 @@ func _randomize_answer(last_index, csv_line):
 	return new_array
 
 func _image_setup(location) -> int:
+	print(location)
 	if (_image_check(location)):
-		$ImageContainer/Image.texture = _load_image_texture("user://images/" + location)
+		$ImageContainer/Image.texture = _load_image_texture(location)
 		return -1
 	else:
 		$ImageContainer/Image.texture = null
@@ -130,7 +132,7 @@ func _end_quiz_check():
 		return
 
 func _image_check(location):
-	var path_image = "user://images/" + location
+	var path_image = location
 	return FileAccess.file_exists(path_image)
 
 func _load_image_texture(path_image):

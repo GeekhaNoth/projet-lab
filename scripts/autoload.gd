@@ -1,6 +1,7 @@
 extends Node
 
 var number_question = 0
+var number_question_create = 0
 
 @onready var hover_player = AudioStreamPlayer.new()
 @onready var click_player = AudioStreamPlayer.new()

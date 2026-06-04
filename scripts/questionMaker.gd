@@ -1,7 +1,7 @@
 extends Node
 @export var button_create_question : TextureButton
 @export var button_validate_question : TextureButton
-@export var button_add_image : Button
+@export var button_add_image : TextureButton
 @export var question_edit : TextEdit
 @export var button_modify_question : TextureButton
 @export var button_validate_modif : TextureButton
@@ -12,7 +12,7 @@ extends Node
 $TextEdit/AddAnswer2Button/Answer2Edit, 
 $TextEdit/AddAnswer3Button/Answer3Edit, 
 $TextEdit/AddAnswer4Button/Answer4Edit]
-@onready var container = $GridContainer
+@onready var container = $ScrollContainer
 
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
@@ -20,6 +20,7 @@ func _ready() -> void:
 	Autoload.register_buttons(self)
 	_change_node_visibility(false)
 	$Counter/CounterNumberQuestion.text = str(_counter_number_line())
+	$Counter.show()
 	_setup_button()
 	container.hide()
 	_check_for_modify_button()
@@ -52,7 +53,9 @@ func _counter_number_line() -> int:
 	var file = FileAccess.get_file_as_string("user://quiz.csv")
 	if not (file):
 		return 0
-	return file.strip_edges().split("\n").size()
+	var number_create = file.strip_edges().split("\n").size()
+	Autoload.number_question_create = number_create
+	return number_create
 
 func _validate_question():
 	if (!_check_field_when_question_validation(line_edit[0], "Le champ réponse 1 est vide")):
@@ -89,6 +92,7 @@ func _validate_title_question():
 	$TextEdit/QuestionEdit.hide()
 	$TextEdit/Answer1Edit.show()
 	$QuestionTitle.show()
+	button_add_image.show()
 	$QuestionTitle.text = question_edit.text
 	if ($ErrorEmpty.visible == true):
 		$ErrorEmpty.hide()
@@ -120,7 +124,7 @@ func _put_img_in_csv() -> String:
 		DirAccess.make_dir_recursive_absolute(img_folder)
 		var target_path = img_folder + img_name
 		DirAccess.copy_absolute(selected_image_path, target_path)
-		return img_name
+		return target_path
 
 func _check_if_csv_exist():
 	var csv_file_root = "user://quiz.csv"
@@ -147,6 +151,7 @@ func _on_answer_edit_text_changed(new_text, index) -> void:
 		option_button.set_item_text(index, new_text)
 	else:
 		option_button.add_item(new_text, index)
+		#option_button.set_item_icon(index, load("res://sprites/ModeCreation/UIProjetLabSelectAnswer.png"))
 		var popup = option_button.get_popup()
 		popup.add_theme_font_size_override("font_size", 48)
 		
@@ -176,6 +181,9 @@ func _modify_question_menu():
 	
 func _create_list_question(file):
 	container.show()
+	container.get_child(0).size_flags_horizontal = Control.SIZE_FILL
+	container.get_child(0).size_flags_vertical = Control.SIZE_FILL
+	container.get_child(0).custom_minimum_size = Vector2(0, 0)
 	var csv_rows = []
 	while not file.eof_reached():
 		var line = file.get_csv_line(";")
@@ -199,9 +207,16 @@ func _create_list_question(file):
 		text.offset_right = 0
 		text.offset_bottom = 0
 		text.text = csv_rows[i][0]
-		container.add_child(button)
+		container.get_child(0).add_child(button)
+		button.custom_minimum_size = Vector2(50, 50)
+		button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		
 		button.texture_normal = load("res://sprites/ModeCreation/UIProjetLabSelectAnswer.png")
 		button.texture_hover = load("res://sprites/ModeCreation/UIProjetLabSelectAnswerHighlight.png")
+		button.pressed.connect(Autoload._play_click)
+		button.mouse_entered.connect(Autoload._play_click)
 		text.add_theme_font_size_override("font_size", 48)
 		text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		text. horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

@@ -1,62 +1,125 @@
 [gd_scene format=3 uid="uid://ccxbsfn6ks6x4"]
 
 [ext_resource type="Script" uid="uid://c0cfaccxoieek" path="res://scripts/quiz_option.gd" id="1_1rt4g"]
+[ext_resource type="Texture2D" uid="uid://bp388k3nj1wxr" path="res://sprites/QuestionOptionAssets/UIProjetLabLaunchQuizButton.png" id="2_42kco"]
 [ext_resource type="Texture2D" uid="uid://dqbu7lyqgf0cs" path="res://sprites/ModeCreation/UIProjetLabReturnHome.png" id="2_q2rpj"]
 [ext_resource type="Texture2D" uid="uid://dkmf85oye1pc5" path="res://sprites/ModeCreation/UIProjetLabReturnHomeHighlight.png" id="3_jybrg"]
+[ext_resource type="Texture2D" uid="uid://dk5spofwnqbko" path="res://sprites/QuestionOptionAssets/UIProjetLabLaunchQuizButtonHighlight.png" id="3_vb5yh"]
+[ext_resource type="Texture2D" uid="uid://batupuhmiy20q" path="res://sprites/QuestionOptionAssets/UIProjetLabNbQuestionsPrompt.png" id="4_tua2m"]
+[ext_resource type="Texture2D" uid="uid://b12ymgh2t42e3" path="res://sprites/QuestionOptionAssets/UIProjetLabNbQuestionsButton.png" id="5_njgau"]
+[ext_resource type="Texture2D" uid="uid://c51nm0g2obe3u" path="res://sprites/QuestionOptionAssets/UIProjetLabLeftArrowButton.png" id="6_42kco"]
+[ext_resource type="Texture2D" uid="uid://b4i0kn714rppp" path="res://sprites/QuestionOptionAssets/UIProjetLabLeftArrowButtonHighlight.png" id="7_vb5yh"]
+[ext_resource type="Texture2D" uid="uid://cw3jwock0tyct" path="res://sprites/QuestionOptionAssets/UIProjetLabRightArrowButton.png" id="8_nrc1k"]
+[ext_resource type="FontFile" uid="uid://cdul68x3k0r8c" path="res://data/optima-regular.ttf" id="8_vb5yh"]
+[ext_resource type="Texture2D" uid="uid://t1nbdofjqlcy" path="res://sprites/QuestionOptionAssets/UIProjetLabRightArrowButtonHighlight.png" id="9_6m5q2"]
 
-[node name="MainNode" type="Node2D" unique_id=2045363401]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vb5yh"]
+
+[node name="MainNode" type="Control" unique_id=460198984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_1rt4g")
 
-[node name="Label" type="Label" parent="." unique_id=1385941317]
-offset_left = -331.0
-offset_top = -642.0
-offset_right = 579.0
-offset_bottom = -488.0
-theme_override_font_sizes/font_size = 64
-text = "Nombre de questions du quiz"
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=420357392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=853612956]
-zoom = Vector2(0.5, 0.5)
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1768064393]
+layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="Label2" type="Label" parent="." unique_id=123888890]
-offset_left = -97.0
-offset_top = -208.0
-offset_right = 97.0
-offset_bottom = -54.0
-theme_override_font_sizes/font_size = 64
+[node name="Top" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=482220758]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_tua2m")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=745920352]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=517667462]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1848928140]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_42kco")
+texture_hover = ExtResource("7_vb5yh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=2092267636]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_njgau")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/TextureRect2" unique_id=123888890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_right = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.78039217, 0.6627451, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("8_vb5yh")
+theme_override_font_sizes/font_size = 128
 text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=1938107881]
-offset_left = -317.0
-offset_top = -211.0
-offset_right = -259.0
-offset_bottom = -115.0
-theme_override_font_sizes/font_size = 64
-text = "<"
+[node name="Button2" type="TextureButton" parent="MarginContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=782992320]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("8_nrc1k")
+texture_hover = ExtResource("9_6m5q2")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Button2" type="Button" parent="." unique_id=1379210446]
-offset_left = 174.0
-offset_top = -220.0
-offset_right = 232.0
-offset_bottom = -124.0
-theme_override_font_sizes/font_size = 64
-text = ">"
+[node name="LaunchQuiz" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=288984644]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("2_42kco")
+texture_hover = ExtResource("3_vb5yh")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Button3" type="Button" parent="." unique_id=779151074]
-offset_left = -278.0
-offset_top = 55.0
-offset_right = 336.0
-offset_bottom = 348.0
-theme_override_font_sizes/font_size = 64
-text = "Lancez le quiz"
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=339348838]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="BackHome" type="TextureButton" parent="." unique_id=355126726]
-offset_left = 1377.0
-offset_top = 717.0
-offset_right = 1827.0
-offset_bottom = 981.0
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=302301991]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vb5yh")
+
+[node name="BackHome" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=355126726]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
 texture_normal = ExtResource("2_q2rpj")
 texture_hover = ExtResource("3_jybrg")
+ignore_texture_size = true
+stretch_mode = 5
 
-[connection signal="pressed" from="Button3" to="." method="_launch_quiz"]
-[connection signal="pressed" from="BackHome" to="." method="_on_back_home_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LaunchQuiz" to="." method="_launch_quiz"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackHome" to="." method="_on_back_home_pressed"]

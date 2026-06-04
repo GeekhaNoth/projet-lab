@@ -1,8 +1,8 @@
-extends Node2D
+extends Control
 
-@onready var main_menu = $MainMenu
-@onready var creation_button = $MainMenu/CreationButton
-@onready var game_button = $MainMenu/CreationButton
+@onready var main_menu = $Control/MainMenu
+@onready var creation_button = $Control/MainMenu/CreationButton
+@onready var game_button = $Control/MainMenu/GameButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
