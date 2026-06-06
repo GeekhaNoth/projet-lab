@@ -51,31 +51,302 @@ bg_color = Color(0.3019608, 0.3019608, 0.3019608, 0.49803922)
 
 [node name="QuestionMaker" type="Control" unique_id=1368107132 node_paths=PackedStringArray("button_create_question", "button_validate_question", "button_add_image", "question_edit", "button_modify_question", "button_validate_modif")]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_u0xl1")
-button_create_question = NodePath("NewQuestion")
+button_create_question = NodePath("MarginContainer/VBoxContainer/NewQuestion")
 button_validate_question = NodePath("ValidateQuestion")
 button_add_image = NodePath("AddImageButton")
-question_edit = NodePath("TextEdit/QuestionEdit")
-button_modify_question = NodePath("ModifyButton")
+question_edit = NodePath("MarginContainer/TextEdit/QuestionEdit")
+button_modify_question = NodePath("MarginContainer/VBoxContainer/ModifyButton")
 button_validate_modif = NodePath("ValidateModif")
 
-[node name="NewQuestion" type="TextureButton" parent="." unique_id=563198085]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1431302592]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1652447107]
+visible = false
+layout_mode = 2
+
+[node name="Counter" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=206616271]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+texture = ExtResource("12_q2382")
+stretch_mode = 5
+
+[node name="CounterNumberQuestion" type="Label" parent="MarginContainer/VBoxContainer/Counter" unique_id=298310746]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -76.5
+offset_bottom = 76.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.78039217, 0.6627451, 0.05882353, 1)
+theme_override_fonts/font = ExtResource("18_am5fd")
+theme_override_font_sizes/font_size = 64
+text = "44"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewQuestion" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=563198085]
 z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_f1bk7")
+texture_hover = ExtResource("3_ldwmh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ModifyButton" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1976736490]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("8_am5fd")
+texture_hover = ExtResource("9_mnh5a")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ModifyButton" unique_id=214450327]
+visible = false
+layout_mode = 0
+offset_left = -91.5
+offset_top = 301.0
+offset_right = 1525.5
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 48
+text = "Aucune question n'a encore été créée, tu ne peux donc pas les modifier"
+
+[node name="Control" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1532773015]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="ButtonReset" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=72583977]
+layout_mode = 2
+size_flags_horizontal = 2
+texture_normal = ExtResource("2_owh7f")
+texture_hover = ExtResource("3_ik3k2")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/ButtonReset" unique_id=683165542]
+visible = false
+layout_mode = 0
+offset_left = 364.0
+offset_top = 9.0
+offset_right = 870.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 48
+text = "Clique ici pour réinitialiser toutes les questions que tu as créees"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MainMenuButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=1012885864]
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("6_j03ur")
+texture_hover = ExtResource("7_bq3jh")
+stretch_mode = 5
+
+[node name="TextEdit" type="Control" parent="MarginContainer" unique_id=890227470]
+visible = false
+layout_mode = 2
+
+[node name="QuestionEdit" type="TextEdit" parent="MarginContainer/TextEdit" unique_id=97666342]
+z_index = 1
+layout_mode = 1
+offset_left = -780.0
+offset_top = -167.0
+offset_right = 782.0
+offset_bottom = 167.0
+focus_mode = 1
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_xxa7o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hfkit")
+placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
+wrap_mode = 1
+
+[node name="Questionasset" type="TextureRect" parent="MarginContainer/TextEdit/QuestionEdit" unique_id=242806989]
+z_index = -1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -899.0
-offset_top = -450.0
-offset_right = 899.0
-offset_bottom = -51.0
+offset_left = -791.0
+offset_top = -522.0
+offset_right = 789.0
+offset_bottom = 174.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_f1bk7")
-texture_hover = ExtResource("3_ldwmh")
+mouse_filter = 2
+texture = ExtResource("6_xxa7o")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextEdit/QuestionEdit" unique_id=732085720]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = 166.0
+offset_right = 418.0
+offset_bottom = 494.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
+
+[node name="Answer1Edit" type="LineEdit" parent="MarginContainer/TextEdit" unique_id=588181951]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_j03ur")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bq3jh")
+placeholder_text = "Indiquez une réponse ici. Exemple : 1 million"
+alignment = 1
+max_length = 50
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/Answer1Edit" unique_id=849296070]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
+[node name="AddAnswer2Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1346507262]
+visible = false
+layout_mode = 0
+offset_top = 62.0
+offset_right = 1920.0
+offset_bottom = 93.0
+text = "Ajouter une répone"
+
+[node name="Answer2Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer2Button" unique_id=491326621]
+visible = false
+layout_mode = 0
+offset_top = -196.0
+offset_right = 1354.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_am5fd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mnh5a")
+placeholder_text = "Indiquez une réponse ici. Exemple : 2 million"
+alignment = 1
+max_length = 50
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer2Button/Answer2Edit" unique_id=2134464796]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
+[node name="AddAnswer3Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1225630589]
+visible = false
+layout_mode = 0
+offset_top = 97.0
+offset_right = 1920.0
+offset_bottom = 128.0
+text = "Ajouter une répone"
+
+[node name="Answer3Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer3Button" unique_id=413592429]
+visible = false
+layout_mode = 0
+offset_left = -969.0
+offset_top = -209.0
+offset_right = 384.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_q2382")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iesfe")
+placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
+alignment = 1
+max_length = 50
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer3Button/Answer3Edit" unique_id=539220171]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
+[node name="AddAnswer4Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1282523754]
+visible = false
+layout_mode = 0
+offset_top = 132.0
+offset_right = 1920.0
+offset_bottom = 163.0
+text = "Ajouter une répone"
+
+[node name="Answer4Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer4Button" unique_id=2084961116]
+visible = false
+layout_mode = 0
+offset_left = -123.0
+offset_top = -226.0
+offset_right = 1233.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov3yq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_01mpw")
+placeholder_text = "Indiquez une réponse ici. Exemple : 100 mille"
+alignment = 1
+max_length = 50
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer4Button/Answer4Edit" unique_id=593155182]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_hfkit")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1082665336]
+visible = false
+layout_mode = 2
 
 [node name="ValidateQuestion" type="TextureButton" parent="." unique_id=1343797429]
 visible = false
@@ -93,192 +364,6 @@ grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("4_xxa7o")
 texture_hover = ExtResource("5_hfkit")
-
-[node name="TextEdit" type="Control" parent="." unique_id=890227470]
-anchors_preset = 0
-
-[node name="QuestionEdit" type="TextEdit" parent="TextEdit" unique_id=97666342]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = -780.0
-offset_top = -167.0
-offset_right = 782.0
-offset_bottom = 167.0
-focus_mode = 1
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_xxa7o")
-theme_override_styles/focus = SubResource("StyleBoxFlat_hfkit")
-placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
-wrap_mode = 1
-
-[node name="Questionasset" type="TextureRect" parent="TextEdit/QuestionEdit" unique_id=242806989]
-z_index = -1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -791.0
-offset_top = -522.0
-offset_right = 789.0
-offset_bottom = 174.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("6_xxa7o")
-
-[node name="TextureButton" type="TextureButton" parent="TextEdit/QuestionEdit" unique_id=732085720]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -418.0
-offset_top = 166.0
-offset_right = 418.0
-offset_bottom = 494.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("4_xxa7o")
-texture_hover = ExtResource("5_hfkit")
-
-[node name="Answer1Edit" type="LineEdit" parent="TextEdit" unique_id=588181951]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = -1514.0
-offset_top = -836.0
-offset_right = -164.0
-offset_bottom = -543.0
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_j03ur")
-theme_override_styles/focus = SubResource("StyleBoxFlat_bq3jh")
-placeholder_text = "Indiquez une réponse ici. Exemple : 1 million"
-alignment = 1
-max_length = 50
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-
-[node name="TextureRect" type="TextureRect" parent="TextEdit/Answer1Edit" unique_id=849296070]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hfkit")
-
-[node name="AddAnswer2Button" type="Button" parent="TextEdit" unique_id=1346507262]
-visible = false
-layout_mode = 0
-offset_left = 121.0
-offset_top = -636.0
-offset_right = 280.0
-offset_bottom = -605.0
-text = "Ajouter une répone"
-
-[node name="Answer2Edit" type="LineEdit" parent="TextEdit/AddAnswer2Button" unique_id=491326621]
-visible = false
-layout_mode = 0
-offset_top = -196.0
-offset_right = 1354.0
-offset_bottom = 95.0
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_am5fd")
-theme_override_styles/focus = SubResource("StyleBoxFlat_mnh5a")
-placeholder_text = "Indiquez une réponse ici. Exemple : 2 million"
-alignment = 1
-max_length = 50
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-
-[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer2Button/Answer2Edit" unique_id=2134464796]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hfkit")
-
-[node name="AddAnswer3Button" type="Button" parent="TextEdit" unique_id=1225630589]
-visible = false
-layout_mode = 0
-offset_left = -572.0
-offset_top = 88.0
-offset_right = -413.0
-offset_bottom = 119.0
-text = "Ajouter une répone"
-
-[node name="Answer3Edit" type="LineEdit" parent="TextEdit/AddAnswer3Button" unique_id=413592429]
-visible = false
-layout_mode = 0
-offset_left = -969.0
-offset_top = -209.0
-offset_right = 384.0
-offset_bottom = 82.0
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_q2382")
-theme_override_styles/focus = SubResource("StyleBoxFlat_iesfe")
-placeholder_text = "Indiquez une réponse ici. Exemple : 10 millions"
-alignment = 1
-max_length = 50
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-
-[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer3Button/Answer3Edit" unique_id=539220171]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hfkit")
-
-[node name="AddAnswer4Button" type="Button" parent="TextEdit" unique_id=1282523754]
-visible = false
-layout_mode = 0
-offset_left = 162.0
-offset_top = 94.0
-offset_right = 321.0
-offset_bottom = 125.0
-text = "Ajouter une répone"
-
-[node name="Answer4Edit" type="LineEdit" parent="TextEdit/AddAnswer4Button" unique_id=2084961116]
-visible = false
-layout_mode = 0
-offset_left = -123.0
-offset_top = -226.0
-offset_right = 1233.0
-offset_bottom = 66.0
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_ov3yq")
-theme_override_styles/focus = SubResource("StyleBoxFlat_01mpw")
-placeholder_text = "Indiquez une réponse ici. Exemple : 100 mille"
-alignment = 1
-max_length = 50
-context_menu_enabled = false
-emoji_menu_enabled = false
-shortcut_keys_enabled = false
-
-[node name="TextureRect" type="TextureRect" parent="TextEdit/AddAnswer4Button/Answer4Edit" unique_id=593155182]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_hfkit")
 
 [node name="FileDialog" type="FileDialog" parent="." unique_id=74608589]
 oversampling_override = 1.0
@@ -339,49 +424,6 @@ offset_bottom = 114.5
 grow_vertical = 2
 texture = ExtResource("8_hfkit")
 
-[node name="MainMenuButton" type="TextureButton" parent="." unique_id=1012885864]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1405.0
-offset_top = 700.0
-offset_right = 1855.0
-offset_bottom = 964.0
-grow_horizontal = 0
-grow_vertical = 0
-texture_normal = ExtResource("6_j03ur")
-texture_hover = ExtResource("7_bq3jh")
-
-[node name="ModifyButton" type="TextureButton" parent="." unique_id=1976736490]
-z_index = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -651.5
-offset_top = 50.0
-offset_right = 651.5
-offset_bottom = 340.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_am5fd")
-texture_hover = ExtResource("9_mnh5a")
-
-[node name="Label" type="Label" parent="ModifyButton" unique_id=214450327]
-visible = false
-layout_mode = 0
-offset_left = -91.5
-offset_top = 301.0
-offset_right = 1525.5
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 48
-text = "Aucune question n'a encore été créée, tu ne peux donc pas les modifier"
-
 [node name="ValidateModif" type="TextureButton" parent="." unique_id=1222278563]
 visible = false
 layout_mode = 1
@@ -398,56 +440,6 @@ grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("4_xxa7o")
 texture_hover = ExtResource("5_hfkit")
-
-[node name="ButtonReset" type="TextureButton" parent="." unique_id=72583977]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -1846.0
-offset_top = 700.0
-offset_right = -1490.0
-offset_bottom = 964.0
-grow_vertical = 0
-texture_normal = ExtResource("2_owh7f")
-texture_hover = ExtResource("3_ik3k2")
-
-[node name="Label" type="Label" parent="ButtonReset" unique_id=683165542]
-visible = false
-layout_mode = 0
-offset_left = 364.0
-offset_top = 9.0
-offset_right = 870.0
-offset_bottom = 161.0
-theme_override_font_sizes/font_size = 48
-text = "Clique ici pour réinitialiser toutes les questions que tu as créees"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1877024745]
-position = Vector2(0, -9)
-zoom = Vector2(0.5, 0.5)
-
-[node name="Counter" type="TextureRect" parent="." unique_id=206616271]
-layout_mode = 0
-offset_left = -1873.0
-offset_top = -1031.0
-offset_right = -1120.0
-offset_bottom = -874.0
-texture = ExtResource("12_q2382")
-
-[node name="CounterNumberQuestion" type="Label" parent="Counter" unique_id=298310746]
-layout_mode = 0
-offset_left = 618.0
-offset_right = 753.0
-offset_bottom = 157.0
-theme_override_colors/font_color = Color(0.78039217, 0.6627451, 0.05882353, 1)
-theme_override_fonts/font = ExtResource("18_am5fd")
-theme_override_font_sizes/font_size = 64
-text = "44"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ErrorEmpty" type="Label" parent="." unique_id=1491937463]
 visible = false
@@ -484,25 +476,28 @@ autowrap_mode = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=600399752]
 visible = false
-layout_mode = 0
-offset_left = -1420.0
-offset_top = -850.0
-offset_right = 1845.0
-offset_bottom = 626.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1336607358]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 2
 
-[connection signal="pressed" from="NewQuestion" to="." method="_create_question"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/NewQuestion" to="." method="_create_question"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ModifyButton" to="." method="_modify_question_menu"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_reset_all_questions"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/MainMenuButton" to="." method="_back_to_menu"]
+[connection signal="pressed" from="MarginContainer/TextEdit/QuestionEdit/TextureButton" to="." method="_validate_title_question"]
 [connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
-[connection signal="pressed" from="TextEdit/QuestionEdit/TextureButton" to="." method="_validate_title_question"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="AddImageButton" to="." method="_put_visible_file_dialog"]
-[connection signal="pressed" from="MainMenuButton" to="." method="_back_to_menu"]
-[connection signal="pressed" from="ModifyButton" to="." method="_modify_question_menu"]
-[connection signal="mouse_entered" from="ButtonReset" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="ButtonReset" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="ButtonReset" to="." method="_reset_all_questions"]

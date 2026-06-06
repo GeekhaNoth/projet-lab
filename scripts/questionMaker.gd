@@ -14,34 +14,43 @@ $TextEdit/AddAnswer3Button/Answer3Edit,
 $TextEdit/AddAnswer4Button/Answer4Edit]
 @onready var container = $ScrollContainer
 
+@onready var counter_node = $Counter
+@onready var counter_text = $Counter/CounterNumberQuestion
+@onready var modify_button = $ModifyButton
+@onready var modify_button_label = $ModifyButton/Label
+@onready var reset_button_label = $ButtonReset/Label
+
+@onready var error_node = $ErrorEmpty
+@onready var question_title = $QuestionTitle
+
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Autoload.register_buttons(self)
 	_change_node_visibility(false)
-	$Counter/CounterNumberQuestion.text = str(_counter_number_line())
-	$Counter.show()
+	counter_text.text = str(_counter_number_line())
+	counter_node.show()
 	_setup_button()
 	container.hide()
 	_check_for_modify_button()
 
 func _check_for_modify_button():
 	if (FileAccess.get_file_as_bytes("user://quiz.csv").size() == 0):
-		$ModifyButton.mouse_entered.connect(_on_button_modify_disabled_mouse_entered)
-		$ModifyButton.mouse_exited.connect(_on_button_modify_disabled_mouse_exited)
-		$ModifyButton.disabled = true
+		modify_button.mouse_entered.connect(_on_button_modify_disabled_mouse_entered)
+		modify_button.mouse_exited.connect(_on_button_modify_disabled_mouse_exited)
+		modify_button.disabled = true
 
 func _on_button_modify_disabled_mouse_entered():
-	$ModifyButton/Label.show()
+	modify_button_label.show()
 
 func _on_button_modify_disabled_mouse_exited():
-	$ModifyButton/Label.hide()
+	modify_button_label.hide()
 
 func _on_button_mouse_entered():
-	$ButtonReset/Label.show()
+	reset_button_label.show()
 
 func _on_button_mouse_exited():
-	$ButtonReset/Label.hide()
+	reset_button_label.hide()
 
 func _setup_button():
 	for i in range(line_edit.size()):
@@ -65,15 +74,15 @@ func _validate_question():
 	get_tree().reload_current_scene()
 
 func _setup_visibility_when_question_validate():
-	$ErrorEmpty.set_visible(false)
+	error_node.set_visible(false)
 	_change_node_visibility(false)
 	for element in line_edit:
 		element.get_parent().set_visible(false)
 
 func _check_field_when_question_validation(field_to_check, text_to_show) -> bool:
 	if (field_to_check.text.strip_edges() == ""):
-		$ErrorEmpty.text = text_to_show
-		$ErrorEmpty.set_visible(true)
+		error_node.text = text_to_show
+		error_node.set_visible(true)
 		return false
 	return true
 
@@ -83,19 +92,19 @@ func _hide_main_button():
 
 func _create_question():
 	_hide_main_button()
-	$TextEdit/QuestionEdit.show()
+	question_edit.show()
 	
 
 func _validate_title_question():
 	if (!_check_field_when_question_validation(question_edit, "Le champ question est vide")):
 		return
-	$TextEdit/QuestionEdit.hide()
-	$TextEdit/Answer1Edit.show()
-	$QuestionTitle.show()
+	question_edit.hide()
+	line_edit[0].show()
+	question_title.show()
 	button_add_image.show()
-	$QuestionTitle.text = question_edit.text
-	if ($ErrorEmpty.visible == true):
-		$ErrorEmpty.hide()
+	question_title.text = question_edit.text
+	if (error_node.visible == true):
+		error_node.hide()
 	button_validate_question.show()
 
 func _add_in_csv():

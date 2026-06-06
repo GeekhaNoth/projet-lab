@@ -6,12 +6,14 @@ var question_create
 var total_question = 40
 
 @onready var label_number_questions = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/TextureRect2/Label2
+@onready var left_button = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/Button
+@onready var right_button = $MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/Button2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Autoload.register_buttons(self)
 	question_create = _counter_number_line()
-	$MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/Button.pressed.connect(_add_to_number_question.bind(-1))
-	$MarginContainer/VBoxContainer/CenterContainer/HBoxContainer/Button2.pressed.connect(_add_to_number_question.bind(1))
+	left_button.pressed.connect(_add_to_number_question.bind(-1))
+	right_button.pressed.connect(_add_to_number_question.bind(1))
 	print(str(Autoload.number_question_create))
 	total_question = 40 + question_create
 	number_question = question_create

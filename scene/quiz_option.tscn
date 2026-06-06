@@ -13,8 +13,6 @@
 [ext_resource type="FontFile" uid="uid://cdul68x3k0r8c" path="res://data/optima-regular.ttf" id="8_vb5yh"]
 [ext_resource type="Texture2D" uid="uid://t1nbdofjqlcy" path="res://sprites/QuestionOptionAssets/UIProjetLabRightArrowButtonHighlight.png" id="9_6m5q2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vb5yh"]
-
 [node name="MainNode" type="Control" unique_id=460198984]
 layout_mode = 3
 anchors_preset = 15
@@ -50,6 +48,7 @@ stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=745920352]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=517667462]
 layout_mode = 2
@@ -96,30 +95,31 @@ texture_hover = ExtResource("9_6m5q2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LaunchQuiz" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=288984644]
-custom_minimum_size = Vector2(200, 200)
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=825238256]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LaunchQuiz" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=288984644]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture_normal = ExtResource("2_42kco")
 texture_hover = ExtResource("3_vb5yh")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=339348838]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=302301991]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/separator = SubResource("StyleBoxEmpty_vb5yh")
-
-[node name="BackHome" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=355126726]
+[node name="BackHome" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=355126726]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+size_flags_horizontal = 8
 texture_normal = ExtResource("2_q2rpj")
 texture_hover = ExtResource("3_jybrg")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/LaunchQuiz" to="." method="_launch_quiz"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/BackHome" to="." method="_on_back_home_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/LaunchQuiz" to="." method="_launch_quiz"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackHome" to="." method="_on_back_home_pressed"]

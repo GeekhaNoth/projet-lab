@@ -1,7 +1,10 @@
 extends Control
 @export var buttons: Array[TextureButton] = []
 
-@onready var question_text = $Question/QuestionText
+@onready var question_text = $MarginContainer/VBoxContainer/Question/QuestionText
+@onready var counter_text = $MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Counter/CounterQuestion
+@onready var image_illustration = $MarginContainer/VBoxContainer/ImageSection/ImageContainer/Image
+@onready var score_text = $MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Score/ScoreText
 
 @onready var right = AudioStreamPlayer.new()
 @onready var wrong = AudioStreamPlayer.new()
@@ -95,7 +98,7 @@ func _undisplay_buttons():
 func _new_question():
 	
 	_undisplay_buttons()
-	$CounterQuestion.text = "Question n°" + str(index_csv+1)
+	counter_text.text = "Question n°" + str(index_csv+1)
 	var csv_line = csv_rows[index_csv]
 	print(str(csv_line))
 	question_text.text = csv_line[0]
@@ -115,10 +118,10 @@ func _randomize_answer(last_index, csv_line):
 func _image_setup(location) -> int:
 	print(location)
 	if (_image_check(location)):
-		$ImageContainer/Image.texture = _load_image_texture(location)
+		image_illustration.texture = _load_image_texture(location)
 		return -1
 	else:
-		$ImageContainer/Image.texture = null
+		image_illustration.texture = null
 		return 0
 
 func _display_button(last_index, array_shuffle):
@@ -143,7 +146,7 @@ func _on_button_pressed(button_pressed : TextureButton):
 	var correct = _is_answer_correct(button_pressed)
 	if (correct):
 		score += 1
-		$Score.text = "Score : " + str(score)
+		score_text.text = "Score : " + str(score)
 		_play_sound(right)
 	else:
 		_play_sound(wrong)

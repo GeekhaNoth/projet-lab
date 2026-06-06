@@ -16,18 +16,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wgwml")
 
-[node name="Control" type="MarginContainer" parent="." unique_id=882208450]
+[node name="Control" type="MarginContainer" parent="." unique_id=654618195]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 40
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_bottom = 40
 
 [node name="MainMenu" type="VBoxContainer" parent="Control" unique_id=773136310]
+custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
@@ -35,6 +35,7 @@ alignment = 1
 [node name="Logo" type="TextureRect" parent="Control/MainMenu" unique_id=726308704]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 3
 texture = ExtResource("2_4wnd8")
 expand_mode = 1
@@ -43,10 +44,10 @@ stretch_mode = 5
 [node name="CreationButton" type="TextureButton" parent="Control/MainMenu" unique_id=602643445]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
+size_flags_horizontal = 5
 size_flags_vertical = 3
 texture_normal = ExtResource("3_x5n27")
 texture_hover = ExtResource("4_x5n27")
-ignore_texture_size = true
 stretch_mode = 5
 
 [node name="GameButton" type="TextureButton" parent="Control/MainMenu" unique_id=1513517374]
@@ -56,7 +57,6 @@ size_flags_vertical = 3
 mouse_filter = 1
 texture_normal = ExtResource("4_jsie2")
 texture_hover = ExtResource("6_jsie2")
-ignore_texture_size = true
 stretch_mode = 5
 
 [connection signal="pressed" from="Control/MainMenu/CreationButton" to="." method="_on_creation_button_pressed"]

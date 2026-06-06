@@ -13,27 +13,120 @@
 
 [node name="SceneQuiz" type="Control" unique_id=1823277382 node_paths=PackedStringArray("buttons")]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_d6g27")
-buttons = [NodePath("ButtonA"), NodePath("ButtonB"), NodePath("ButtonC"), NodePath("ButtonD")]
+buttons = [NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonA"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonB"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonC"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonD")]
 
-[node name="Question" type="Control" parent="." unique_id=610086892]
-anchors_preset = 0
-
-[node name="TextureRect" type="TextureRect" parent="Question" unique_id=193089615]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1195603738]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -958.0
-offset_top = -178.0
-offset_right = 958.0
-offset_bottom = 266.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_323ws")
 
-[node name="QuestionText" type="Label" parent="Question" unique_id=195149802]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=527497243]
+layout_mode = 2
+
+[node name="ImageSection" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1858267164]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ImageContainer" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection" unique_id=1035083335]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_fo8ka")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Image" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/ImageContainer" unique_id=1101627164]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="OverlayInfo" type="Control" parent="MarginContainer/VBoxContainer/ImageSection" unique_id=845969584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Counter" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo" unique_id=1665104177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_t6ov6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CounterQuestion" type="Label" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Counter" unique_id=524284260]
+z_index = 4
+layout_mode = 0
+offset_left = 49.0
+offset_top = 31.0
+offset_right = 740.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
+theme_override_font_sizes/font_size = 48
+text = "Question n°1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo" unique_id=850871294]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_t6ov6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScoreText" type="Label" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Score" unique_id=651712972]
+z_index = 4
+layout_mode = 0
+offset_left = 50.0
+offset_top = 31.0
+offset_right = 741.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
+theme_override_font_sizes/font_size = 48
+text = "Score : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=193089615]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_323ws")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="QuestionText" type="Label" parent="MarginContainer/VBoxContainer/Question" unique_id=195149802]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,9 +134,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -940.0
-offset_top = -158.0
+offset_top = -202.0
 offset_right = 941.0
-offset_bottom = 245.0
+offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
@@ -52,20 +145,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ButtonA" type="TextureButton" parent="." unique_id=159556379 groups=["quiz_buttons"]]
+[node name="Answers" type="Control" parent="MarginContainer/VBoxContainer" unique_id=652104049]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/Answers" unique_id=1882778088]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -950.0
-offset_top = 300.0
-offset_right = -35.0
-offset_bottom = 515.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="ButtonA" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=159556379 groups=["quiz_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("3_pw7xn")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
-[node name="Label" type="Label" parent="ButtonA" unique_id=1851768799]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonA" unique_id=1851768799]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,20 +183,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ButtonB" type="TextureButton" parent="." unique_id=240958986 groups=["quiz_buttons"]]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 300.0
-offset_right = 949.0
-offset_bottom = 518.0
-grow_vertical = 0
+[node name="ButtonB" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=240958986 groups=["quiz_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("5_wc2ar")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
-[node name="Label" type="Label" parent="ButtonB" unique_id=877582989]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonB" unique_id=877582989]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,20 +207,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ButtonC" type="TextureButton" parent="." unique_id=2070070366 groups=["quiz_buttons"]]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -950.0
-offset_top = 581.0
-offset_right = -31.666748
-offset_bottom = 798.0
-grow_vertical = 0
+[node name="ButtonC" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=2070070366 groups=["quiz_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("6_070nw")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
-[node name="Label" type="Label" parent="ButtonC" unique_id=196851185]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonC" unique_id=196851185]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,20 +233,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ButtonD" type="TextureButton" parent="." unique_id=493098486 groups=["quiz_buttons"]]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 28.5
-offset_top = 581.0
-offset_right = 949.5
-offset_bottom = 798.0
-grow_vertical = 0
+[node name="ButtonD" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=493098486 groups=["quiz_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("7_ji63d")
+ignore_texture_size = true
+stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
-[node name="Label" type="Label" parent="ButtonD" unique_id=85687014]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonD" unique_id=85687014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -166,98 +257,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1553230964]
-zoom = Vector2(0.5, 0.5)
-
-[node name="ImageContainer" type="TextureRect" parent="." unique_id=1035083335]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -916.0
-offset_top = -1079.0
-offset_right = 916.0
-offset_bottom = -158.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("21_fo8ka")
-
-[node name="Image" type="TextureRect" parent="ImageContainer" unique_id=1101627164]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 9.0
-offset_right = -9.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 6
-
-[node name="Score1" type="TextureRect" parent="ImageContainer" unique_id=1665104177]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -138.0
-offset_right = 781.0
-offset_bottom = -4.0
-grow_vertical = 0
-texture = ExtResource("20_t6ov6")
-
-[node name="Score2" type="TextureRect" parent="ImageContainer" unique_id=850871294]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -781.0
-offset_top = -138.0
-offset_bottom = -4.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("20_t6ov6")
-
-[node name="Circle" type="TextureRect" parent="." unique_id=370481139]
+[node name="Circle" type="TextureRect" parent="MarginContainer/VBoxContainer/Answers" unique_id=370481139]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -186.0
-offset_top = 375.0
+offset_top = -77.0
 offset_right = 186.0
-offset_bottom = 709.0
+offset_bottom = 257.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_l41g4")
-
-[node name="CounterQuestion" type="Label" parent="." unique_id=524284260]
-z_index = 4
-layout_mode = 0
-offset_left = -867.0
-offset_top = -265.0
-offset_right = -176.0
-offset_bottom = -174.0
-theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
-theme_override_font_sizes/font_size = 48
-text = "Question n°1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Score" type="Label" parent="." unique_id=651712972]
-z_index = 4
-layout_mode = 0
-offset_left = 185.0
-offset_top = -265.0
-offset_right = 876.0
-offset_bottom = -174.0
-theme_override_colors/font_color = Color(0.06666667, 0.21960784, 0.79607844, 1)
-theme_override_font_sizes/font_size = 48
-text = "Score : 0"
-horizontal_alignment = 1
-vertical_alignment = 1
+stretch_mode = 5
