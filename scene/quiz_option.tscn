@@ -57,6 +57,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 texture_normal = ExtResource("6_42kco")
 texture_hover = ExtResource("7_vb5yh")
 ignore_texture_size = true
@@ -90,23 +91,16 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 texture_normal = ExtResource("8_nrc1k")
 texture_hover = ExtResource("9_6m5q2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=825238256]
+[node name="LaunchQuiz" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=288984644]
+custom_minimum_size = Vector2(875, 200)
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LaunchQuiz" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=288984644]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("2_42kco")
 texture_hover = ExtResource("3_vb5yh")
 ignore_texture_size = true
@@ -116,10 +110,11 @@ stretch_mode = 5
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 4
 texture_normal = ExtResource("2_q2rpj")
 texture_hover = ExtResource("3_jybrg")
 ignore_texture_size = true
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/LaunchQuiz" to="." method="_launch_quiz"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LaunchQuiz" to="." method="_launch_quiz"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackHome" to="." method="_on_back_home_pressed"]

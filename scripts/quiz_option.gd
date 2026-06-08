@@ -14,9 +14,9 @@ func _ready() -> void:
 	question_create = _counter_number_line()
 	left_button.pressed.connect(_add_to_number_question.bind(-1))
 	right_button.pressed.connect(_add_to_number_question.bind(1))
-	print(str(Autoload.number_question_create))
 	total_question = 40 + question_create
-	number_question = question_create
+	if (question_create > 0):
+		number_question = question_create
 	label_number_questions.text = str(number_question)
 
 func _counter_number_line() -> int:

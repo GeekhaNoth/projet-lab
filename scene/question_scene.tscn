@@ -22,31 +22,39 @@ script = ExtResource("1_d6g27")
 buttons = [NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonA"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonB"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonC"), NodePath("MarginContainer/VBoxContainer/Answers/GridContainer/ButtonD")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1195603738]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=527497243]
 layout_mode = 2
 
 [node name="ImageSection" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1858267164]
+custom_minimum_size = Vector2(640, 320)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 
 [node name="ImageContainer" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection" unique_id=1035083335]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 450.0
+offset_left = -50.0
+offset_right = 64.494995
+offset_bottom = 59.3067
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
 texture = ExtResource("21_fo8ka")
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 5
+stretch_mode = 4
 
 [node name="Image" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/ImageContainer" unique_id=1101627164]
 z_index = -1
@@ -54,33 +62,41 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = 9.0
-offset_right = -9.0
-offset_bottom = -9.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -4.494995
+offset_bottom = -12.999695
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="OverlayInfo" type="Control" parent="MarginContainer/VBoxContainer/ImageSection" unique_id=845969584]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -20.0
+offset_right = 640.0
+offset_bottom = 740.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Counter" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo" unique_id=1665104177]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 119.0
+offset_top = -256.0
+offset_right = 900.0
+offset_bottom = -122.0
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("20_t6ov6")
-expand_mode = 1
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="CounterQuestion" type="Label" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Counter" unique_id=524284260]
 z_index = 4
@@ -97,14 +113,21 @@ vertical_alignment = 1
 
 [node name="Score" type="TextureRect" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo" unique_id=850871294]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchor_bottom = 0.5
+offset_left = -894.0
+offset_top = -256.0
+offset_right = -112.99988
+offset_bottom = -122.0
+grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("20_t6ov6")
-expand_mode = 1
-stretch_mode = 5
+stretch_mode = 2
 
 [node name="ScoreText" type="Label" parent="MarginContainer/VBoxContainer/ImageSection/OverlayInfo/Score" unique_id=651712972]
 z_index = 4
@@ -120,25 +143,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Question" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=193089615]
+custom_minimum_size = Vector2(1000, 330)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 texture = ExtResource("2_323ws")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 5
 
 [node name="QuestionText" type="Label" parent="MarginContainer/VBoxContainer/Question" unique_id=195149802]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -940.0
-offset_top = -202.0
-offset_right = 941.0
-offset_bottom = 201.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 48
 text = "capitale"
 horizontal_alignment = 1
@@ -146,112 +166,131 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Answers" type="Control" parent="MarginContainer/VBoxContainer" unique_id=652104049]
+custom_minimum_size = Vector2(1920, 350)
+layout_direction = 4
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/Answers" unique_id=1882778088]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -188.0
+offset_right = 700.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/v_separation = 20
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
 columns = 2
 
 [node name="ButtonA" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=159556379 groups=["quiz_buttons"]]
+custom_minimum_size = Vector2(700, 170)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture_normal = ExtResource("3_pw7xn")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonA" unique_id=1851768799]
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.333332
-offset_right = -122.666626
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
+offset_top = 8.0
+offset_right = 620.0
+offset_bottom = 160.495
+theme_override_font_sizes/font_size = 32
 text = "paris"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonB" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=240958986 groups=["quiz_buttons"]]
+custom_minimum_size = Vector2(700, 170)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture_normal = ExtResource("5_wc2ar")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonB" unique_id=877582989]
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 115.0
-offset_right = -7.666626
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
+offset_left = -620.0
+offset_top = 9.0
+offset_bottom = 161.0
+grow_horizontal = 0
+pivot_offset_ratio = Vector2(1, 0)
+theme_override_font_sizes/font_size = 32
 text = "lyon"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonC" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=2070070366 groups=["quiz_buttons"]]
+custom_minimum_size = Vector2(700, 170)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture_normal = ExtResource("6_070nw")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonC" unique_id=196851185]
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 6.666664
-offset_top = -5.086263e-05
-offset_right = -122.666626
-offset_bottom = -4.5776367e-05
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
+offset_top = -163.0
+offset_right = 620.0
+offset_bottom = -11.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "marseille"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="ButtonD" type="TextureButton" parent="MarginContainer/VBoxContainer/Answers/GridContainer" unique_id=493098486 groups=["quiz_buttons"]]
+custom_minimum_size = Vector2(700, 170)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture_normal = ExtResource("7_ji63d")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("4_pw7xn")
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Answers/GridContainer/ButtonD" unique_id=85687014]
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 115.0
-offset_right = -7.666626
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
+offset_left = -622.0
+offset_top = -162.0
+offset_right = -2.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(1, 0)
+theme_override_font_sizes/font_size = 32
 text = "lille"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -259,14 +298,18 @@ autowrap_mode = 3
 
 [node name="Circle" type="TextureRect" parent="MarginContainer/VBoxContainer/Answers" unique_id=370481139]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -186.0
-offset_top = -77.0
+offset_top = -185.0
 offset_right = 186.0
-offset_bottom = 257.0
+offset_bottom = 149.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("19_l41g4")
 stretch_mode = 5

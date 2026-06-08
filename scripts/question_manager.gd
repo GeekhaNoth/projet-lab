@@ -86,9 +86,7 @@ func load_csv():
 		if line.size() == 0 or line[0].strip_edges() == "":
 			break
 
-		print(line)
 		csv_rows.append(line)
-		print(str(csv_rows))
 	csv_file.close()
 
 func _undisplay_buttons():
@@ -100,12 +98,10 @@ func _new_question():
 	_undisplay_buttons()
 	counter_text.text = "Question n°" + str(index_csv+1)
 	var csv_line = csv_rows[index_csv]
-	print(str(csv_line))
 	question_text.text = csv_line[0]
 	var last_index = csv_line.size()-1
 	last_index += _image_setup(csv_line[last_index])
 	right_answer = csv_line[last_index]
-	print(str(last_index))
 	_display_button(last_index, _randomize_answer(last_index, csv_line))
 
 func _randomize_answer(last_index, csv_line):
@@ -116,7 +112,6 @@ func _randomize_answer(last_index, csv_line):
 	return new_array
 
 func _image_setup(location) -> int:
-	print(location)
 	if (_image_check(location)):
 		image_illustration.texture = _load_image_texture(location)
 		return -1
@@ -126,6 +121,7 @@ func _image_setup(location) -> int:
 
 func _display_button(last_index, array_shuffle):
 	for i in range(0, last_index-1):
+		print(str(array_shuffle))
 		buttons[i].set_visible(true)
 		buttons[i].get_child(0).text = array_shuffle[i]
 
@@ -139,8 +135,7 @@ func _image_check(location):
 	return FileAccess.file_exists(path_image)
 
 func _load_image_texture(path_image):
-	var img = Image.load_from_file(path_image)
-	return ImageTexture.create_from_image(img)
+	return load(path_image)
 
 func _on_button_pressed(button_pressed : TextureButton):
 	var correct = _is_answer_correct(button_pressed)
@@ -177,7 +172,7 @@ func load_button_sprites(path: String):
 	
 	state["normal"] = load(path + "/normal.png")
 	state["hover"] = load(path + "/hover.png")
-	state["correct"] = load(path + "/correct.png")
+	state["right"] = load(path + "/right.png")
 	state["wrong"] = load(path + "/wrong.png")
 	
 	return state
@@ -189,7 +184,7 @@ func _set_button_state(button, state: ButtonState):
 		ButtonState.HOVER:
 			button.texture_normal = sprites[button]["hover"]
 		ButtonState.CORRECT:
-			button.texture_normal = sprites[button]["correct"]
+			button.texture_normal = sprites[button]["right"]
 		ButtonState.WRONG:
 			button.texture_normal = sprites[button]["wrong"]
 

@@ -77,7 +77,8 @@
 		"Portugais",
 		"Francais",
 		"Anglais",
-		"Portugais"
+		"Portugais",
+		"res://data/bresil.jpg"
 	],
 	[
 		"Qui a peint la Joconde ?",
@@ -85,7 +86,8 @@
 		"Monet",
 		"Leonard de Vinci",
 		"Van Gogh",
-		"Leonard de Vinci"
+		"Leonard de Vinci",
+		"res://data/monalisa.jpg"
 	],
 	[
 		"Combien de jours compte une annee normale ?",
@@ -93,7 +95,8 @@
 		"365",
 		"366",
 		"367",
-		"365"
+		"365",
+		"res://data/calendrier.jpg"
 	],
 	[
 		"Quel gaz les plantes absorbent-elles principalement ?",
@@ -101,7 +104,8 @@
 		"Azote",
 		"Hydrogene",
 		"Dioxyde de carbone",
-		"Dioxyde de carbone"
+		"Dioxyde de carbone",
+		"res://data/plante.jpg"
 	],
 	[
 		"Qui fut le premier president de la Ve Republique francaise ?",
@@ -109,7 +113,8 @@
 		"Georges Pompidou",
 		"Charles de Gaulle",
 		"Jacques Chirac",
-		"Charles de Gaulle"
+		"Charles de Gaulle",
+		"res://data/france.png"
 	],
 	[
 		"Quel est l'animal terrestre le plus rapide ?",
@@ -117,7 +122,8 @@
 		"Guepard",
 		"Antilope",
 		"Tigre",
-		"Guepard"
+		"Guepard",
+		"res://data/vitesse.jpg"
 	],
 	[
 		"Quelle est la capitale de l'Italie ?",
@@ -125,7 +131,8 @@
 		"Naples",
 		"Turin",
 		"Rome",
-		"Rome"
+		"Rome",
+		"res://data/italy.png"
 	],
 	[
 		"Dans quel organe se trouve le cerveau ?",
@@ -133,7 +140,8 @@
 		"Abdomen",
 		"Crane",
 		"Bassin",
-		"Crane"
+		"Crane",
+		"res://data/cerveau.jpg"
 	],
 	[
 		"Combien de dents possede normalement un adulte ?",
@@ -141,7 +149,8 @@
 		"30",
 		"32",
 		"36",
-		"32"
+		"32",
+		"res://data/dents.jpg"
 	],
 	[
 		"Qui a decouvert l'Amerique en 1492 ?",
@@ -149,7 +158,8 @@
 		"Christophe Colomb",
 		"Magellan",
 		"Marco Polo",
-		"Christophe Colomb"
+		"Christophe Colomb",
+		"res://data/amerique.png"
 	],
 	[
 		"Quel est le plus grand desert chaud du monde ?",
@@ -157,7 +167,8 @@
 		"Kalahari",
 		"Sahara",
 		"Atacama",
-		"Sahara"
+		"Sahara",
+		"res://data/desert.jpg"
 	],
 	[
 		"Combien de cordes possede une guitare classique ?",
@@ -165,7 +176,8 @@
 		"5",
 		"6",
 		"8",
-		"6"
+		"6",
+		"res://data/musique.jpg"
 	],
 	[
 		"Quel est l'astre au centre du systeme solaire ?",
@@ -173,7 +185,8 @@
 		"Lune",
 		"Jupiter",
 		"Soleil",
-		"Soleil"
+		"Soleil",
+		"res://data/voielactee.jpg"
 	],
 	[
 		"Quel est le symbole chimique du fer ?",
@@ -181,7 +194,8 @@
 		"Fr",
 		"F",
 		"Fi",
-		"Fe"
+		"Fe",
+		"res://data/molecule.jpg"
 	],
 	[
 		"Quelle est la capitale de l'Espagne ?",
@@ -189,7 +203,8 @@
 		"Seville",
 		"Madrid",
 		"Valence",
-		"Madrid"
+		"Madrid",
+		"res://data/espagne.png"
 	],
 	[
 		"Combien de cotes possede un triangle ?",
@@ -197,7 +212,8 @@
 		"3",
 		"4",
 		"5",
-		"3"
+		"3",
+		"res://data/triangle.jpg"
 	],
 	[
 		"Quel est le plus grand mammifere du monde ?",
@@ -205,7 +221,8 @@
 		"Requin-baleine",
 		"Baleine bleue",
 		"Girafe",
-		"Baleine bleue"
+		"Baleine bleue",
+		"res://data/mammifere.jpg"
 	],
 	[
 		"Quelle est la formule du perimetre d'un carre ?",
@@ -213,7 +230,8 @@
 		"Cote x 3",
 		"Cote x 4",
 		"Cote^2",
-		"Cote x 4"
+		"Cote x 4",
+		"res://data/carre.jpg"
 	],
 	[
 		"Combien de couleurs comporte un arc-en-ciel ?",
@@ -221,7 +239,8 @@
 		"6",
 		"7",
 		"8",
-		"7"
+		"7",
+		"res://data/couleur.jpg"
 	],
 	[
 		"Qui a ecrit Le Petit Prince ?",
@@ -229,7 +248,8 @@
 		"Antoine de Saint-Exupery",
 		"Albert Camus",
 		"Balzac",
-		"Antoine de Saint-Exupery"
+		"Antoine de Saint-Exupery",
+		"res://data/livre.jpg"
 	],
 	[
 		"Quel pays est surnomme le Pays du Soleil-Levant ?",
@@ -237,7 +257,8 @@
 		"Coree du Sud",
 		"Japon",
 		"Thailande",
-		"Japon"
+		"Japon",
+		"res://data/asie.jpg"
 	],
 	[
 		"Quel metal est liquide a temperature ambiante ?",
@@ -245,7 +266,8 @@
 		"Cuivre",
 		"Mercure",
 		"Aluminium",
-		"Mercure"
+		"Mercure",
+		"res://data/thermometre.jpg"
 	],
 	[
 		"Combien de mois compte une annee ?",
@@ -253,7 +275,8 @@
 		"11",
 		"12",
 		"13",
-		"12"
+		"12",
+		"res://data/calendrier.jpg"
 	],
 	[
 		"Quel est l'instrument utilise pour mesurer la temperature ?",
@@ -261,7 +284,8 @@
 		"Thermometre",
 		"Hygrometre",
 		"Altimetre",
-		"Thermometre"
+		"Thermometre",
+		"res://data/thermometre.jpg"
 	],
 	[
 		"Quelle mer borde la Cote d'Azur ?",
@@ -269,7 +293,8 @@
 		"Mer Rouge",
 		"Mer Mediterranee",
 		"Mer Baltique",
-		"Mer Mediterranee"
+		"Mer Mediterranee",
+		"res://data/ocean.jpg"
 	],
 	[
 		"Combien de joueurs une equipe de football aligne-t-elle sur le terrain ?",
@@ -277,7 +302,8 @@
 		"10",
 		"11",
 		"12",
-		"11"
+		"11",
+		"res://data/foot.jpg"
 	],
 	[
 		"Quel est le plus petit nombre premier ?",
@@ -285,7 +311,8 @@
 		"1",
 		"2",
 		"3",
-		"2"
+		"2",
+		"res://data/nombre.jpg"
 	],
 	[
 		"Qui a invente l'imprimerie moderne ?",
@@ -293,7 +320,8 @@
 		"Gutenberg",
 		"Newton",
 		"Pasteur",
-		"Gutenberg"
+		"Gutenberg",
+		"res://data/imprimante.jpg"
 	],
 	[
 		"Quel est le principal gaz de l'atmosphere terrestre ?",
@@ -301,7 +329,8 @@
 		"Dioxyde de carbone",
 		"Azote",
 		"Hydrogene",
-		"Azote"
+		"Azote",
+		"res://data/terre.jpg"
 	],
 	[
 		"Quelle est la capitale de l'Allemagne ?",
@@ -309,7 +338,8 @@
 		"Hambourg",
 		"Francfort",
 		"Berlin",
-		"Berlin"
+		"Berlin",
+		"res://data/allemagne.png"
 	],
 	[
 		"Quelle est la planete la plus proche du Soleil ?",
@@ -317,7 +347,8 @@
 		"Terre",
 		"Mars",
 		"Mercure",
-		"Mercure"
+		"Mercure",
+		"res://data/voielactee.jpg"
 	],
 	[
 		"Quel ecrivain a cree le personnage de Sherlock Holmes ?",
@@ -325,6 +356,7 @@
 		"Arthur Conan Doyle",
 		"Jules Verne",
 		"Emile Zola",
-		"Arthur Conan Doyle"
+		"Arthur Conan Doyle",
+		"res://data/livre.jpg"
 	]
 ]

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b6g7e7t24qqwi" path="res://sprites/ModeCreation/UIProjetLabModifyQuestion.png" id="8_am5fd"]
 [ext_resource type="Texture2D" uid="uid://c03bejoyxy0bh" path="res://sprites/ModeCreation/UIProjetLabAddImageButton.png" id="8_bq3jh"]
 [ext_resource type="Texture2D" uid="uid://dh7h2mwqc6fe7" path="res://sprites/ModeCreation/UIProjetLabSelectAnswerPrompt.png" id="8_hfkit"]
+[ext_resource type="Texture2D" uid="uid://b12ymgh2t42e3" path="res://sprites/QuestionOptionAssets/UIProjetLabNbQuestionsButton.png" id="8_mnh5a"]
 [ext_resource type="Texture2D" uid="uid://b4a4xspjsqhyk" path="res://sprites/ModeCreation/UIProjetLabAddImageButtonHighlight.png" id="9_am5fd"]
 [ext_resource type="Texture2D" uid="uid://b7b8amwoedgp4" path="res://sprites/ModeCreation/UIProjetLabModifyQuestionHightlight.png" id="9_mnh5a"]
 [ext_resource type="Texture2D" uid="uid://clr68a235lu8p" path="res://sprites/ModeCreation/UIProjetLabQuestionsNumber.png" id="12_q2382"]
@@ -58,11 +59,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u0xl1")
 button_create_question = NodePath("MarginContainer/VBoxContainer/NewQuestion")
-button_validate_question = NodePath("ValidateQuestion")
-button_add_image = NodePath("AddImageButton")
-question_edit = NodePath("MarginContainer/TextEdit/QuestionEdit")
+button_validate_question = NodePath("Control/ValidateQuestion")
+button_add_image = NodePath("MarginContainer/VBoxContainer/TextEdit/GridContainer/AddImageButton")
+question_edit = NodePath("MarginContainer/VBoxContainer/TextEdit/Questionasset/QuestionEdit")
 button_modify_question = NodePath("MarginContainer/VBoxContainer/ModifyButton")
-button_validate_modif = NodePath("ValidateModif")
+button_validate_modif = NodePath("Control/ValidateModif")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1431302592]
 layout_mode = 1
@@ -71,15 +72,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1652447107]
-visible = false
 layout_mode = 2
+theme_override_constants/separation = 40
 
 [node name="Counter" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=206616271]
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 3
 texture = ExtResource("12_q2382")
 stretch_mode = 5
 
@@ -90,11 +94,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = -76.5
-offset_bottom = 76.5
+offset_left = -134.0
+offset_top = -61.5
+offset_right = -1.0
+offset_bottom = 70.19501
 grow_horizontal = 0
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0.78039217, 0.6627451, 0.05882353, 1)
 theme_override_fonts/font = ExtResource("18_am5fd")
 theme_override_font_sizes/font_size = 64
@@ -104,8 +110,10 @@ vertical_alignment = 1
 
 [node name="NewQuestion" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=563198085]
 z_index = 1
+custom_minimum_size = Vector2(1000, 225)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("2_f1bk7")
 texture_hover = ExtResource("3_ldwmh")
 ignore_texture_size = true
@@ -113,75 +121,53 @@ stretch_mode = 5
 
 [node name="ModifyButton" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=1976736490]
 z_index = 1
+custom_minimum_size = Vector2(1000, 225)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("8_am5fd")
 texture_hover = ExtResource("9_mnh5a")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ModifyButton" unique_id=214450327]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ModifyButton" unique_id=337931834]
 visible = false
-layout_mode = 0
-offset_left = -91.5
-offset_top = 301.0
-offset_right = 1525.5
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 48
-text = "Aucune question n'a encore été créée, tu ne peux donc pas les modifier"
-
-[node name="Control" type="HFlowContainer" parent="MarginContainer/VBoxContainer" unique_id=1532773015]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
-last_wrap_alignment = 2
-
-[node name="ButtonReset" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=72583977]
-layout_mode = 2
-size_flags_horizontal = 2
-texture_normal = ExtResource("2_owh7f")
-texture_hover = ExtResource("3_ik3k2")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 170.5
+offset_right = 250.0
+offset_bottom = 400.305
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("8_mnh5a")
+expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Control/ButtonReset" unique_id=683165542]
-visible = false
-layout_mode = 0
-offset_left = 364.0
-offset_top = 9.0
-offset_right = 870.0
-offset_bottom = 161.0
-theme_override_font_sizes/font_size = 48
-text = "Clique ici pour réinitialiser toutes les questions que tu as créees"
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ModifyButton/TextureRect" unique_id=214450327]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Aucune question n'a encore été créée, tu ne peux donc pas les modifier"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="MainMenuButton" type="TextureButton" parent="MarginContainer/VBoxContainer/Control" unique_id=1012885864]
+[node name="TextEdit" type="Control" parent="MarginContainer/VBoxContainer" unique_id=890227470]
 layout_mode = 2
-size_flags_horizontal = 10
-texture_normal = ExtResource("6_j03ur")
-texture_hover = ExtResource("7_bq3jh")
-stretch_mode = 5
+size_flags_vertical = 3
 
-[node name="TextEdit" type="Control" parent="MarginContainer" unique_id=890227470]
+[node name="Questionasset" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit" unique_id=242806989]
 visible = false
-layout_mode = 2
-
-[node name="QuestionEdit" type="TextEdit" parent="MarginContainer/TextEdit" unique_id=97666342]
-z_index = 1
-layout_mode = 1
-offset_left = -780.0
-offset_top = -167.0
-offset_right = 782.0
-offset_bottom = 167.0
-focus_mode = 1
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxFlat_xxa7o")
-theme_override_styles/focus = SubResource("StyleBoxFlat_hfkit")
-placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
-wrap_mode = 1
-
-[node name="Questionasset" type="TextureRect" parent="MarginContainer/TextEdit/QuestionEdit" unique_id=242806989]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -189,37 +175,78 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -791.0
-offset_top = -522.0
-offset_right = 789.0
-offset_bottom = 174.0
+offset_left = -562.0
+offset_top = -407.5
+offset_right = 563.0
+offset_bottom = 92.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 2
 texture = ExtResource("6_xxa7o")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/TextEdit/QuestionEdit" unique_id=732085720]
+[node name="QuestionEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/TextEdit/Questionasset" unique_id=97666342]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.5
+offset_top = 0.5
+offset_right = 556.02
+offset_bottom = 242.51001
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_mode = 1
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_xxa7o")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hfkit")
+placeholder_text = "Indiquez la question ici. Exemple : Combien y a-t-il d'habitants à Paris ?"
+wrap_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TextEdit/Questionasset" unique_id=732085720]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -418.0
-offset_top = 166.0
-offset_right = 418.0
-offset_bottom = 494.0
+offset_left = -250.0
+offset_top = 44.0
+offset_right = 250.0
+offset_bottom = 243.16003
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_xxa7o")
 texture_hover = ExtResource("5_hfkit")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Answer1Edit" type="LineEdit" parent="MarginContainer/TextEdit" unique_id=588181951]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/TextEdit" unique_id=1873245973]
 visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/h_separation = 25
+columns = 2
+
+[node name="Answer1Edit" type="LineEdit" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=588181951]
 z_index = 1
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 58.0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_j03ur")
 theme_override_styles/focus = SubResource("StyleBoxFlat_bq3jh")
@@ -230,30 +257,23 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/Answer1Edit" unique_id=849296070]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer1Edit" unique_id=849296070]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_hfkit")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="AddAnswer2Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1346507262]
-visible = false
-layout_mode = 0
-offset_top = 62.0
-offset_right = 1920.0
-offset_bottom = 93.0
-text = "Ajouter une répone"
-
-[node name="Answer2Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer2Button" unique_id=491326621]
-visible = false
-layout_mode = 0
-offset_top = -196.0
-offset_right = 1354.0
-offset_bottom = 95.0
+[node name="Answer2Edit" type="LineEdit" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=491326621]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_am5fd")
 theme_override_styles/focus = SubResource("StyleBoxFlat_mnh5a")
@@ -264,31 +284,23 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer2Button/Answer2Edit" unique_id=2134464796]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer2Edit" unique_id=2134464796]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_hfkit")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="AddAnswer3Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1225630589]
-visible = false
-layout_mode = 0
-offset_top = 97.0
-offset_right = 1920.0
-offset_bottom = 128.0
-text = "Ajouter une répone"
-
-[node name="Answer3Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer3Button" unique_id=413592429]
-visible = false
-layout_mode = 0
-offset_left = -969.0
-offset_top = -209.0
-offset_right = 384.0
-offset_bottom = 82.0
+[node name="Answer3Edit" type="LineEdit" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=413592429]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_q2382")
 theme_override_styles/focus = SubResource("StyleBoxFlat_iesfe")
@@ -299,31 +311,24 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer3Button/Answer3Edit" unique_id=539220171]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer3Edit" unique_id=539220171]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_hfkit")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="AddAnswer4Button" type="Button" parent="MarginContainer/TextEdit" unique_id=1282523754]
-visible = false
-layout_mode = 0
-offset_top = 132.0
-offset_right = 1920.0
-offset_bottom = 163.0
-text = "Ajouter une répone"
-
-[node name="Answer4Edit" type="LineEdit" parent="MarginContainer/TextEdit/AddAnswer4Button" unique_id=2084961116]
-visible = false
-layout_mode = 0
-offset_left = -123.0
-offset_top = -226.0
-offset_right = 1233.0
-offset_bottom = 66.0
+[node name="Answer4Edit" type="LineEdit" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=2084961116]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_ov3yq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_01mpw")
@@ -334,114 +339,87 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 shortcut_keys_enabled = false
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/TextEdit/AddAnswer4Button/Answer4Edit" unique_id=593155182]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer4Edit" unique_id=593155182]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_hfkit")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1082665336]
-visible = false
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=1216238509]
+custom_minimum_size = Vector2(422.87, 120)
 layout_mode = 2
-
-[node name="ValidateQuestion" type="TextureButton" parent="." unique_id=1343797429]
-visible = false
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -418.0
-offset_top = 645.0
-offset_right = 418.0
-offset_bottom = 973.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("4_xxa7o")
-texture_hover = ExtResource("5_hfkit")
-
-[node name="FileDialog" type="FileDialog" parent="." unique_id=74608589]
-oversampling_override = 1.0
-title = "Open a File"
-position = Vector2i(-1000, -500)
-size = Vector2i(1920, 1080)
-file_mode = 0
-access = 2
-filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
-
-[node name="AddImageButton" type="TextureButton" parent="." unique_id=818336286]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 499.0
-offset_top = 612.0
-offset_right = 949.0
-offset_bottom = 876.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("8_bq3jh")
-texture_hover = ExtResource("9_am5fd")
-
-[node name="Label" type="Label" parent="AddImageButton" unique_id=303781555]
-visible = false
-layout_mode = 0
-offset_left = 92.5
-offset_top = 317.0
-offset_right = 743.5
-offset_bottom = 384.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 48
-text = "Image importée avec succès"
-
-[node name="OptionButton" type="OptionButton" parent="." unique_id=1216238509]
-visible = false
-layout_mode = 0
-offset_left = 962.0
-offset_top = 396.0
-offset_right = 1405.0
-offset_bottom = 502.0
+size_flags_horizontal = 8
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 64
 alignment = 1
 autowrap_mode = 2
+icon_alignment = 1
 allow_reselect = true
 
-[node name="TextureRect" type="TextureRect" parent="OptionButton" unique_id=360674401]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/OptionButton" unique_id=360674401]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -900.0
-offset_top = -114.5
-offset_right = -27.0
-offset_bottom = 114.5
+offset_left = -644.0
+offset_top = -62.5
+offset_right = 156.0
+offset_bottom = 62.5
 grow_vertical = 2
 texture = ExtResource("8_hfkit")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ValidateModif" type="TextureButton" parent="." unique_id=1222278563]
+[node name="AddImageButton" type="TextureButton" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer" unique_id=818336286]
+custom_minimum_size = Vector2(365.55, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+texture_normal = ExtResource("8_bq3jh")
+texture_hover = ExtResource("9_am5fd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/AddImageButton" unique_id=38824605]
 visible = false
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -418.0
-offset_top = 649.0
-offset_right = 418.0
-offset_bottom = 977.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("4_xxa7o")
-texture_hover = ExtResource("5_hfkit")
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.449951
+offset_top = -63.0
+offset_right = 283.10498
+offset_bottom = 63.36499
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_mnh5a")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ErrorEmpty" type="Label" parent="." unique_id=1491937463]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextEdit/GridContainer/AddImageButton/TextureRect" unique_id=303781555]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Image importée avec succès"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=600399752]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -449,17 +427,176 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -273.0
-offset_top = 656.0
-offset_right = 273.0
-offset_bottom = 832.0
+offset_left = -920.0
+offset_top = -325.0
+offset_right = 920.0
+offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 48
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1336607358]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Control" type="Control" parent="." unique_id=1414564449]
+custom_minimum_size = Vector2(1800, 135)
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 895.0
+offset_right = 1860.0
+offset_bottom = 1030.0
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="ButtonReset" type="TextureButton" parent="Control" unique_id=72583977]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -132.0
+offset_right = 356.0
+offset_bottom = 132.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0, 0.5)
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("2_owh7f")
+texture_hover = ExtResource("3_ik3k2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Control/ButtonReset" unique_id=1117977989]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -100.0
+offset_right = 432.0
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("8_mnh5a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/ButtonReset/TextureRect" unique_id=683165542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Clique ici pour réinitialiser toutes les questions que tu as créees"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ValidateQuestion" type="TextureButton" parent="Control" unique_id=1343797429]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -153.85999
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValidateModif" type="TextureButton" parent="Control" unique_id=1222278563]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -153.85999
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_xxa7o")
+texture_hover = ExtResource("5_hfkit")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MainMenuButton" type="TextureButton" parent="Control" unique_id=1012885864]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -132.0
+offset_bottom = 132.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(1, 0.5)
+size_flags_horizontal = 10
+texture_normal = ExtResource("6_j03ur")
+texture_hover = ExtResource("7_bq3jh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1072144671]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -671.0
+offset_top = 360.0
+offset_right = -371.0
+offset_bottom = 495.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_mnh5a")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ErrorEmpty" type="Label" parent="TextureRect" unique_id=1491937463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
 text = "Le champ est vide"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+autowrap_mode = 3
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=74608589]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+size = Vector2i(1000, 800)
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.png,*.jpg,*.jpeg;Image Files;image/png,image/jpeg.")
 
 [node name="QuestionTitle" type="Label" parent="." unique_id=688508129]
 visible = false
@@ -474,30 +611,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=600399752]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1336607358]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 15
-columns = 2
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NewQuestion" to="." method="_create_question"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ModifyButton" to="." method="_modify_question_menu"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_on_button_mouse_exited"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/ButtonReset" to="." method="_reset_all_questions"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/MainMenuButton" to="." method="_back_to_menu"]
-[connection signal="pressed" from="MarginContainer/TextEdit/QuestionEdit/TextureButton" to="." method="_validate_title_question"]
-[connection signal="pressed" from="ValidateQuestion" to="." method="_validate_question"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextEdit/Questionasset/TextureButton" to="." method="_validate_title_question"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextEdit/GridContainer/AddImageButton" to="." method="_put_visible_file_dialog"]
+[connection signal="mouse_entered" from="Control/ButtonReset" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control/ButtonReset" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Control/ButtonReset" to="." method="_reset_all_questions"]
+[connection signal="pressed" from="Control/ValidateQuestion" to="." method="_validate_question"]
+[connection signal="pressed" from="Control/MainMenuButton" to="." method="_back_to_menu"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="pressed" from="AddImageButton" to="." method="_put_visible_file_dialog"]

@@ -7,21 +7,22 @@ extends Node
 @export var button_validate_modif : TextureButton
 
 @onready var file_dialog = $FileDialog
-@onready var option_button = $OptionButton
-@onready var line_edit = [ $TextEdit/Answer1Edit, 
-$TextEdit/AddAnswer2Button/Answer2Edit, 
-$TextEdit/AddAnswer3Button/Answer3Edit, 
-$TextEdit/AddAnswer4Button/Answer4Edit]
+@onready var option_button = $MarginContainer/VBoxContainer/TextEdit/GridContainer/OptionButton
+@onready var line_edit = [ $MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer1Edit, 
+$MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer2Edit, 
+$MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer3Edit, 
+$MarginContainer/VBoxContainer/TextEdit/GridContainer/Answer4Edit]
 @onready var container = $ScrollContainer
 
-@onready var counter_node = $Counter
-@onready var counter_text = $Counter/CounterNumberQuestion
-@onready var modify_button = $ModifyButton
-@onready var modify_button_label = $ModifyButton/Label
-@onready var reset_button_label = $ButtonReset/Label
+@onready var counter_node = $MarginContainer/VBoxContainer/Counter
+@onready var counter_text = $MarginContainer/VBoxContainer/Counter/CounterNumberQuestion
+@onready var modify_button = $MarginContainer/VBoxContainer/ModifyButton
+@onready var modify_button_label = $MarginContainer/VBoxContainer/ModifyButton/TextureRect
+@onready var reset_button_label = $Control/ButtonReset/TextureRect
 
-@onready var error_node = $ErrorEmpty
+@onready var error_node = $TextureRect
 @onready var question_title = $QuestionTitle
+@onready var button_validate = $MarginContainer/VBoxContainer/TextEdit/Questionasset/TextureButton
 
 var selected_image_path := ""
 # Called when the node enters the scene tree for the first time.
@@ -55,8 +56,6 @@ func _on_button_mouse_exited():
 func _setup_button():
 	for i in range(line_edit.size()):
 		line_edit[i].text_changed.connect(_on_answer_edit_text_changed.bind(i))
-		if (i > 0):
-			line_edit[i].get_parent().pressed.connect(_add_an_answer.bind(line_edit[i].get_parent()))
 
 func _counter_number_line() -> int:
 	var file = FileAccess.get_file_as_string("user://quiz.csv")
@@ -76,12 +75,10 @@ func _validate_question():
 func _setup_visibility_when_question_validate():
 	error_node.set_visible(false)
 	_change_node_visibility(false)
-	for element in line_edit:
-		element.get_parent().set_visible(false)
 
 func _check_field_when_question_validation(field_to_check, text_to_show) -> bool:
 	if (field_to_check.text.strip_edges() == ""):
-		error_node.text = text_to_show
+		error_node.get_child(0).text = text_to_show
 		error_node.set_visible(true)
 		return false
 	return true
@@ -92,15 +89,16 @@ func _hide_main_button():
 
 func _create_question():
 	_hide_main_button()
-	question_edit.show()
+	question_edit.get_parent().show()
 	
 
 func _validate_title_question():
 	if (!_check_field_when_question_validation(question_edit, "Le champ question est vide")):
 		return
-	question_edit.hide()
-	line_edit[0].show()
+	question_edit.get_parent().hide()
+	line_edit[0].get_parent().show()
 	question_title.show()
+	option_button.show()
 	button_add_image.show()
 	question_title.text = question_edit.text
 	if (error_node.visible == true):
@@ -143,9 +141,9 @@ func _check_if_csv_exist():
 		return FileAccess.open(csv_file_root, FileAccess.WRITE_READ)
 
 func _change_node_visibility(state):
-	question_edit.set_visible(state)
+	question_edit.get_parent().set_visible(state)
 	button_add_image.set_visible(state)
-	line_edit[0].set_visible(state)
+	line_edit[0].get_parent().set_visible(state)
 
 
 func _put_visible_file_dialog():
@@ -162,23 +160,7 @@ func _on_answer_edit_text_changed(new_text, index) -> void:
 		option_button.add_item(new_text, index)
 		#option_button.set_item_icon(index, load("res://sprites/ModeCreation/UIProjetLabSelectAnswer.png"))
 		var popup = option_button.get_popup()
-		popup.add_theme_font_size_override("font_size", 48)
-		
-	_check_lineEdit_text(new_text, index)
-
-func _check_lineEdit_text(new_text, index):
-	if (new_text == ""):
-		if (line_edit.size() > index+1):
-			line_edit[index+1].get_parent().set_visible(false)
-	else:
-		if (line_edit.size() > index+1):
-			line_edit[index+1].get_parent().set_visible(true)
-
-func _add_an_answer(button):
-	if (option_button.visible == false):
-		option_button.set_visible(true)
-	button.get_child(0).set_visible(true)
-	button.self_modulate.a = 0
+		popup.add_theme_font_size_override("font_size", 24)
 
 func _back_to_menu():
 	get_tree().change_scene_to_file("res://scene/main_scene.tscn")
@@ -190,9 +172,6 @@ func _modify_question_menu():
 	
 func _create_list_question(file):
 	container.show()
-	container.get_child(0).size_flags_horizontal = Control.SIZE_FILL
-	container.get_child(0).size_flags_vertical = Control.SIZE_FILL
-	container.get_child(0).custom_minimum_size = Vector2(0, 0)
 	var csv_rows = []
 	while not file.eof_reached():
 		var line = file.get_csv_line(";")
@@ -204,6 +183,8 @@ func _create_list_question(file):
 			continue
 		csv_rows.append(line)
 	for i in range(csv_rows.size()):
+		if (i % 2 == 1 && i > 1):
+			container.get_child(0).columns += 1
 		var button = TextureButton.new()
 		var text = Label.new()
 		button.add_child(text)
@@ -236,31 +217,29 @@ func _modify_question(csv_rows, index):
 	#option_button.show()
 	var csv_line = csv_rows[index]
 	question_edit.text = csv_line[0]
-	question_edit.show()
-	question_edit.get_child(1).hide()
+	question_edit.get_parent().show()
 	var last_index = csv_line.size()-1
 	last_index += _image_setup(csv_line[last_index])
-	button_validate_modif.show()
-	button_validate_modif.pressed.connect(_validate_modif_question_title.bind(last_index, csv_line, csv_rows, index), CONNECT_ONE_SHOT)
+	if (button_validate.pressed.is_connected(_validate_title_question)):
+		button_validate.pressed.disconnect(_validate_title_question)
+	button_validate.pressed.connect(_validate_modif_question_title.bind(last_index, csv_line, csv_rows, index), CONNECT_ONE_SHOT)
 
 func _validate_modif_question_title(last_index, csv_line, csv_rows, index):
 	if (!_check_field_when_question_validation(question_edit, "Le champ question est vide")):
 		button_validate_modif.pressed.connect(_validate_modif_question_title.bind(last_index, csv_line, csv_rows, index), CONNECT_ONE_SHOT)
 		return
 	option_button.show()
-	question_edit.hide()
+	question_edit.get_parent().hide()
+	line_edit[0].get_parent().show()
 	for i in range(1, last_index):
 		line_edit[i-1].text = csv_line[i]
-		line_edit[i-1].get_parent().show()
-		line_edit[i-1].get_parent().self_modulate.a = 0
-		line_edit[i-1].show()
 		option_button.add_item(line_edit[i-1].text, i-1)
 	button_validate_modif.show()
 	button_validate_modif.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
 
 func _make_modif_in_csv(index, csv_rows):
 	if (!_check_field_when_question_validation(line_edit[0], "Le champ réponse 1 est vide")):
-		button_validate_modif.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
+		button_validate.pressed.connect(_make_modif_in_csv.bind(index, csv_rows), CONNECT_ONE_SHOT)
 		return
 	var string_to_csv = []
 	string_to_csv.append(question_edit.text)
@@ -271,9 +250,8 @@ func _make_modif_in_csv(index, csv_rows):
 	string_to_csv.append(option_button.get_item_text(option_button.selected))
 	if (selected_image_path != ""):
 		string_to_csv.append(_put_img_in_csv())
-	
 	csv_rows[index] = string_to_csv
-	var file = _check_if_csv_exist()
+	var file = FileAccess.open("user://quiz.csv", FileAccess.WRITE)
 	for line in csv_rows:
 		file.store_csv_line(line, ";")
 	
@@ -287,7 +265,7 @@ func _image_setup(location) -> int:
 		return 0
 
 func _image_check(location):
-	var path_image = "user://images/" + location
+	var path_image = location
 	return FileAccess.file_exists(path_image)
 
 func _reset_all_questions():
